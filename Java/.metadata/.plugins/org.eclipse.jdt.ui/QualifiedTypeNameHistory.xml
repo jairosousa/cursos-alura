@@ -3,4 +3,6 @@
 <fullyQualifiedTypeName name="bytebank.Conta"/>
 <fullyQualifiedTypeName name="Cliente"/>
 <fullyQualifiedTypeName name="Conta"/>
+<fullyQualifiedTypeName name="Funcionario"/>
+<fullyQualifiedTypeName name="FuncionarioTeste"/>
 </qualifiedTypeNameHistroy>
