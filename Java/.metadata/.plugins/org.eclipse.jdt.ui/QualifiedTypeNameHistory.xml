@@ -3,6 +3,8 @@
 <fullyQualifiedTypeName name="bytebank.Conta"/>
 <fullyQualifiedTypeName name="Cliente"/>
 <fullyQualifiedTypeName name="Conta"/>
-<fullyQualifiedTypeName name="Funcionario"/>
 <fullyQualifiedTypeName name="FuncionarioTeste"/>
+<fullyQualifiedTypeName name="Funcionario"/>
+<fullyQualifiedTypeName name="Gerente"/>
+<fullyQualifiedTypeName name="java.lang.Override"/>
 </qualifiedTypeNameHistroy>
