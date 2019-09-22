@@ -6,8 +6,8 @@ public class ContaCorrente extends Conta {
 	}
 
 	/**
-	 * Nova regra de saqu para CC
-	 * Conra-se taxa de 20 centavos
+	 * Nova regra de saque para CC
+	 * Cobra-se taxa de 20 centavos
 	 */
 	@Override
 	public boolean saca(double valor) {
