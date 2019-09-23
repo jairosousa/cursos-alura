@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
 <fullyQualifiedTypeName name="bytebank.Conta"/>
-<fullyQualifiedTypeName name="Cliente"/>
 <fullyQualifiedTypeName name="Conta"/>
 <fullyQualifiedTypeName name="FuncionarioTeste"/>
 <fullyQualifiedTypeName name="java.lang.Override"/>
 <fullyQualifiedTypeName name="Gerente"/>
 <fullyQualifiedTypeName name="ControleBonificacao"/>
-<fullyQualifiedTypeName name="Funcionario"/>
 <fullyQualifiedTypeName name="EditorVideo"/>
 <fullyQualifiedTypeName name="Desingner"/>
+<fullyQualifiedTypeName name="ContaCorrente"/>
+<fullyQualifiedTypeName name="ContaPoupanca"/>
+<fullyQualifiedTypeName name="FuncionarioAutenticavel"/>
+<fullyQualifiedTypeName name="Administrador"/>
+<fullyQualifiedTypeName name="Funcionario"/>
+<fullyQualifiedTypeName name="Cliente"/>
+<fullyQualifiedTypeName name="Autenticavel"/>
 </qualifiedTypeNameHistroy>
