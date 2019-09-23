@@ -8,11 +8,14 @@
 <fullyQualifiedTypeName name="ControleBonificacao"/>
 <fullyQualifiedTypeName name="EditorVideo"/>
 <fullyQualifiedTypeName name="Desingner"/>
-<fullyQualifiedTypeName name="ContaCorrente"/>
 <fullyQualifiedTypeName name="ContaPoupanca"/>
 <fullyQualifiedTypeName name="FuncionarioAutenticavel"/>
 <fullyQualifiedTypeName name="Administrador"/>
 <fullyQualifiedTypeName name="Funcionario"/>
 <fullyQualifiedTypeName name="Cliente"/>
 <fullyQualifiedTypeName name="Autenticavel"/>
+<fullyQualifiedTypeName name="Tributavel"/>
+<fullyQualifiedTypeName name="ContaCorrente"/>
+<fullyQualifiedTypeName name="SeguroDeVida"/>
+<fullyQualifiedTypeName name="CalculadorDeImposto"/>
 </qualifiedTypeNameHistroy>
