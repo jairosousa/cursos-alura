@@ -18,4 +18,5 @@
 <fullyQualifiedTypeName name="ContaCorrente"/>
 <fullyQualifiedTypeName name="SeguroDeVida"/>
 <fullyQualifiedTypeName name="CalculadorDeImposto"/>
+<fullyQualifiedTypeName name="java.lang.NullPointerException"/>
 </qualifiedTypeNameHistroy>
