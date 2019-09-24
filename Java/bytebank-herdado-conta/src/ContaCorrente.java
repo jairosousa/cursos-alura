@@ -7,9 +7,10 @@ public class ContaCorrente extends Conta implements Tributavel {
 
 	/**
 	 * Nova regra de saque para CC Cobra-se taxa de 20 centavos
+	 * @throws SaldoInsuficienteExcepcion 
 	 */
 	@Override
-	public void saca(double valor) {
+	public void saca(double valor) throws SaldoInsuficienteExcepcion {
 		double valorASacar = valor + 0.2;
 		super.saca(valorASacar);
 	}
