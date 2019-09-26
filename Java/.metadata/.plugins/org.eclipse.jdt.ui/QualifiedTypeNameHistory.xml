@@ -23,4 +23,6 @@
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
 <fullyQualifiedTypeName name="MinhaExececao"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
+<fullyQualifiedTypeName name="modelo.ContaCorrente"/>
+<fullyQualifiedTypeName name="modelo.SeguroDeVida"/>
 </qualifiedTypeNameHistroy>
