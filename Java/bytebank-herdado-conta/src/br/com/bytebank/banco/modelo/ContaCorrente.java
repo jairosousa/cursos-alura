@@ -1,4 +1,5 @@
 package br.com.bytebank.banco.modelo;
+
 public class ContaCorrente extends Conta implements Tributavel {
 
 	public ContaCorrente(int agencia, int numero) {
@@ -7,7 +8,8 @@ public class ContaCorrente extends Conta implements Tributavel {
 
 	/**
 	 * Nova regra de saque para CC Cobra-se taxa de 20 centavos
-	 * @throws SaldoInsuficienteExcepcion 
+	 * 
+	 * @throws SaldoInsuficienteExcepcion
 	 */
 	@Override
 	public void saca(double valor) throws SaldoInsuficienteExcepcion {
@@ -18,6 +20,11 @@ public class ContaCorrente extends Conta implements Tributavel {
 	@Override
 	public double getValorImposto() {
 		return super.getSaldo() * 0.01;
+	}
+
+	@Override
+	public String toString() {
+		return "ContaCorrente, " + super.toString();
 	}
 
 }

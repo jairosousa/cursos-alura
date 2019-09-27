@@ -3,7 +3,7 @@ package br.com.bytebank.banco.modelo;
 /**
  * Classe que representa a moldura de Conta
  * 
- * @author Jairo Nascimento 
+ * @author Jairo Nascimento
  *
  */
 public abstract class Conta {
@@ -24,7 +24,7 @@ public abstract class Conta {
 //		System.out.println("total de contas é: " + total);
 		this.agencia = agencia;
 		this.numero = numero;
-		System.out.println("estou criando uma conta: " + numero);
+//		System.out.println("estou criando uma conta: " + numero);
 	}
 
 	public void deposita(double valor) {
@@ -39,9 +39,8 @@ public abstract class Conta {
 	 */
 	public void saca(double valor) throws SaldoInsuficienteExcepcion {
 		if (this.saldo < valor) {
-			//Problema
-			throw new SaldoInsuficienteExcepcion("Saldo: " + this.saldo + 
-					", valor: " + valor);
+			// Problema
+			throw new SaldoInsuficienteExcepcion("Saldo: " + this.saldo + ", valor: " + valor);
 		}
 
 		this.saldo -= valor;
@@ -93,4 +92,8 @@ public abstract class Conta {
 		return Conta.total;
 	}
 
+	@Override
+	public String toString() {
+		return "Numero: " + this.numero + ", Agencia:" + this.agencia;
+	}
 }
