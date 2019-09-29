@@ -1,24 +1,32 @@
 package br.com.bytebank.banco.teste;
 
+import br.com.bytebank.banco.modelo.Cliente;
 import br.com.bytebank.banco.modelo.ContaCorrente;
+import br.com.bytebank.banco.modelo.ContaPoupanca;
 
 public class TesteArraysReferencias {
 
 	public static void main(String[] args) {
 
-		ContaCorrente[] contas = new ContaCorrente[5];
+		Object[] refs = new Object[5];
 
 		ContaCorrente cc1 = new ContaCorrente(22, 11);
 
-		contas[0] = cc1;
+		refs[0] = cc1;
 		
-		ContaCorrente cc2 = new ContaCorrente(22, 22);
+		ContaPoupanca cp1 = new ContaPoupanca(22, 22);
 		
-		contas[1] = cc2;
+		refs[1] = cp1;
 		
-		System.out.println(contas[1].getNumero());
+		Cliente c = new Cliente();
+		refs[2] = c;
 		
-		ContaCorrente ref = contas[1];
+//		System.out.println(refs[1].getNumero());
+		
+		ContaPoupanca ref = (ContaPoupanca) refs[1];
+		
+		System.out.println(cc1.getNumero());
+		System.out.println(ref.getNumero());
 
 	}
 
