@@ -1,7 +1,9 @@
 package br.com.bytebank.banco.teste.util;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Vector;
 
 import br.com.bytebank.banco.modelo.Cliente;
 import br.com.bytebank.banco.modelo.Conta;
@@ -13,6 +15,9 @@ public class TesteArrayList {
 
 		// Generics
 		List<Conta> lista = new ArrayList();
+//		Collection<Conta> lista = new ArrayList();
+
+//		List<Conta> lista = new Vector<Conta>(); //thread safe
 		
 		Cliente c = new Cliente();
 //		lista.add(c); nem compila
