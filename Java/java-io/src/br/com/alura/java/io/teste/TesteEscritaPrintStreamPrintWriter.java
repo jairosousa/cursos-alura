@@ -1,10 +1,9 @@
 package br.com.alura.java.io.teste;
 
 import java.io.IOException;
-import java.io.PrintStream;
 import java.io.PrintWriter;
 
-public class TesteEscrita3 {
+public class TesteEscritaPrintStreamPrintWriter {
 
 	public static void main(String[] args) throws IOException {
 
