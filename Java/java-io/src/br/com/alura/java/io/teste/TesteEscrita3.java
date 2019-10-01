@@ -1,10 +1,10 @@
 package br.com.alura.java.io.teste;
 
-import java.io.BufferedWriter;
-import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintStream;
+import java.io.PrintWriter;
 
-public class TesteEscrita2 {
+public class TesteEscrita3 {
 
 	public static void main(String[] args) throws IOException {
 
@@ -13,19 +13,18 @@ public class TesteEscrita2 {
 //		Writer osw = new OutputStreamWriter(fos); // Escreve arquivo e transforma bit/bytes em caracteres
 //		BufferedWriter bw  = new BufferedWriter(osw); //Escreve e salva caracteres de uma linha
 		
-		FileWriter fw = new FileWriter("lorem2.txt");
-		BufferedWriter bw  = new BufferedWriter(fw);
+//		BufferedWriter bw  = new BufferedWriter(new FileWriter("lorem2.txt"));
+		
+//		PrintStream ps = new PrintStream("lorem2.txt");
+		PrintWriter ps = new PrintWriter("lorem2.txt");
+		
+		ps.println("Escrevendo em um arquivo na primeira linha");
 
-		bw.write("Escrevendo em um arquivo na primeira linha");
-//		bw.write(System.lineSeparator()); //nova linha
-//		bw.write(System.lineSeparator()); //nova linha
-		bw.newLine();
-		bw.newLine();
-		bw.newLine();
-		bw.write("Escrevendo em um arquivo na segunda linha");
+		ps.println();
 		
+		ps.println("Escrevendo em um arquivo na segunda linha");
 		
-		bw.close();
+		ps.close();
 	}
 
 }
