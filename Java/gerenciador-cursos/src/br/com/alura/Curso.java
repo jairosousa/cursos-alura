@@ -23,6 +23,11 @@ public class Curso {
 		return nome;
 	}
 
+	/**
+	 * Deicha as listas imutáveis
+	 * 
+	 * @return
+	 */
 	public List<Aula> getAulas() {
 		return Collections.unmodifiableList(aulas); // Retorna lista que não pode ser modificado tipo add, remove
 	}
@@ -30,4 +35,21 @@ public class Curso {
 	public void adiciona(Aula aula) {
 		this.aulas.add(aula);
 	}
+
+	public int tempoTotal() {
+//		int tempoTotal = 0;
+//		for (Aula aula : aulas) {
+//			tempoTotal += aula.getTempo();
+//		}
+//		return tempoTotal;
+		return this.aulas.stream().mapToInt(Aula::getTempo).sum();
+	}
+
+	@Override
+	public String toString() {
+		return "Curso [nome=" + nome + ", instrutor=" + instrutor + ", Tempo Total=" + tempoTotal() + 
+				", Aulas: "+ aulas + "]";
+	}
+	
+	
 }
