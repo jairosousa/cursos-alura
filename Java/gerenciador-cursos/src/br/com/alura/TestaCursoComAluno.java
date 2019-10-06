@@ -31,5 +31,7 @@ public class TestaCursoComAluno {
 		Set<Aluno> alunosSincronizados = Collections.synchronizedSet(javaColecoes.getAlunos());
 		alunosSincronizados.forEach(a -> System.out.println(a));
 
+		System.out.println("Alunos esta matriculado: ");
+		System.out.println(javaColecoes.estaMatriculado(a1));
 	}
 }
