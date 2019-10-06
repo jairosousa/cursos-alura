@@ -106,15 +106,95 @@ Vamos acessá-lo e clicar em `"br/ > com/ > caelum/ > vraptor/"`, e encontraremo
 No repositório central armazenamos as bibliotecas a serem compartilhadas com o mundo do Maven.
 ```
 
+#### **As fases do Maven**
+
+Em um processo de _build_, o primeiro passo é criar os diretórios que armazenarão os arquivos do projeto. A segunda etapa é compilar os conteúdos, depois os _testes_, e então efetivá-lo de fato. O _build_ possui várias fases que são executadas ordenadamente.
+
+Na [documentação do Maven](https://maven.apache.org/guides/introduction/introduction-to-the-lifecycle.html) encontraremos as fases que um ciclo de vida build apresenta:
 
 
+>1. **Validação**: verificamos se projeto possui todas as informações necessárias
+>2. **Compilação**: compilar os conteúdos
+>3. **Teste**: realizar testes diferentes no projeto
+>4. **Pacote**: geração de um pacote do projeto
+>5. **Teste de integração**: realizar testes de integração
+>6. **Verificação**: checagem do pacote gerado
+>7. **Instalação**: realizar a instalação do pacote no repositório local
+>8. **Implantação**: realizar a implantação no ambiente adequado
+
+Quando acionamos o seguinte comando no terminal estamos executando duas fases do ciclo: **validação** e **compilação**.
+
+```
+cd Documents/guilherme/workspace/produtos
+mvn compile
+```
+
+Para executarmos a fase de teste `(mvn test)`, devemos realizar as duas que a antecedem, isto é, validação e compilação, como dito anteriormente. Precisamos fazer o processo na ordem correta, e não podemos gerar um _package_ sem a compilação prévia, por exemplo.
+
+Podemos forçar a ordem de etapas com opções da linha de comando, como não gerar testes, por meio do comando `-DskipTests=true`:
+
+```
+mvn -DskipTests=true package
+```
+
+Por padrão, o ciclo de vida de _build_ respeita a ordem que apresentamos, portanto primeiro ocorre a validação dos arquivos do projeto, a verificação do ambiente, e assim por diante. Em seguida teremos a compilação dos arquivos e a possibilidade de executarmos testes. Na fase de pacote, geraremos os arquivos `.jar`, `.war` ou quaisquer outros que serão usados para a implementação do projeto.
+
+Em seguida, há a fase de verificação dos resultados dos testes e o controle de qualidade da aplicação. Finalmente, passamos para as duas últimas etapas: a instalação no local e a implementação no remoto.
+
+Agora que conhecemos melhor os processos de _build_, iremos estudar alguns relatórios que o _Maven_ pode gerar.
 
 
+#### **Utilizando o plugin PMD**
 
+O [PMD é um analisador de código-fonte](https://pmd.github.io/) que consegue encontrar algumas falhas no nosso código, como por exemplo, variáveis que não estão sendo utilizadas.
 
+Utilize o plugin PMD do Maven para gerar um relatório da análise do código-fonte do seu projeto. Após executar o comando, você encontrará o relatório dentro do diretório `target/site`, no arquivo `pmd.html`.
 
+O relatório irá indicar que a classe Produto possui campos que não estão sendo utilizados.
 
+Você pode encontrar mais informações sobre o plugin PMD [aqui](https://maven.apache.org/plugins/maven-pmd-plugin/).
 
+A primeira coisa a se fazer é adicionar o plugin do PMD ao `pom.xml`. Nós adicionamos depedências na tag `<dependencies>`, mas como aqui queremos alterar o _build_ do projeto, os plugins ficam dentro da tag `build`:
+
+```xml
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <!-- informações sobre o projeto -->
+    <dependencies>
+        <!-- dependências do junit e xstream -->
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <version>3.6</version>
+                <executions>
+                    <execution>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+```
+
+Para gerar o relatório, você deve utilizar o comando `mvn pmd:pmd`. Caso existam violações no código-fonte, o arquivo `pmd.html` será criado em `target/site`, indicando quais são as violações.
+
+#### **Utilizando o plugin do JaCoCo**
+
+Adicione o plugin do JaCoCo ao projeto para que seja possível gerar relatórios sobre a cobertura de testes do projeto. Esse tipo de relatório é interessante pois é possível ver de uma forma fácil o que não testamos em nossa aplicação.
+
+Lembre-se que para adicionar o plugin, basta fazer uma busca no Google. No caso do JaCoCo, você pode obter informações [aqui](https://www.eclemma.org/jacoco/trunk/doc/maven.html).
+
+Faça com que os _goals_ `prepare-agent` e `report` sejam adicionados ao ciclo de vida. Mantenha a execução do goal na fase padrão do plugin, não é necessário deixar a fase explícita no `pom.xml`.
+
+Execute o comando `mvn verify`, e no diretório `target/site/jacoco` você encontrará a página HTML `index.html`. Abra o arquivo e veja o relatório detalhado sobre o código não coberto por testes. No momento, nenhum código do nosso projeto está testado.
 
 
 
