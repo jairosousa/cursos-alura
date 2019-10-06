@@ -1,8 +1,23 @@
 #Gerar projeto maven
 mvn archetype:generate -DartifactId=produtos -DgroupId=br.com.alura.maven -DinteractiveMode=false -DarchetypeArtifactId=maven-archetype-quickstart
 
+#Para Compilar
+mvn compile
+
 #Gerar relatorios
 mvn surefire-report:report
 
 #gerar Jar
 mvn package
+
+ Como foi visto nas aulas, o processo de build da nossa aplicação pode se tornar cada vez mais complexo. Por esse motivo, é interessante utilizar uma ferramenta que o automatize, como o Maven.
+
+O comando utilizado para compilar nossas classes para um diretório que não é o mesmo do fonte é mais complexo.
+
+No lugar de executar o javac, vamos utilizar o Maven para compilar a classe App.java que o projeto produtos contém. Para isto, execute mvn compile. Verifique se dentro do diretório target/classes, o arquivo class foi devidamente gerado.
+
+Utilize o Maven para rodar os testes do projeto. Para isto execute o comando mvn test. Além de verificar a saída do comando no terminal, verifique dentro do diretório target quais diretórios foram gerados e seus conteúdos.
+
+Para finalizar, utilize o comando mvn clean para limpar o diretório target e manter apenas os arquivos fonte.
+
+maven repositório
