@@ -86,6 +86,25 @@ mvn package
 
 O Maven busca as informações sobre o tipo de pacote que deve gerar, bem como o nome do pacote e versão, no arquivo `pom.xml`. É nesse arquivo que concentramos as configurações sobre o _build_ do nosso projeto, assim como as bibliotecas (dependências) necessárias para o projeto funcionar.
 
+#### **Executar uma ação de maneira offline**
+
+Sendo assim, podemos solicitar que o Maven execute uma ação de maneira offline por meio do comando -o no terminal:
+
+```
+mvn -o test
+```
+Contudo, se o Maven necessitar de algum arquivo novo para executar a ação solicitada, ele não poderá realizar o download de dependências, uma vez que estamos trabalhando no modo offline. Por isso, é importante que tenhamos certeza de que temos todos os elementos necessários antes de operarmos nesse modo.
+
+Quando dizemos que o Maven busca na internet as dependências necessárias, estamos nos referindo ao repositório central da ferramenta. Considerando a imensidão da internet, uma busca completa seria praticamente impossível.
+
+Atualmente, o repositório central do Maven está hospedado em [maven repositório](http://repo.maven.apache.org/maven2/). 
+
+
+Vamos acessá-lo e clicar em `"br/ > com/ > caelum/ > vraptor/"`, e encontraremos diferentes versões de ***VRaptor***. Clicaremos sobre a versão `4.2.0-RC3/`, e encontraremos códigos fonte em formato `.jar`, Javadocs que podem ser descompactados, e assim por diante.
+
+```
+No repositório central armazenamos as bibliotecas a serem compartilhadas com o mundo do Maven.
+```
 
 
 
