@@ -1,6 +1,7 @@
 package br.com.alura;
 
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.Set;
 
 public class TestaCursoComAluno {
@@ -33,5 +34,15 @@ public class TestaCursoComAluno {
 
 		System.out.println("Alunos esta matriculado: ");
 		System.out.println(javaColecoes.estaMatriculado(a1));
+		
+		System.out.println("Testanto Interable");
+		
+		Set<Aluno> alunos = javaColecoes.getAlunos();
+		Iterator<Aluno> iterator = alunos.iterator();
+		
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+		
 	}
 }
