@@ -1,0 +1,8 @@
+#Gerar projeto maven
+mvn archetype:generate -DartifactId=produtos -DgroupId=br.com.alura.maven -DinteractiveMode=false -DarchetypeArtifactId=maven-archetype-quickstart
+
+#Gerar relatorios
+mvn surefire-report:report
+
+#gerar Jar
+mvn package
