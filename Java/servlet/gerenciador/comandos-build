@@ -1,0 +1,12 @@
+#Gerar war
+>Na raiz do projeto botão direito exportar war
+
+#Na pasta bin do Tomcat
+>startup.bat 
+#configurar porta no tomcat
+>pasta conf>server.xml
+<Connector port="80" protocol="HTTP/1.1"
+               connectionTimeout="20000"
+               redirectPort="8443" />
+               
+ #configurando porta 80
