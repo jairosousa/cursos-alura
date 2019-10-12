@@ -11,6 +11,11 @@
 <title>Java Standard Tag library - JSTL</title>
 </head>
 <body>
+<c:if test="${not empty empresa}">
+			Empresa <strong> ${ empresa } </strong>cadastrada com sucesso!!!
+		</c:if>
+		<br/>
+		<br/>
 	Lista de Empresas: <br/>
 	
 	<ul>
