@@ -11,7 +11,7 @@
 <title>Java Standard Tag library - JSTL</title>
 </head>
 <body>
-<c:if test="${not empty empresa}">
+		<c:if test="${not empty empresa}">
 			Empresa <strong> ${ empresa } </strong>cadastrada com sucesso!!!
 		</c:if>
 		<br/>
@@ -20,7 +20,10 @@
 	
 	<ul>
 		<c:forEach items="${ empresas }" var="empresa">
-			<li>${ empresa.nome } - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/></li>
+			<li>${ empresa.nome } - <fmt:formatDate value="${empresa.dataAbertura}" pattern="dd/MM/yyyy"/>
+				<a href="/gerenciador/mostrarEmpresa?id=${empresa.id}">editar</a>
+				<a href="/gerenciador/removeEmpresa?id=${empresa.id}">Remove</a>
+			</li>
 		</c:forEach>
 	
 	</ul>
