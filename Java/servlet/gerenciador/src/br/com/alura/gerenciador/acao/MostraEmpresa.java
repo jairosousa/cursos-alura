@@ -10,9 +10,9 @@ import javax.servlet.http.HttpServletResponse;
 import br.com.alura.gerenciador.modelo.Banco;
 import br.com.alura.gerenciador.modelo.Empresa;
 
-public class MostraEmpresas {
+public class MostraEmpresa  implements Acao {
 
-	public void executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public String executa(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		System.out.println("Removendo empresas");
 		
@@ -26,9 +26,7 @@ public class MostraEmpresas {
 
 		request.setAttribute("empresa", empresa);
 
-		RequestDispatcher rd = request.getRequestDispatcher("formAlteraEmpresa.jsp");
+		return "forward:formAlteraEmpresa.jsp";
 
-		rd.forward(request, response);
-		
 	}
 }
