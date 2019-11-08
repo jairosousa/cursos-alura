@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 public class OiMundoServlet extends HttpServlet {
 
 	public OiMundoServlet() {
-		System.out.println("Criando Oi Mundo servlet");
+//		System.out.println("Criando Oi Mundo servlet");
 	}
 
 	@Override
