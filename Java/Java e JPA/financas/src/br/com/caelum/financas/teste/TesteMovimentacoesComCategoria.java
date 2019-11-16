@@ -22,7 +22,6 @@ public class TesteMovimentacoesComCategoria {
 		
 		Conta conta = new Conta();
 		conta.setId(2);
-		
 
 		Movimentacao movimentacao1 = new Movimentacao();
 		movimentacao1.setData(Calendar.getInstance()); //hoje
@@ -44,18 +43,16 @@ public class TesteMovimentacoesComCategoria {
 
 		em.getTransaction().begin();
 		
-//		em.persist(categoria1);
-//		em.persist(categoria2);
-//
-//		em.persist(movimentacao1);
-//		em.persist(movimentacao2);
+		em.persist(categoria1);
+		em.persist(categoria2);
+
+		em.persist(movimentacao1);
+		em.persist(movimentacao2);
 		
 		/**
 		 * Ajuste conta
 		 */
-		Conta c = em.find(Conta.class, 8);
-		c.setTitular("Valdomiro");
-		c.setAgencia("5263");
+		
 		em.getTransaction().commit();
 
 		em.close();
