@@ -19,10 +19,14 @@ public class TesteTodasMovimentacoesDasConta {
 		
 		/**
 		 * join fectch indica que queremo juntar a conta com movimentações
-		 * ou seja tirar o padrão lazy so tras as movimentações quando pedir ou dar o getMovimentações
-		 * usando o join fetch ele ja traz as movimentações passando usando o padrão fetch
-		 * left join pede trazer tudo esta do lado esquerdo do relacionamento ou seja trazer
-		 * as contas mesmo que não tenga movimentação
+		 * ou seja tirar o padrão lazy so tras as movimentações quando pedir ou dar o getMovimentações.
+		 * Usando o join fetch ele ja traz as movimentações passando usando o padrão fetch
+		 * Por padrão join fetch fara inner join que trará somente as contas que possuem movimentacão.
+		 * Portanto, precisamos fazer um left join fetch em vez do join fetch 
+		 * para trazer tudo esta do lado esquerdo do relacionamento ou seja trazer as contas mesmo que
+		 * não tenha movimentação.
+		 * Ao usar o distinct dizemos ao banco que queremos apenas os resultados
+		 * diferentes. 
 		 */
 		String jpql ="select distinct c from Conta c left join fetch c.movimentacoes";
 		

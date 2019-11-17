@@ -10,7 +10,7 @@ public class TesteConta {
 	public static void main(String[] args) {
 		Conta conta = new Conta();
 		conta.setTitular("Jairo Nascimento");
-		conta.setBanco("Caixa Economica");
+		conta.setBanco("104 - Caixa Economica Federal");
 		conta.setAgencia("3220");
 		conta.setNumero("45606-9");
 		
