@@ -14,11 +14,22 @@ public class Avaliador {
 	private List<Lance> maiores;
 
 	public void avalia(Leilao leilao) {
+		
+		/**
+		 * Variavel utilizada para calcular a media dos 
+		 * valores dos lances do leilão.
+		 */
 		double total = 0;
 		
+		if(leilao.getLances().size() == 0) {
+			throw new RuntimeException("Não é possivel avaliar um leilão sem lances!");
+		}
+		
 		for (Lance lance : leilao.getLances()) {
+			
 			if (lance.getValor() > maiorDeTodos)
 				maiorDeTodos = lance.getValor();
+			
 			if (lance.getValor() < menorDeTodos)
 				menorDeTodos = lance.getValor();
 
@@ -47,7 +58,7 @@ public class Avaliador {
 	}
 	
 	public List<Lance> getTresMaioresLance() {
-		return maiores == null ? new ArrayList<Lance>() : maiores;
+		return maiores;
 	}
 
 	public double getMaiorLance() {
