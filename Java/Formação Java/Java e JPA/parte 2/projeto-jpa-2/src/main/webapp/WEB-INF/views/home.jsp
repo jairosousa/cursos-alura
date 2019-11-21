@@ -18,6 +18,7 @@
 							width="150" height="200">
 						</a>
 					<p>
+					
 						<a class="btn btn-default"
 							href="<c:url value="/produto/${produto.id}" />" />Saiba mais </a>
 						<a class="btn btn-default"

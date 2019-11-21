@@ -36,7 +36,7 @@ public class Produto {
 	private double preco;
 
 	@ManyToMany
-	@JoinTable(name="categora_produto")// altera o nome da tabela em vez da default
+//	@JoinTable(name="categoria_produto")// altera o nome da tabela em vez da default
 	private List<Categoria> categorias = new ArrayList<>();
 
 	@Valid
@@ -97,6 +97,14 @@ public class Produto {
 
 	public Loja getLoja() {
 		return loja;
+	}
+
+	public List<Categoria> getCategorias() {
+		return categorias;
+	}
+
+	public void setCategorias(List<Categoria> categorias) {
+		this.categorias = categorias;
 	}
 
 }
