@@ -12,14 +12,14 @@ public class TestaPool {
 		
 		ComboPooledDataSource dataSource = (ComboPooledDataSource) new JpaConfigurator().getDataSource();
 		
-		for (int i = 0; i < 10; i++) {
-			Connection connection = dataSource.getConnection();
-			
-			System.out.println(dataSource.getNumBusyConnections());
-			System.out.println(dataSource.getNumIdleConnections());
-			System.out.println();
-			
-		}
+//		for (int i = 0; i < 10; i++) {
+//			Connection connection = dataSource.getConnection();
+//			
+//			System.out.println(dataSource.getNumBusyConnections());
+//			System.out.println(dataSource.getNumIdleConnections());
+//			System.out.println();
+//			
+//		}
 
 	}
 
