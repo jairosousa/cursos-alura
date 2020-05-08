@@ -1,0 +1,30 @@
+
+Voltando aqui para o meu slide, classes coesas, eu as quero o tempo inteiro. Por quê? Porque uma classe coesa é mais fácil de ser lida, eu tenho mais reuso, eu posso pegá-la e levar para um outro sistema, ela provavelmente vai ser mais simples, porque ela vai ter menos código, e eu não vou precisar abri-la o tempo inteiro. Essa é uma coisa com a qual me preocupo bastante, uma classe coesa, ela geralmente vem fechada no meu Eclipse. Porque eu só a abro no caso particular quando eu preciso mudar aquela regra ou quando eu encontrei um problema naquela regra. Mas eu não fico mexendo nela o tempo inteiro.
+Essa é a vantagem de uma classe coesa, ela é pequenininha, bem focada, eu sei quando eu tenho que mexer nela, e eu não tenho que mexer nela o tempo inteiro.
+
+ O que é SOLID? SOLID é o acrônimo, é o conjunto de 5 boas práticas em relação a Orientação a objetos, cada letra fala de uma prática em particular.
+
+Comece a prestar atenção nisso no seu dia a dia, quando você está escrevendo uma classe que não para de crescer nunca, esse é um indício de que ela não é coesa. Quando você tem uma classe com 40, 50, 60 métodos, pare e pense “Será que a minha classe, ela tem que ter mesmo 60 comportamentos diferentes? Será que eu não consigo separar isso em classes menores, mais coesas? Então é isso: nesta aula, a lição é coesão. Obrigado.
+
+Uma classe coesa é aquela que contém apenas uma única responsabilidade. Ou seja, ela toma conta de apenas um conceito dentro do sistema.
+
+Classes coesas tendem a ser menores, e por consequência, mais fáceis de serem lidas e mantidas. Elas também tendem a ser mais reutilizáveis, afinal são mais fáceis.
+
+Classes que não são coesas geralmente possuem muitos comportamentos (métodos). Além disso, elas também tem a tendência de crescer pra sempre, ou seja, o tempo inteiro o desenvolvedor tem que por a mão para escrever mais código.
+
+Uma classe não coesa contém muitas diferentes responsabilidades. A ideia é então separar essas responsabilidades em classes diferentes. Como no caso do vídeo, onde separamos cada regra de cálculo em um lugar separado. Repare também que a classe Funcionario também é coesa, já que ela cuida apenas das responsabilidades e comportamentos de um funcionário.
+
+Então, encontrou uma classe com muita responsabilidade, divida-a em várias classes menores.
+
+O que é o SRP (Single Responsibility Principle)?
+
+É um dos princípios SOLID, que o nome já diz, a ideia é ter uma única responsabilidade por classe. Ou seja, coesão.
+
+Interface Segregation Principle
+Podemos pensar sobre coesão em vários níveis diferentes. Por exemplo, o que seria uma interface coesa? Uma interface coesa é aquela que também só possui uma única responsabilidade.
+E será que conseguimos ver a coesão pelo outro lado? Pense, se a classe A depende de B, idealmente B deve prover uma interface para A, somente com as coisas que A depende. Ou seja, a classe não deve depender de métodos que ela não usa. Isso é o que chamamos de Princípio de Segregação de Interfaces, ou ISP.
+
+Novamente, é propagação de mudanças. Se a interface mudar, a mudança tende a ser propagada em menos pontos. Lembre-se que a nossa ideia ao longo desse curso, é diminuir ao máximo a quantidade de pontos de mudança.
+
+Por curiosidade, esse princípio faz mais sentido ainda em linguagens mais antigas como C++. Ao mudar uma interface, você é obrigado a recompilar e redeployar todo o código. Em sistemas grandes, isso pode ser bastante problemático. Esse princípio nasceu nessa época. Hoje, esse problema de deploy é menor, mas ainda assim o problema de propagação de mudanças é importante, e deve ser resolvido.
+

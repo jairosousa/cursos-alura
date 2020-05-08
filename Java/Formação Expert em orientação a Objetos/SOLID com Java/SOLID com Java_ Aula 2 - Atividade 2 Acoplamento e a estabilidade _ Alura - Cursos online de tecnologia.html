@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<!-- saved from url=(0093)https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4950 -->
+<html lang="pt-BR" data-product="alura" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+	
+		
+
+
+
+<!-- Page hiding snippet (recommended)  -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script type="text/javascript" async="" src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/analytics.js.download"></script><script async="" src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/analytics.js.download"></script><script async="" src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/gtm.js.download"></script><script>
+	(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+	h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+	(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+	})(window,document.documentElement,'async-hide','dataLayer',4000,
+		{'GTM-TN542JN':true});
+</script>
+
+<!-- Google Tag Manager -->
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer', 'GTM-TN542JN');
+</script>
+<!-- End Google Tag Manager -->
+
+	<script type="text/javascript">
+        dataLayer.push({
+            'tipoPagina': 'Aula',
+            'curso': 'SOLID com Java: Orientação a Objetos com Java'
+        });
+	</script>
+
+	
+
+	<title>SOLID com Java: Aula 2 - Atividade 2 Acoplamento e a estabilidade | Alura - Cursos online de tecnologia</title>
+	
+	<link rel="shortcut icon" href="https://cursos.alura.com.br/assets/images/alura/favicon.ico">
+	
+	<link href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com/">
+
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/video-js.322ee8c7.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/silvermine-videojs-quality-selector.min.de928d55.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/prettify.4f36b4ca.css">
+
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/base.1e88adda.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/formattedText.afb4622e.css">
+	
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/container.16466c50.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/classPage.686decbe.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/menuSettings.47105043.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/taskProgress.73b1902d.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/taskMessageInfo.2f3d3681.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/alternativeList.3b452dc0.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/taskFeedback.1c82537d.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/markdown.c1e23fdd.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/finishSection.eae45901.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/phrase.416f092b.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/hqexplanation.3ed41021.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/openquestion.c66aa640.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/textcontent.7298b79f.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/video.48a68d14.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/singlechoice.4a8caf68.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/music.c02947a9.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/multiplechoice.70f60e4c.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/videodialog.80603de3.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/fillintheblank.92f59734.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/speakingpractice.c2461a40.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/pronunciationpractice.790ca935.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/repetition.13eb3517.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/genericVideo.9239c799.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/projectSubmit.e7032445.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/extraContentTask.b2d126e6.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/taskContent.1ef47209.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/taskButtons.3fbd6adb.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/markdownEditor.9f06486b.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/audioPlayer.a615784e.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/notes.0c60a7da.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/dark-mode.26653973.css">
+	<link rel="stylesheet" href="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/taskFeedbackAnswer.98ef221e.css">
+
+
+	<style type="text/css">
+		.task:before, .video-js .vjs-play-progress {
+			background-color: #2A7AE4;
+		}
+	</style>
+
+	
+	
+	<script async="" src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/hotjar-1638253.js.download"></script><script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/sha256.min.js.download"></script><script async="" src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/modules.de7e888e0955327c1dca.js.download" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head>
+<body>
+
+
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN542JN"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<section class="task" data-allow-answer="true" data-task-section-exam="false" data-task-type="hqexplanation" data-task-id="4950" data-author-id="330602" data-course-code="orientacao-a-objetos-avancada-e-principios-solid" data-section-name="Acoplamento e a estabilidade" data-section-id="1756" data-section-number="2" data-domain="cursos.alura.com.br" data-hasfeedbackanswer="false" data-url-prefix="/">
+	<section class="task-body">
+		
+		<header class="task-body-header">
+			<div class="container">
+				<h1 class="task-body-header-title">
+					<svg class="task-body-header-title-svg" aria-label="Atividade de Explicação">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+					</svg>
+					<small>02</small>
+					<span class="task-body-header-title-text"> Acoplamento e a estabilidade</span>
+				</h1>
+				
+					<div class="task-body-header-actions">
+						<a href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4950/next" aria-hidden="true" class="task-actions-button task-actions-button-next task-submit">Próxima Atividade</a>
+					</div>
+				
+			</div>
+		</header>
+		<div class="task-body__wrapper">
+			
+
+
+
+<section class="class-notes">
+    <div class="class-notes-content">
+        <h2 class="class-notes-title">Meu caderno do curso (beta)</h2>
+        <p class="class-notes-description">Este é seu caderno de anotações aqui na Alura. Todo o seu conteúdo fica vísivel apenas para você. Próximos passos para essa funcionalidade  no nosso<a href="https://suporte.alura.com.br/article/308-meu-caderno-como-funciona" class="class-notes-faq-link">FAQ</a></p>
+        <textarea name="text" id="courseNotebook-text" class="class-notes-text" cols="30" rows="10"></textarea>
+        <div class="class-notes-save-wrapper">
+            <span>
+                <p class="class-notes-saved-text" aria-hidden="true" style="display: none">Notas salvas</p>
+            </span>
+            <span class="class-notes-save-button-wrapper">
+                <button class="class-notes-save-button" data-save-text="Salvar caderno" data-saving-text="Salvando">
+                   Salvar caderno</button>
+            </span>
+        </div>
+        <button class="class-notes-close-button"></button>
+    </div>
+</section>
+			<main class="task-body-main container" data-should-warn="false">
+				
+
+
+
+
+
+
+
+	
+		
+
+
+
+
+<section class="hqExplanation" id="task-content">
+	<div class="container">
+	
+
+
+
+
+
+
+<div class="settings">
+	<button type="button" class="settings-button" aria-label="Configurações">
+		<svg class="settings-button-icon">
+			<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#MENU_SETTINGS"></use>
+		</svg>
+	</button>
+	<div class="settings-box">
+		<span class="settings-box-title"></span>
+		<ul class="settings-box-list">
+			
+				<li class="settings-box-item settings-box-item-darkmode">
+					<button class="dark-mode-action">
+						Modo noturno
+					</button>
+				</li>
+			
+			
+				
+				
+				
+				
+					
+						<li class="settings-box-item settings-box-item-suggestion"><a href="https://cursos.alura.com.br/suggestions/new/orientacao-a-objetos-avancada-e-principios-solid/4950/question">Sugerir alteração</a></li>
+					
+				
+			
+			
+		</ul>
+	</div>
+</div>
+
+		<div class="formattedText" data-external-links="">
+			<p>Bem-vindo à aula de acoplamento do curso de Orientação a objetos avançada do Alura. Nesta aula, eu vou discutir um pouquinho sobre acoplamento.</p>
+<p>Acoplamento é um termo muito comum entre os desenvolvedores, em especial entre aqueles que programam usando linguagens OO. Até porque tem aquela grande frase, a máxima da Orientação a objetos, que é “Tenha classes que são muito coesas e pouco acopladas.”</p>
+<p>Neste capítulo, em particular, a parte de coesão vou dar uma deixada de lado, e vou discutir um pouquinho mais sobre acoplamento. Mas vamos lá. Dá uma olhada nesse código. Eu tenho um <code>GeradorDeNotaFiscal</code> e se você olhar o método <code>gera</code>, que é o principal método dessa classe, o que ele faz? Ele pega uma fatura, descobre o valor mensal da fatura, gera uma nota fiscal, certo, faz uma conta lá qualquer com o valor da fatura, isso não vem ao caso. Em seguida, ele manda um e-mail, olha lá <code>email.enviaEmail</code>, e depois ela persiste no <code>dao</code>, <code>dao.persiste</code>. E aí retorna a nota fiscal.</p>
+<p>Tanto o enviador de e-mail, quanto o dao, eu estou recebendo ali no construtor da classe <code>GeradorDeNotaFiscal</code>. Excelente. Qual que é o problema desse código? Qual que é o problema do ponto de vista de acoplamento desse código?</p>
+<p>Pensa o seguinte: hoje, esse código aqui em particular, ele manda e-mail e ele salva no banco de dados usando um dao. Imagina que amanhã ele também vai ter que mandar pro SAP, ele vai ter que mandar um SMS, ele vai ter que disparar um outro sistema da empresa etc.</p>
+<p>Essa classe <code>GeradorDeNotaFiscal</code>, ela vai crescer, ela vai passar a depender de muitas outras classes.</p>
+<p>A gente acaba sempre aprendendo que acoplamento é uma coisa muita ruim, “nunca acople o seu sistema”, “faça suas classes não serem acopladas”, mas a pergunta é: por quê? Qual que é o real problema do acoplamento? Por que ele é tão ruim assim?
+Dê uma olhada no diagrama abaixo:</p>
+<p><img src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/DiagramaSolidJava.jpg" alt="Diagrama que representa a classe GeradorDeNotaFiscal que depende da classe EnviadorDeEmail, ela também depende da classe NFDAO, e tambem depende da classe SAP."></p>
+<p>Hoje, eu tenho um <code>GeradorDeNotaFiscal</code> que depende do <code>EnviadorDeEmail</code>, que depende de um <code>NFDAO</code>, e que depende de um <code>SAP</code>.</p>
+<p>O grande problema do acoplamento é que uma mudança em qualquer uma das classes de que eu dependo pode impactar na minha classe principal. Ou seja, se o <code>EnviadorDeEmail</code> parar de funcionar, esse problema pode ser propagado pro <code>GeradorDeNotaFiscal</code>. Se o <code>NFDAO</code> parar de funcionar, o problema vai ser propagado pro gerador. E assim por diante. </p>
+<p>Posso até pensar em exemplos de código. Se a interface da classe <code>SAP</code> mudar, essa mudança vai ser propagada para o <code>GeradorDeNotaFiscal</code>. Então, o problema é: a partir do momento em que eu tenho muitas dependências, a minha classe depende de várias. </p>
+<p><img src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/DiagramaGeradorDeNotaFiscalcomVariasDependendias.jpg" alt="GeradorDeNotaFiscal depende de muitas outras dependencias"></p>
+<p>Quer dizer que eu tenho muitas outras classes que podem propagar problemas pra minha classe principal. E é exatamente por isso que o acoplamento é ruim. Minha classe geradora, ela fica muito dependente, muito frágil, muito fácil de ela parar de funcionar.</p>
+<p>Esse é o problema do acoplamento. E ele é bem fácil de ser enxergado, certo? E é por isso que a gente tem que tentar diminuí-lo.</p>
+<p>Mas agora a grande pergunta é: será que eu consigo zerar o acoplamento? Ou seja, resolver o problema do acoplamento, nenhuma classe vai se acoplar com ninguém. É impossível. Nós sabemos que, na prática, quando estamos fazendo sistemas de médio, grande porte, dependências existirão. O acoplamento vai existir. Eu vou depender de uma classe, minha classe vai depender de outra, e assim por diante.</p>
+<p>O grande ponto aqui é começar a diferenciar os tipos de acoplamento. Quando que o acoplamento é realmente problemático, e quando que ele é problemático, mas não tanto assim? Porque se eu conseguir catalogar, eu vou começar a evitar acoplamentos que são realmente perigosos e me acoplar com coisas que são menos perigosas. Essa é a charada, é aonde eu quero chegar nesta aula.</p>
+<p>O ponto é: não é sempre que eu fico incomodado com acoplamento. Alguns acoplamentos eu nem lembro que eu estou fazendo. Por exemplo, em Java, quando eu quero lidar com um monte de elementos, eu normalmente uso uma lista, certo? Quando eu estou escrevendo uma string, eu uso a classe <code>String</code>. <code>String</code> e <code>List</code> são classes do mesmo jeito que qualquer outra classe sua. E quando eu faço uso delas, eu estou me acoplando com elas.</p>
+<p>Mas aí que está. Quando eu me acoplo com <code>List</code>, eu não sinto tanta dor no coração quanto eu sinto quando eu me acoplo com um DAO por exemplo. Ou com um <code>EnviadorDeEmail</code>, ou com qualquer outra classe que tenha uma regra de negócio associada. A mesma coisa com <code>String</code>. Eu me acoplo a ela, mas me incomoda menos. É um acoplamento que não me dói.</p>
+<p>O ponto é: por quê? Qual é a característica de <code>List</code> e qual é a característica de <code>String</code> que faz com que eu tenha menos medo de me acoplar do que com as outras classes? E veja só que essa é a questão chave, porque se eu descobrir o segredo da interface <code>List</code>, eu vou conseguir replicar esse segredo pras minhas classes. E aí, do mesmo jeito que eu não me importo em me acoplar com <code>List</code>, eu não vou me importar em me acoplar com alguma outra coisa do meu sistema.</p>
+<p>Quando que é bom, e quando que é ruim? As pessoas geralmente falam assim: “Puxa, acoplar com <code>List</code> não é problema porque <code>List</code> é uma interface que o Java fez. Vem na linguagem Java”. A mesma coisa com a classe <code>String</code>, “<code>String</code> vem com o Java”. Mas não é bem essa resposta que eu procuro.</p>
+<p>A resposta, na verdade, é uma característica que <code>List</code> tem, que <code>String</code> tem, que eu preciso replicar nas minhas classes.  Dê uma olhada:</p>
+<p><img src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/InterfaceList.jpg" alt="Interface List"></p>
+<p>A interface <code>List</code>, quantas implementações ela tem embaixo dela? <code>ArrayList</code>, <code>LinkedList</code>, qualquer outra coisa <code>List</code>. Aqui no desenho eu coloquei <code>GoogleList</code> - o Google tem um monte de bibliotecas que fazem uso da interface <code>List</code> - etc. e tal.</p>
+<p>Eu tenho um monte de implementações de <code>List</code>. Além disso, eu tenho muitas classes que usam <code>List</code>, que dependem de <code>List</code>. O seu código, por exemplo, o meu <code>GeradorDeNotaFiscal</code>, suponha que ele depende de <code>List</code>. É um acoplamento também. Agora, imagina que você está nesse cenário. Você programa lá o Java, você está criando a linguagem Java, você tem acesso ao código-fonte de <code>List</code>, <code>ArrayList</code>, <code>LinkedList</code> etc. e eu peço pra você uma mudança na interface <code>List</code>. Você vai fazer essa mudança?</p>
+<p>É claro que não! Porque você sabe que essa mudança é difícil. Mudar a interface <code>List</code> implica em mudar a classe <code>ArrayList</code>, a classe <code>LinkedList</code> e assim por diante. <code>List</code> é uma interface muito importante do meu sistema. Eu não posso mexer nela porque eu sei que essa mudança vai quebrar muitas outras classes. Isso faz com que a interface <code>List</code> seja o que chamamos de <strong>estável</strong>.  Ou seja, ela tende a mudar muito pouco. E se ela tende a mudar muito pouco, quer dizer que a chance de ela propagar um erro, uma mudança, pra classe que a está usando é menor. Consegue ver isso?</p>
+<p>Ou seja, se a minha classe depende de <code>List</code>, isso não é um problema porque <code>List</code> não muda. Se ela não muda, eu não vou sofrer impacto com a mudança dela. Esse é o ponto. Eu quero me acoplar com classes, interfaces, módulos, que sejam estáveis. Que tendem a mudar muito pouco.</p>
+<p>Essa é a diferença de <code>List</code> pro resto. <code>List</code> muda muito pouco. O nome disso em particular – a gente está sempre acostumado a ver o acoplamento daquele ponto de vista onde eu tenho uma classe e eu dependo de várias outras. Classe <code>GeradorDeNotaFiscal</code> depende de <code>NFDAO</code>, de <code>SAP</code>, de <code>EnviadorDeEmail</code> etc. Isso é o que nós chamamos de <strong>acoplamento eferente</strong>. Eu, classe, dependo de outras. Mas o outro lado do acoplamento, que é o que eu estou mostrando pra vocês na interface <code>List</code> é também importante, e nós chamamos isso de <strong>acoplamento aferente</strong>. Eu sou uma classe, e o acoplamento aferente mostra quem depende de mim. Olha só a diferença.</p>
+<p>E o que isso mostra pra mim? Quando eu tenho muitas outras classes que dependem de uma classe em específico, isso faz com que essa classe seja estável, com que esse módulo seja estável. Então, o acoplamento do outro lado é importante pra dar essa visão pra gente, de coisas que são estáveis. E por que eu quero isso? Porque eu quero me acoplar com coisas estáveis. Dê uma olhada:</p>
+<p><img src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/DiagramaGeradorDeNotaFiscal2.jpg" alt="A classe GeradorDeNotaFiscal depende da classe String, depende da classe List"></p>
+<p>Isso é o que nós temos hoje. <code>GeradorDeNotaFiscal</code> depende de <code>String</code>, depende de <code>List</code>, esse acoplamento me incomoda menos, e aí eu tenho <code>EnviadorDeEmail</code>, <code>NFDAO</code>, <code>SAP</code> e assim por diante. Esses acoplamentos são mais perigosos, pois podem mudar.</p>
+<p>O ponto é: como que eu consigo redesenhar isso de maneira a fazer com que o <code>GeradorDeNotaFiscal</code> dependa agora de coisas que são estáveis? Como que eu crio alguma coisa no meu sistema que é estável? Do mesmo jeito que o pessoal lá da <em>Sun</em> (ou da <em>Oracle</em> hoje), fez com <code>List</code>. Eu tenho uma interface <code>List</code> e eu tenho várias implementações embaixo. </p>
+<p><img src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/GeradorDeNotaFiscal+com+Interface.jpg" alt="Classe GeradorDeNotaFiscal com a interface AcaoAposGerarNota"></p>
+<p>Eu tenho agora o meu <code>GeradorDeNotaFiscal</code>, eu tenho uma interface <code>AcaoAposGerarNota</code>, e essa interface é implementada por <code>SAP</code>, por <code>EnviadorDeEmail</code> e por <code>NFDAO</code>. Imagina só que eu tivesse mais 10 outras implementações embaixo, que são ações que eu executo depois de gerar a nota.</p>
+<p>Essa interface que eu acabei de criar, ela acabou de virar estável. A chance de ela mudar vai ser menor. Porque você, programador, vai ter medo de mexer nela. Mexeu nela, criou um método a mais, mudou uma assinatura de algum método, você vai ter que mudar em todas as implementações abaixo. Isso vai fazer com que ela seja estável, naturalmente.</p>
+<p>E se eu fizer o meu <code>GeradorDeNotaFiscal</code> parar de depender do <code>SAP</code>, do <code>EnviadorDeEmail</code>, e do <code>NFDAO</code>, e passar a depender agora de um monte de <code>AcaoAposGerarNota</code>, eu resolvi o problema do acoplamento. Porque agora eu dependo de algo que é bastante estável. É por isso, pessoal, que interfaces têm um papel muito importante em sistemas orientados a objetos. É sempre legal aquela ideia de “Programe voltado pra interface”.</p>
+<p>Por quê? Porque além de eu ganhar flexibilidade, certo - porque eu posso ter várias implementações embaixo daquela interface  -, aquela interface, ela tende a ser estável. E se ela é estável, me acoplar com ela é um problema menor. Tá certo?</p>
+<p>Essa é a grande ideia pra reduzir o problema do acoplamento. Não é deixar de acoplar. É começar a acoplar com coisas estáveis, coisas que tendem a mudar menos. Interface é um bom exemplo disso. Interfaces tendem a mudar menos, porque têm um monte de implementação embaixo, porque interface geralmente só tem um contrato, não tem um código ali dentro, isso faz com que ela seja estável.</p>
+<p>Vamos ver isso no código. Eu tenho aqui o <code>GeradorDeNotaFiscal</code>, e ela depende do <code>EnviadorDeEmail</code> e do <code>NotaFiscalDao</code>. E eu sei agora que, pra resolver o problema do acoplamento, eu preciso criar uma interface, essa que, mais pra frente, vai ser estável.</p>
+<pre class="prettyprint"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">GeradorDeNotaFiscal</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">EnviadorDeEmail</span><span class="pln"> email</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">final</span><span class="pln"> </span><span class="typ">NotaFiscalDao</span><span class="pln"> dao</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">GeradorDeNotaFiscal</span><span class="pun">(</span><span class="typ">EnviadorDeEmail</span><span class="pln"> email</span><span class="pun">,</span><span class="pln"> </span><span class="typ">NotaFiscalDao</span><span class="pln"> dao</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">email </span><span class="pun">=</span><span class="pln"> email</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">dao </span><span class="pun">=</span><span class="pln"> dao</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">NotaFiscal</span><span class="pln"> gera</span><span class="pun">(</span><span class="typ">Fatura</span><span class="pln"> fatura</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+        </span><span class="kwd">double</span><span class="pln"> valor </span><span class="pun">=</span><span class="pln"> fatura</span><span class="pun">.</span><span class="pln">getValorMensal</span><span class="pun">();</span><span class="pln">
+
+        </span><span class="typ">NotaFiscal</span><span class="pln"> nf </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">NotaFiscal</span><span class="pun">(</span><span class="pln">valor</span><span class="pun">,</span><span class="pln"> impostoSimplesSobreO</span><span class="pun">(</span><span class="pln">valor</span><span class="pun">));</span><span class="pln">
+
+        email</span><span class="pun">.</span><span class="pln">enviaEmail</span><span class="pun">(</span><span class="pln">nf</span><span class="pun">);</span><span class="pln">
+        dao</span><span class="pun">.</span><span class="pln">persiste</span><span class="pun">(</span><span class="pln">nf</span><span class="pun">);</span><span class="pln">
+
+        </span><span class="kwd">return</span><span class="pln"> nf</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="kwd">double</span><span class="pln"> impostoSimplesSobreO</span><span class="pun">(</span><span class="kwd">double</span><span class="pln"> valor</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> valor </span><span class="pun">*</span><span class="pln"> </span><span class="lit">0.06</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p>Vamos lá. O que eu vou fazer aqui é criar uma interface, <code>Ctrl + N</code>, <code>Interface</code>; vou chamar de <code>AcaoAposGerarNota</code>. Essa interface vai ter um método que eu vou chamar de <code>executa()</code>, e ela vai receber – veja só, todos eles recebem uma nota fiscal, certo, todas as dependências recebem uma nota fiscal – então, vou receber também uma nota fiscal aqui.</p>
+<pre class="prettyprint"><code><span class="kwd">void</span><span class="pln"> executa</span><span class="pun">(</span><span class="typ">NotaFiscal</span><span class="pln"> nf</span><span class="pun">);</span></code></pre>
+<p>Aqui no meu gerador, eu vou parar de receber cada um deles em particular (<code>EnviadorDeEmail email, NotaFiscalDao dao</code>) e vou começar a receber uma lista de <code>AcaoAposGerarNota</code> e vou chamar de <code>acoes</code>.</p>
+<pre class="prettyprint"><code><span class="kwd">public</span><span class="pln"> </span><span class="typ">GeradorDeNotaFiscal</span><span class="pun">(</span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">AcaoAposGerarNota</span><span class="pun">&gt;</span><span class="pln"> acoes</span><span class="pun">)</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+
+</span><span class="pun">}</span></code></pre>
+<p><code>List</code>, ele vai importar pra mim, é uma lista convencional do <code>java.util</code>. Vou tirar esses caras fora (<code>private final EnviadorDeEmail email;    private final NotaFiscalDao dao;</code>), certo, agora eu não preciso mais, porque agora eu tenho uma lista de ações.
+E aqui, em vez de fazer <code>email.enviaEmail(nf); dao.persiste(nf);</code>, eu vou fazer um loop. Para cada <code>AcaoAposGerarNota acao</code> na lista de <code>acoes</code>, faco <code>acao.executa(nf);</code>.</p>
+<pre class="prettyprint"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">GeradorDeNotaFiscal</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">private</span><span class="pln"> </span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">AcaoAposGerarNota</span><span class="pun">&gt;</span><span class="pln">  acoes</span><span class="pun">;</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">GeradorDeNotaFiscal</span><span class="pun">(</span><span class="typ">List</span><span class="pun">&lt;</span><span class="typ">AcaoAposGerarNota</span><span class="pun">&gt;</span><span class="pln">  acoes</span><span class="pun">)</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">acoes </span><span class="pun">=</span><span class="pln"> acoes</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">NotaFiscal</span><span class="pln"> gera</span><span class="pun">(</span><span class="typ">Fatura</span><span class="pln"> fatura</span><span class="pun">)</span><span class="pln">  </span><span class="pun">{</span><span class="pln"> 
+        </span><span class="kwd">double</span><span class="pln"> valor </span><span class="pun">=</span><span class="pln"> fatura</span><span class="pun">.</span><span class="pln">getValorMensal</span><span class="pun">();</span><span class="pln">
+        </span><span class="typ">NotaFiscal</span><span class="pln"> nf </span><span class="pun">=</span><span class="pln"> </span><span class="kwd">new</span><span class="pln"> </span><span class="typ">NotaFiscal</span><span class="pun">(</span><span class="pln">valor </span><span class="pun">,</span><span class="pln"> impostoSimplesSobre0</span><span class="pun">(</span><span class="pln">valor</span><span class="pun">));</span><span class="pln">
+        </span><span class="kwd">for</span><span class="pun">(</span><span class="typ">AcaoAposGerarNota</span><span class="pln"> acao  </span><span class="pun">:</span><span class="pln">  acoes</span><span class="pun">)</span><span class="pln">  </span><span class="pun">{</span><span class="str">`
+            acao.executa(nf);
+        }
+        return nnf;
+}</span></code></pre>
+<p>Pra quem já conhece padrão de projeto, e fez até o nosso curso aqui online sobre o assunto, percebeu que o que eu fiz aqui foi usar o <strong>observer</strong>. Esse padrão aqui chama <code>observer</code>. E veja só como ele resolve bem o problema do acoplamento. Eu passo a depender de uma lista de ações, <code>AcoesAposGerarNota</code>, e assim que a ação acontece, eu notifico todas as ações pra que cada uma delas faça seu trabalho.</p>
+<p>O que eu preciso agora é implementar essas ações. No <code>dao</code>, tenho que implementar <code>AcaoAposGerarNota</code>. </p>
+<pre class="prettyprint"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">NotaFiscalDao</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">AcaoAposGerarNota</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+
+</span><span class="pun">}</span></code></pre>
+<p>Tá legal? Erro de compilação, claro, porque o método <code>executa</code> não está escrito, eu vou substituir o nome:</p>
+<pre class="prettyprint"><code><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">NotaFiscalDao</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">AcaoAposGerarNota</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> executa</span><span class="pun">(</span><span class="typ">NotaFiscal</span><span class="pln"> nf</span><span class="pun">)</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+        </span><span class="typ">System</span><span class="pun">.</span><span class="kwd">out</span><span class="pun">.</span><span class="pln">println</span><span class="pun">(</span><span class="str">"salva nf no banco"</span><span class="pun">);</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre>
+<p>A implementação aqui de exemplo é o <code>sysout</code>, mas na prática, é o código que acessa o banco de dados etc.</p>
+<p>A mesma coisa no <code>EnviadorDeEmail</code>. Eu vou implementar <code>AcaoAposGerarNota</code>. Vou mudar o método aqui de <code>enviaEmail</code> para <code>executa</code>, que é o método da interface, e tudo funcionando.</p>
+<pre class="prettyprint"><code><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">EnviadorDeEmail</span><span class="pln"> </span><span class="kwd">implements</span><span class="pln"> </span><span class="typ">AcaoAposGerarNota</span><span class="pln">  </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> executa</span><span class="pun">(</span><span class="typ">NotaFiscal</span><span class="pln"> nf</span><span class="pun">)</span><span class="pln">  </span><span class="pun">{</span></code></pre>
+<p>Agora, basta eu, na hora de instanciar o <code>GeradorDeNotaFiscal</code>, passar todas as ações que eu quero, certo? <code>new NotaFiscalDao</code>, <code>new EnviadorDeEmail</code>, e assim por diante.</p>
+<p>Eu resolvi o problema de acoplamento agora do <code>GeradorDeNotaFiscal</code> usando interfaces e, mais do que isso, dependendo de um módulo estável que eu criei, que é o <code>AcaoAposGerarNota</code>. Olha só que simples.</p>
+<p>Bem, então o que nós vimos neste capítulo? Nós discutimos um pouquinho do que é acoplamento, e por que ele é ruim. O acoplamento é ruim porque quando eu tenho uma classe que depende de outra classe, mudanças nas classes de que eu dependo podem afetar a classe principal. Isso é problemático. Eu preciso diminuir isso.</p>
+<p>Como eu faço isso? Eu tento me acoplar com classes, interfaces, módulos, que sejam estáveis. Um módulo estável é aquele que tenta mudar muito pouco. Ele tem alguma coisa ao redor dele que faz ele mudar muito pouco. E eu mostrei que, no caso da interface, o número de implementações embaixo, o número de pessoas usando aquela interface, são uma força contra mudança nela. Então, acople-se com coisas que são estáveis. E evite ao máximo acoplamento com coisas instáveis no seu sistema. E por hoje é isso, obrigado!</p>
+
+		</div>
+	</div>
+</section>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+				
+					
+
+
+
+
+
+
+	
+	
+		<section class="task-actions">
+			<div class="container">
+				
+
+
+
+
+
+<a href="https://cursos.alura.com.br/forum/curso-orientacao-a-objetos-avancada-e-principios-solid/exercicio-acoplamento-e-a-estabilidade/4950/novo" class=" task-actions-button task-actions-button-forum" target="_blank">Discutir no Forum</a>
+
+				
+				
+				
+					<a href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4950/next" class="task-actions-button task-body-actions-button task-actions-button-next">Próxima Atividade</a>
+				
+			</div>
+		</section>
+	
+
+
+				
+			</main>
+		</div>
+	</section>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button title="Abrir menu/Fechar menu" aria-label="Abrir menu/Fechar menu" type="button" class="openMenu-button task-body-button "></button>
+
+<aside class="task-menu" style="position: fixed; transform: translateY(-247.077px);">
+	<section class="task-menu-header">
+		<button title="Fechar menu" aria-label="Fechar menu" type="button" class="openMenu-button task-menu-button "></button>
+		<div class="task-menu-header-info">
+			<a class="task-menu-header-info-title" href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid" title="Ir para página do curso">
+				
+					
+					
+						<img src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/orientacao-a-objetos-avancada-e-principios-solid.svg" alt="ícone SOLID com Java: Orientação a Objetos com Java" class="task-menu-header-info-title-icon " width="37.5px" height="37.5px">
+					
+				
+				<h2 class="task-menu-header-info-title-text">SOLID com Java: Orientação a Objetos com Java</h2>
+			</a>
+			
+				<div class="task-menu-header-info-progress">
+					
+					<span class="task-menu-header-info-progress-percentage ">29%</span>
+					<span class="task-menu-header-info-progress-bar" style="background-image: linear-gradient(to right, #9de482, #9de482 29%, transparent 29%);"></span>
+				</div>
+			
+		</div>
+	</section>
+	
+	<div class="task-menu-others task-menu-notes">
+		<button class="task-menu-others-link class-notes-button" title="Abrir caderno">Abrir caderno</button>
+	</div>
+
+	<section class="task-menu-section">
+		<div class="task-menu-section-title">
+			<span class="task-menu-section-title-number ">Aula<strong>02</strong>
+				<span>de 05</span></span>
+			<h3 class="task-menu-section-title-text">
+				Acoplamento e a estabilidade
+			</h3>
+		</div>
+	</section>
+	<nav class="task-menu-nav">
+		<h2 class="task-menu-nav-title">
+			Atividades
+			<span>2 de 7</span>
+		</h2>
+		<ul class="task-menu-nav-list">
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4949" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Vídeo concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#VIDEO"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">01</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Vídeo 1">
+							Vídeo 1
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">15min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item task-menu-nav-item--selected">
+					<a href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4950" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">02</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Acoplamento e a estabilidade">
+							Acoplamento e a estabilidade
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4951" class="task-menu-nav-item-link task-menu-nav-item-link-OPEN_QUESTION">
+						<svg class="task-menu-nav-item-svg " aria-label="Atividade de Exercício Aberto não concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#OPEN_QUESTION"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">03</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Problema do acoplamento">
+							Problema do acoplamento
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4952" class="task-menu-nav-item-link task-menu-nav-item-link-OPEN_QUESTION">
+						<svg class="task-menu-nav-item-svg " aria-label="Atividade de Exercício Aberto não concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#OPEN_QUESTION"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">04</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Classes estáveis">
+							Classes estáveis
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4953" class="task-menu-nav-item-link task-menu-nav-item-link-OPEN_QUESTION">
+						<svg class="task-menu-nav-item-svg " aria-label="Atividade de Exercício Aberto não concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#OPEN_QUESTION"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">05</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Resolvendo problema do acoplamento">
+							Resolvendo problema do acoplamento
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4954" class="task-menu-nav-item-link task-menu-nav-item-link-OPEN_QUESTION">
+						<svg class="task-menu-nav-item-svg " aria-label="Atividade de Exercício Aberto não concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#OPEN_QUESTION"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">06</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Mão na massa">
+							Mão na massa
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/31642" class="task-menu-nav-item-link task-menu-nav-item-link-TEXT_CONTENT">
+						<svg class="task-menu-nav-item-svg " aria-label="Atividade de Atividade sem Resposta do Aluno não concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#TEXT_CONTENT"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">07</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Arquivos do projeto atual">
+							Arquivos do projeto atual
+						</span>
+						
+					</span></a>
+				</li>
+			
+			
+		</ul>
+	</nav>
+	<section class="task-menu-sections">
+		<h2 class="task-menu-sections-title">
+			Aulas
+		</h2>
+		<select class="task-menu-sections-select" onchange="location.href=&#39;/course/orientacao-a-objetos-avancada-e-principios-solid/section/&#39;+this.value+&#39;/tasks&#39;;">
+			
+				<option value="1755">01. Coesão e o Single Responsibility Principle</option>
+			
+				<option value="1756" selected="">02. Acoplamento e a estabilidade</option>
+			
+				<option value="1757">03. Classes abertas, Open Closed e Dependency Inversion Principles</option>
+			
+				<option value="1758">04. Entendendo o encapsulamento</option>
+			
+				<option value="1759">05. Herança e o Liskov Substitutive Principle</option>
+			
+		</select>
+	</section>
+	<section class="task-menu-others">
+		<h2 class="task-menu-others-title ">
+			Outros Links
+		</h2>
+		<a href="https://cursos.alura.com.br/forum/curso-orientacao-a-objetos-avancada-e-principios-solid/todos" class="task-menu-others-link task-menu-others-link-forum" title="Ir para o fórum do curso">Fórum</a>
+		<a href="https://cursos.alura.com.br/dashboard" class="task-menu-others-link task-menu-others-link-curso" title="Ir para a página principal">Trocar Curso</a>
+
+	</section>
+	<section class="task-menu-footer">
+		<a class="task-menu-footer-user" href="https://cursos.alura.com.br/user/jaironsousa" title="Ir para sua página de usuário">
+			<img src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/3834e9bd0d40b9d142d2f4277f3c4c41.png" alt="Gravatar de Jairo Nascimento de Sousa" class="task-menu-footer-img" width="40px" height="40px">
+			
+				<p class="task-menu-footer-detalhes">
+					<span class="task-menu-footer-detalhes-nome">Jairo Nascimento de Sousa</span>
+					<span class="task-menu-footer-detalhes-xp">
+						127.7k xp
+					</span>
+				</p>
+			
+			<input type="hidden" value="">
+			<input type="hidden" value="">
+		</a>
+		<a href="https://cursos.alura.com.br/dashboard" class="task-menu-footer-logo">
+			<img src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/icon-menu-alura.svg" alt="Logo da Alura" class="task-menu-footer-logo-image" width="19px" height="32px" title="Ir para a página principal">
+		</a>
+	</section>
+</aside>
+
+
+
+</section><div class="full-screen__panel" style="display: none;">
+				<img id="full-screen__image" class="full-screen__image" src="https://cursos.alura.com.br/course/orientacao-a-objetos-avancada-e-principios-solid/task/4950" alt="">
+				<div class="full-screen__actions">
+				<button class="button buttonAction partitura-download">Anterior</button><button class="button buttonAction partitura-download">Sair</button><button class="button buttonAction partitura-download">Próximo</button></div> 
+			</div>
+
+
+
+
+	
+		<!-- Hotjar Tracking Code for https://cursos.alura.com.br -->
+		<script>
+			(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:1638253,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+	
+
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/jquery-2.1.3.min.32015dd4.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/buttonToggle.js.download" async=""></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/sectionMenu.9c6d35d8.js.download" async=""></script>
+
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/marked.min.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/markdownEditor.07eebbca.js.download" async=""></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/caret.js.download" async=""></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/keydownWatchers.f20680cd.js.download" async=""></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/prettify.min.49a10a85.js.download" async=""></script>
+
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/preventsMultipleInteractions.ccefe158.js.download" async=""></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/assessment.050f656f.js.download" async=""></script>
+
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/menuSettings.586ae39e.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/aria.1c51db86.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/ProjectSubmit.1da29f73.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/classPage.d03a1401.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/phrase.dda08bd7.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/feedback.98f71e18.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/ExtraContentProgressRequest.74258bb3.js.download"></script>
+	
+	
+
+	
+	
+	
+	
+
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/partitura.c5cff29c.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/audioProgress.71d14880.js.download"></script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/audioPlayer.9e2e5334.js.download"></script>
+
+		
+
+	
+
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/darkMode.65d4b699.js.download">
+	</script>
+
+	
+		
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-42101548-1', 'alura.com.br');
+
+    
+        ga('set', 'userId', '330602');
+    
+
+    ga('require', 'displayfeatures');
+    
+    ga('send', 'pageview');
+    
+    
+</script>
+	
+
+	<script>new DarkModeToggler().refreshListener()</script>
+	<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/ClassNotes.1b143ac5.js.download">
+	</script>
+<script>
+	new ClassNotes().refreshListeners();
+</script>
+
+
+
+
+
+
+<script src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/MarkdownProcessing.f83261d2.js.download"></script>
+<script>
+	new MarkdownProcessing("https://cursos.alura.com.br").onLoad();
+</script><script type="text/javascript" id="">function eventClick(d,a,b,c){a.includes(" \x3e ")&&(a=document.querySelector(a).textContent);b.includes(" \x3e ")&&(b=document.querySelector(b).textContent);(c=document.querySelector(c))&&c.addEventListener("click",function(){dataLayer.push({event:"gaEvent",eventCategory:d,eventAction:a,eventLabel:b})})}eventClick("Menu","Logo","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e a");eventClick("Menu","Todos os Cursos","Abrir","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e div");
+eventClick("Menu","Todos os Cursos","Cursos de Mobile","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--mobile \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Programa\u00e7\u00e3o","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--programacao \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Front-end","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--front-end \x3e a");
+eventClick("Menu","Todos os Cursos","Cursos de Infraestrutura","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--infraestrutura \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Design \x26 UX","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--design-ux \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Business","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--business \x3e a");
+eventClick("Menu","Carreiras e Forma\u00e7\u00f5es","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e a:nth-child(2)");eventClick("Menu","Como funciona","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e a:nth-child(3)");eventClick("Menu","Para empresas","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e a:nth-child(4)");
+eventClick("Menu","Entrar","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--ctas \x3e a:nth-child(1)");eventClick("Menu","Matricule-se","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--ctas \x3e a.header__nav__link.header__nav__link--cta");eventClick("Menu","Busca","Abrir","body \x3e div.home \x3e div \x3e header \x3e section \x3e div:nth-child(2) \x3e a");
+eventClick("Menu","Busca","Buscar","body \x3e div.home \x3e div \x3e header \x3e section \x3e div:nth-child(1) \x3e form \x3e button");eventClick("Footer","Primeira Se\u00e7\u00e3o","Alura","body \x3e footer.footer \x3e div \x3e div.footer-info \x3e div.footer-logos \x3e a.footer-logos-home");eventClick("Footer","Primeira Se\u00e7\u00e3o","Caelum","body \x3e footer.footer \x3e div \x3e div.footer-info \x3e div.footer-logos \x3e a.footer-link-caelum");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Apostilas","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(1) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Planos","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(2) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Todos os Cursos","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(3) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Carreiras","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(4) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Instrutores","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(5) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Como virar Instrutor","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(6) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Ranking","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(7) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Blog da Alura","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(8) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Podcast Nerdtech","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(9) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Pol\u00edtica de Privacidade","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(10) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Termos de Uso","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(11) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Sobre N\u00f3s","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(12) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Perguntas Frequentes","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(13) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Youtube","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(1)");eventClick("Footer","Primeira Se\u00e7\u00e3o","Facebook","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(2)");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Twitter","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(3)");eventClick("Footer","Primeira Se\u00e7\u00e3o","Hipsters","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(4)");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Google Play","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-mobile \x3e a:nth-child(1)");eventClick("Footer","Primeira Se\u00e7\u00e3o","App Store","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-mobile \x3e a:nth-child(2)");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Fale Conosco","body \x3e footer.footer \x3e div \x3e div:nth-child(3) \x3e a.footer-card.footer-card-contato");eventClick("Footer","Primeira Se\u00e7\u00e3o","Empresa?","body \x3e footer.footer \x3e div \x3e div:nth-child(3) \x3e a.footer-card.footer-card-empresa");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(2)","body \x3e nav \x3e div \x3e a:nth-child(2)");
+eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(3)","body \x3e nav \x3e div \x3e a:nth-child(3)");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(4)","body \x3e nav \x3e div \x3e a:nth-child(4)");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(5)","body \x3e nav \x3e div \x3e a:nth-child(5)");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(6)","body \x3e nav \x3e div \x3e a:nth-child(6)");
+eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(8)","body \x3e nav \x3e div \x3e a:nth-child(8)");eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(9)","body \x3e nav \x3e div \x3e a:nth-child(9)");eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(10)","body \x3e nav \x3e div \x3e a:nth-child(10)");eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(11)","body \x3e nav \x3e div \x3e a:nth-child(11)");
+eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(12)","body \x3e nav \x3e div \x3e a:nth-child(12)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(14)","body \x3e nav \x3e div \x3e a:nth-child(14)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(15)","body \x3e nav \x3e div \x3e a:nth-child(15)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(16)","body \x3e nav \x3e div \x3e a:nth-child(16)");
+eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(17)","body \x3e nav \x3e div \x3e a:nth-child(17)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(18)","body \x3e nav \x3e div \x3e a:nth-child(18)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(20)","body \x3e nav \x3e div \x3e a:nth-child(20)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(21)","body \x3e nav \x3e div \x3e a:nth-child(21)");
+eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(22)","body \x3e nav \x3e div \x3e a:nth-child(22)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(23)","body \x3e nav \x3e div \x3e a:nth-child(23)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(24)","body \x3e nav \x3e div \x3e a:nth-child(24)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(26)","body \x3e nav \x3e div \x3e a:nth-child(26)");
+eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(27)","body \x3e nav \x3e div \x3e a:nth-child(27)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(28)","body \x3e nav \x3e div \x3e a:nth-child(28)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(29)","body \x3e nav \x3e div \x3e a:nth-child(29)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(30)","body \x3e nav \x3e div \x3e a:nth-child(30)");
+eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(32)","body \x3e nav \x3e div \x3e a:nth-child(32)");eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(33)","body \x3e nav \x3e div \x3e a:nth-child(33)");eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(34)","body \x3e nav \x3e div \x3e a:nth-child(34)");eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(35)","body \x3e nav \x3e div \x3e a:nth-child(35)");
+eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(36)","body \x3e nav \x3e div \x3e a:nth-child(36)");</script><script type="text/javascript" id="">elements=document.querySelectorAll("input, select");elements.forEach(function(b,c){b.addEventListener("change",function(a){a=this.getAttribute("name");dataLayer.push({event:"gaEvent",eventCategory:"Formul\u00e1rios",eventAction:"Altera\u00e7\u00e3o",eventLabel:a})})});</script>
+<script type="text/javascript" id="">var key="Think_Again45984$%";function log(a){console.log(a)}function getPars(){var a={};window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(b,c,d){a[c]=d});return a}function userId(a){a=sha256.hmac(key,a);dataLayer.push({event:"userId",userId:a})}var script=document.createElement("script");script.onload=function(){var a=getPars().e;a&&userId(a);a=document.querySelectorAll('[type\x3d"email"]');for(var b=0;b<a.length;b++)a[b].onchange=function(){userId(this.value)}};script.src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js";
+document.head.appendChild(script);</script><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./SOLID com Java_ Aula 2 - Atividade 2 Acoplamento e a estabilidade _ Alura - Cursos online de tecnologia_files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>
