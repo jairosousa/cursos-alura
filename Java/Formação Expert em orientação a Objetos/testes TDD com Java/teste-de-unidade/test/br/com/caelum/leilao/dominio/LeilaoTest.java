@@ -1,17 +1,13 @@
 package br.com.caelum.leilao.dominio;
 
-import static br.com.caelum.leilao.mather.LeilaoMatcher.temUmLance;
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.CoreMatchers.isA;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
-
+import br.com.caelum.leilao.builder.CriadorDeLeilao;
 import org.junit.Before;
 import org.junit.Test;
 
-import br.com.caelum.leilao.builder.CriadorDeLeilao;
-import br.com.caelum.leilao.mather.LeilaoMatcher;
+import static br.com.caelum.leilao.mather.LeilaoMatcher.temUmLance;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class LeilaoTest {
 

@@ -1,7 +1,6 @@
 package br.com.caelum.leilao.dominio;
 
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -17,12 +16,12 @@ public class Avaliador {
 		
 		/**
 		 * Variavel utilizada para calcular a media dos 
-		 * valores dos lances do leilão.
+		 * valores dos lances do leilï¿½o.
 		 */
 		double total = 0;
 		
 		if(leilao.getLances().size() == 0) {
-			throw new RuntimeException("Não é possivel avaliar um leilão sem lances!");
+			throw new RuntimeException("Nï¿½o ï¿½ possivel avaliar um leilï¿½o sem lances!");
 		}
 		
 		for (Lance lance : leilao.getLances()) {

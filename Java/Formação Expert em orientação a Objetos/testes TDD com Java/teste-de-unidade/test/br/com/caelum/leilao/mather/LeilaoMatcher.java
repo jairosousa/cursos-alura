@@ -1,11 +1,10 @@
 package br.com.caelum.leilao.mather;
 
+import br.com.caelum.leilao.dominio.Lance;
+import br.com.caelum.leilao.dominio.Leilao;
 import org.hamcrest.Description;
 import org.hamcrest.Matcher;
 import org.hamcrest.TypeSafeMatcher;
-
-import br.com.caelum.leilao.dominio.Lance;
-import br.com.caelum.leilao.dominio.Leilao;
 
 public class LeilaoMatcher extends TypeSafeMatcher<Leilao> {
 
@@ -17,7 +16,7 @@ public class LeilaoMatcher extends TypeSafeMatcher<Leilao> {
 
 	@Override
 	public void describeTo(Description descricao) {
-		descricao.appendText("Leilão com lance " + lance.getValor());
+		descricao.appendText("Leilï¿½o com lance " + lance.getValor());
 	}
 
 	@Override

@@ -1,19 +1,13 @@
 package br.com.caelum.leilao.dominio;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.CoreMatchers.hasItems;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
+import br.com.caelum.leilao.builder.CriadorDeLeilao;
+import org.junit.*;
 
 import java.util.List;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
-import org.junit.Test;
-
-import br.com.caelum.leilao.builder.CriadorDeLeilao;
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
 
 public class AvaliadorTest {
 	
@@ -25,7 +19,7 @@ public class AvaliadorTest {
 	@Before
 	public void setUp() {
 		this.leiloeiro  = new Avaliador();
-		this.joao = new Usuario("joão");
+		this.joao = new Usuario("joï¿½o");
 		this.jose = new Usuario("jose");
 		this.maria = new Usuario("maria");
 		System.out.println("inicio");
@@ -54,7 +48,7 @@ public class AvaliadorTest {
 
 		/**
 		 * esse teste so pass se a
-		 * exceção for lançada
+		 * exceï¿½ï¿½o for lanï¿½ada
 		 */
 		leiloeiro.avalia(leilao);
 
