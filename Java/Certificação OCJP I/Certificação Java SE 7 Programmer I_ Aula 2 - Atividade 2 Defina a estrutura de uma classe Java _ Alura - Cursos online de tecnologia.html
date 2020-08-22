@@ -1,0 +1,763 @@
+<!DOCTYPE html>
+<!-- saved from url=(0069)https://cursos.alura.com.br/course/certificacao-java-basico/task/5841 -->
+<html lang="pt-BR" data-product="alura" class=""><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	
+
+	
+		
+
+
+
+<!-- Page hiding snippet (recommended)  -->
+<style>.async-hide { opacity: 0 !important} </style>
+<script type="text/javascript" async="" src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/analytics.js.download"></script><script async="" src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/analytics.js.download"></script><script async="" src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/gtm.js.download"></script><script>
+	(function(a,s,y,n,c,h,i,d,e){s.className+=' '+y;h.start=1*new Date;
+	h.end=i=function(){s.className=s.className.replace(RegExp(' ?'+y),'')};
+	(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+	})(window,document.documentElement,'async-hide','dataLayer',4000,
+		{'GTM-TN542JN':true});
+</script>
+
+<!-- Google Tag Manager -->
+<script>
+	(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+		new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+		j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+		'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer', 'GTM-TN542JN');
+</script>
+<!-- End Google Tag Manager -->
+
+	<script type="text/javascript">
+        dataLayer.push({
+            'tipoPagina': 'Aula',
+            'curso': 'Certificação Java SE 7 Programmer I: O básico de Java'
+        });
+	</script>
+
+	
+
+	<title>Certificação Java SE 7 Programmer I: Aula 2 - Atividade 2 Defina a estrutura de uma classe Java | Alura - Cursos online de tecnologia</title>
+	
+	<link rel="shortcut icon" href="https://cursos.alura.com.br/assets/images/alura/favicon.ico">
+	
+	<link href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/css" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com/">
+
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/video-js.322ee8c7.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/silvermine-videojs-quality-selector.min.de928d55.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/prettify.4f36b4ca.css">
+
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/base.1e88adda.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/formattedText.afb4622e.css">
+	
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/container.16466c50.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/classPage.686decbe.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/menuSettings.47105043.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/taskProgress.73b1902d.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/taskMessageInfo.2f3d3681.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/alternativeList.3b452dc0.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/taskFeedback.1c82537d.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/markdown.c1e23fdd.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/finishSection.eae45901.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/phrase.416f092b.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/hqexplanation.3ed41021.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/openquestion.c66aa640.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/textcontent.7298b79f.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/video.48a68d14.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/singlechoice.4a8caf68.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/music.c02947a9.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/multiplechoice.70f60e4c.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/videodialog.80603de3.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/fillintheblank.92f59734.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/speakingpractice.c2461a40.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/pronunciationpractice.790ca935.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/repetition.13eb3517.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/genericVideo.9239c799.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/projectSubmit.e7032445.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/extraContentTask.b2d126e6.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/taskContent.1ef47209.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/taskButtons.3fbd6adb.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/markdownEditor.9f06486b.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/audioPlayer.a615784e.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/notes.0c60a7da.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/dark-mode.26653973.css">
+	<link rel="stylesheet" href="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/taskFeedbackAnswer.98ef221e.css">
+
+
+	<style type="text/css">
+		.task:before, .video-js .vjs-play-progress {
+			background-color: #2A7AE4;
+		}
+	</style>
+
+	
+	
+	<script async="" src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/hotjar-1638253.js.download"></script><script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/sha256.min.js.download"></script><script async="" src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/modules.c7f83f205e0dc7840084.js.download" charset="utf-8"></script><style type="text/css">iframe#_hjRemoteVarsFrame {display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;}</style></head>
+<body>
+
+
+	
+<!-- Google Tag Manager (noscript) -->
+<noscript>
+	<iframe src="https://www.googletagmanager.com/ns.html?id=GTM-TN542JN"
+				  height="0" width="0" style="display:none;visibility:hidden"></iframe>
+</noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+
+
+<section class="task" data-allow-answer="true" data-task-section-exam="false" data-task-type="hqexplanation" data-task-id="5841" data-author-id="330602" data-course-code="certificacao-java-basico" data-section-name="Defina a estrutura de uma classe Java" data-section-id="1918" data-section-number="2" data-domain="cursos.alura.com.br" data-hasfeedbackanswer="false" data-url-prefix="/">
+	<section class="task-body">
+		
+		<header class="task-body-header">
+			<div class="container">
+				<h1 class="task-body-header-title">
+					<svg class="task-body-header-title-svg" aria-label="Atividade de Explicação">
+						<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+					</svg>
+					<small>02</small>
+					<span class="task-body-header-title-text"> Defina a estrutura de uma classe Java</span>
+				</h1>
+				
+					<div class="task-body-header-actions">
+						<a href="https://cursos.alura.com.br/course/certificacao-java-basico/task/5841/next" aria-hidden="true" class="task-actions-button task-actions-button-next task-submit">Próxima Atividade</a>
+					</div>
+				
+			</div>
+		</header>
+		<div class="task-body__wrapper">
+			
+
+
+
+<section class="class-notes">
+    <div class="class-notes-content">
+        <h2 class="class-notes-title">Meu caderno do curso (beta)</h2>
+        <p class="class-notes-description">Este é seu caderno de anotações aqui na Alura. Todo o seu conteúdo fica vísivel apenas para você. Próximos passos para essa funcionalidade  no nosso<a href="https://suporte.alura.com.br/article/308-meu-caderno-como-funciona" class="class-notes-faq-link">FAQ</a></p>
+        <textarea name="text" id="courseNotebook-text" class="class-notes-text" cols="30" rows="10"></textarea>
+        <div class="class-notes-save-wrapper">
+            <span>
+                <p class="class-notes-saved-text" aria-hidden="true" style="display: none">Notas salvas</p>
+            </span>
+            <span class="class-notes-save-button-wrapper">
+                <button class="class-notes-save-button" data-save-text="Salvar caderno" data-saving-text="Salvando">
+                   Salvar caderno</button>
+            </span>
+        </div>
+        <button class="class-notes-close-button"></button>
+    </div>
+</section>
+			<main class="task-body-main container" data-should-warn="false">
+				
+
+
+
+
+
+
+
+	
+		
+
+
+
+
+<section class="hqExplanation" id="task-content">
+	<div class="container">
+	
+
+
+
+
+
+
+<div class="settings">
+	<button type="button" class="settings-button" aria-label="Configurações">
+		<svg class="settings-button-icon">
+			<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#MENU_SETTINGS"></use>
+		</svg>
+	</button>
+	<div class="settings-box">
+		<span class="settings-box-title"></span>
+		<ul class="settings-box-list">
+			
+				<li class="settings-box-item settings-box-item-darkmode">
+					<button class="dark-mode-action">
+						Modo noturno
+					</button>
+				</li>
+			
+			
+				
+				
+				
+				
+					
+						<li class="settings-box-item settings-box-item-suggestion"><a href="https://cursos.alura.com.br/suggestions/new/certificacao-java-basico/5841/question">Sugerir alteração</a></li>
+					
+				
+			
+			
+		</ul>
+	</div>
+</div>
+
+		<div class="formattedText" data-external-links="">
+			<p>Nesta seção, iremos entender a estrutura de um arquivo java, onde inserir as
+declarações de pacotes e imports e como declarar classes e interfaces.</p>
+<p>Para entender a estrutura de uma classe, vamos ver o arquivo <code>Pessoa.java</code>:</p>
+<pre class="prettyprint"><code><span class="pln">
+</span><span class="com">// Declaração de pacote</span><span class="pln">
+</span><span class="kwd">package</span><span class="pln"> br</span><span class="pun">.</span><span class="pln">com</span><span class="pun">.</span><span class="pln">caelum</span><span class="pun">.</span><span class="pln">certificacao</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">// imports</span><span class="pln">
+</span><span class="kwd">import</span><span class="pln"> java</span><span class="pun">.</span><span class="pln">util</span><span class="pun">.</span><span class="typ">Date</span><span class="pun">;</span><span class="pln">
+
+</span><span class="com">// Declaração da classe</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Pessoa</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">// conteúdo da classe</span><span class="pln">
+</span><span class="pun">}</span></code></pre><h3>Pacotes</h3>
+<p>Pacotes servem para separar e organizar as diversas classes que temos em nossos sistemas. Todas as classes pertencem a um pacote, sendo que, caso o pacote não seja explicitamente declarado, a classe fará parte do que chamamos de <strong>pacote
+padrão</strong>, ou <strong>default package</strong>. Todas as classes no <em>default package</em> se
+enxergam e podem ser utilizadas entre si. Classes no pacote default não podem
+ser importadas para uso em outros pacotes:</p>
+<pre class="prettyprint"><code><span class="pln">
+</span><span class="com">// Uma classe no pacote padrão</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Pessoa</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">//...</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>Para definir qual o pacote a que a classe pertence, usamos a palavra-chave
+<code>package</code>, seguida do nome do pacote. Só pode existir um único <code>package</code>
+definido por arquivo, e ele deve ser a primeira instrução do arquivo. Após a
+definição do <code>package</code>, devemos finalizar a instrução com um <code>;</code>. Podem existir comentários
+antes da definição de um pacote:</p>
+<pre class="prettyprint"><code><span class="pln">
+</span><span class="com">// declaração do pacote</span><span class="pln">
+</span><span class="kwd">package</span><span class="pln"> br</span><span class="pun">.</span><span class="pln">com</span><span class="pun">.</span><span class="pln">caelum</span><span class="pun">.</span><span class="pln">certificacao</span><span class="pun">;</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Pessoa</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="com">//...</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>Aproveitando que tocamos no assunto, o <code>package</code> deve ser a primeira instrução
+de código que temos declarada em nosso arquivo. Comentários não são considerados
+parte do código, portanto, podem existir em qualquer lugar do arquivo java sem restrições.</p>
+<p>Para inserir comentário em nosso código, temos as seguintes formas:</p>
+<pre class="prettyprint"><code><span class="pln">
+</span><span class="com">// comentário de linha</span><span class="pln">
+
+</span><span class="com">/*
+   comentário de
+   multiplas linhas
+ */</span><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="com">/* comentário no meio da linha */</span><span class="pln"> </span><span class="typ">Pessoa</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="com">/**
+     *  JavaDoc, repare que a primeira linha do comentário tem
+     *  2 asteriscos
+     */</span><span class="pln">
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">void</span><span class="pln"> metodo</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span><span class="pln">
+</span></code></pre><h3>Para saber mais: JavaDoc</h3>
+<h3>Classe</h3>
+<p>Uma classe é a forma no Java onde definimos os atributos e comportamentos de um
+objeto. A declaração de uma classe pode ser bem simples, apenas a palavra
+<code>class</code> seguida do nome e de <code>{}</code>:</p>
+<pre class="prettyprint"><code><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Pessoa</span><span class="pln"> </span><span class="pun">{}</span></code></pre><p>Existem outros modificadores que podem ser usados na definição de uma classe,
+mas veremos essas outras opções mais à frente, onde discutiremos esses
+modificadores com mais detalhes.</p>
+<p>Vale lembrar que java é <em>case sensitive</em> e <code>Class</code> é o nome de uma classe e não
+podemos usá-lo para definir uma nova classe.</p>
+<p>Dentro de uma classe, podemos ter variáveis, métodos e construtores. Essas estruturas são chamadas de <strong>membros</strong> da classe.:</p>
+<pre class="prettyprint"><code><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Pessoa</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="typ">String</span><span class="pln"> nome</span><span class="pun">;</span><span class="pln">
+    </span><span class="typ">String</span><span class="pln"> sobrenome</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="typ">Pessoa</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> nome</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> sobrenome</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">nome </span><span class="pun">=</span><span class="pln"> nome</span><span class="pun">;</span><span class="pln">
+        </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">sobrenome </span><span class="pun">=</span><span class="pln"> sobrenome</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+
+    </span><span class="kwd">public</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> getNomeCompleto</span><span class="pun">()</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">return</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">nome </span><span class="pun">+</span><span class="pln"> </span><span class="kwd">this</span><span class="pun">.</span><span class="pln">sobrenome</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><h3>Nomes dos membros</h3>
+<h3>Variáveis</h3>
+<p>Usando como exemplo a classe <code>Pessoa</code> definida anteriormente, <code>nome</code> e
+<code>sobrenome</code> são variáveis. A declaração de variáveis é bem simples,
+sempre o <strong>tipo</strong> seguido do <strong>nome</strong> da variável.</p>
+<p>Dizemos que essas são variáveis de instância, pois existe uma cópia delas para
+cada objeto <code>Pessoa</code> criado em nosso programa. Cada cópia guarda o estado de uma certa instância desses objetos.</p>
+<p>Existem ainda variáveis que não guardam valores ou referências para uma
+determinada instância, mas sim um valor compartilhado por todas as instâncias
+de objetos. Essas são variáveis <strong>estáticas</strong>, definidas com a palavra-chave <code>static</code>. Veremos mais sobre esse tipo de membro mais à frente.</p>
+<h3>Métodos</h3>
+<p>A declaração de métodos é um pouquinho diferente pois precisamos do <strong>tipo do retorno</strong>, seguido do <strong>nome do método</strong> e seguido de parênteses, sendo que pode ou não haver parâmetros de entrada desse método. Cada parâmetro é uma declaração de variável em si. Essa linha do método, onde está definido o retorno, o nome e os parâmetros é onde temos a <strong>assinatura do método</strong>.
+Cuidado, pois a <strong>assinatura de um método</strong> inclui somente o nome do método e os tipos dos parâmetros.</p>
+<p>Assim como variáveis, métodos também podem ser <code>static</code>, como veremos mais adiante.</p>
+<h3>Construtores</h3>
+<p>Uma classe pode possuir zero ou vários construtores. Nossa classe <code>Pessoa</code> possui um construtor que recebe como parâmetros o nome e o sobrenome da pessoa. A principal diferença entre a declaração de um método e um construtor é que um <strong>construtor não tem retorno e possui o mesmo nome da classe</strong>.</p>
+<h3>Métodos com o mesmo nome da classe</h3>
+<p>Note que um construtor pode ter um <code>return</code> vazio:</p>
+<pre class="prettyprint"><code><span class="pln">
+</span><span class="kwd">class</span><span class="pln"> X </span><span class="pun">{</span><span class="pln">
+    </span><span class="kwd">int</span><span class="pln"> j </span><span class="pun">=</span><span class="pln"> </span><span class="pun">-</span><span class="lit">100</span><span class="pun">;</span><span class="pln">
+
+    X</span><span class="pun">(</span><span class="kwd">int</span><span class="pln"> i</span><span class="pun">)</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+        </span><span class="kwd">if</span><span class="pln"> </span><span class="pun">(</span><span class="pln">i </span><span class="pun">&gt;</span><span class="pln"> </span><span class="lit">1</span><span class="pun">)</span><span class="pln">
+            </span><span class="kwd">return</span><span class="pun">;</span><span class="pln">
+        j </span><span class="pun">=</span><span class="pln"> i</span><span class="pun">;</span><span class="pln">
+    </span><span class="pun">}</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>Caso o valor seja maior que <code>1</code>, o valor de <code>j</code> será <code>-100</code>, caso contrário, será o mesmo valor de <code>i</code>.</p>
+<h3>Interfaces</h3>
+<p>Além de classes, também podemos declarar <em>interfaces</em> em nossos arquivos java. Para definir uma interface usamos a palavra reservada <code>interface</code>:</p>
+<pre class="prettyprint"><code><span class="pln">
+</span><span class="kwd">interface</span><span class="pln"> </span><span class="typ">Autenticavel</span><span class="pln"> </span><span class="pun">{</span><span class="pln">
+
+    </span><span class="kwd">final</span><span class="pln"> </span><span class="kwd">int</span><span class="pln"> TAMANHO_SENHA </span><span class="pun">=</span><span class="pln"> </span><span class="lit">8</span><span class="pun">;</span><span class="pln">
+
+    </span><span class="kwd">void</span><span class="pln"> autentica</span><span class="pun">(</span><span class="typ">String</span><span class="pln"> login</span><span class="pun">,</span><span class="pln"> </span><span class="typ">String</span><span class="pln"> senha</span><span class="pun">);</span><span class="pln">
+</span><span class="pun">}</span></code></pre><p>Em uma interface, devemos apenas definir a assinatura do método, sem a sua
+implementação. Além da assinatura de métodos, também é possível declarar
+constantes em interfaces.</p>
+<h3>Multíplas estruturas em um arquivo</h3>
+<p>Em java, é possível definir mais de uma classe/interface em um mesmo arquivo
+java, embora devamos seguir algumas regras:</p>
+<ul><li>Podem ser definidos em qualquer ordem;</li><li>Se existir alguma classe/interface pública, o nome do arquivo deve ser o mesmo dessa classe/interface;</li><li>Só pode existir uma classe/interface pública por arquivo;</li><li>Se não houver nenhuma classe/interface pública, o arquivo pode ter qualquer
+nome.</li></ul>
+<p>Logo, são válidos:</p>
+<pre class="prettyprint"><code><span class="pln">
+</span><span class="com">// arquivo1.java</span><span class="pln">
+</span><span class="kwd">interface</span><span class="pln"> </span><span class="typ">Bar</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">
+
+</span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pln"> </span><span class="pun">{}</span></code></pre><pre class="prettyprint"><code><span class="pln">
+</span><span class="com">// Foo.java</span><span class="pln">
+</span><span class="kwd">public</span><span class="pln"> </span><span class="kwd">class</span><span class="pln"> </span><span class="typ">Foo</span><span class="pln"> </span><span class="pun">{}</span><span class="pln">
+
+</span><span class="kwd">interface</span><span class="pln"> X </span><span class="pun">{}</span></code></pre><h3>Pacotes e imports em arquivos com múltiplas estruturas</h3>
+<p>As regras de pacotes e imports valem também para arquivos com múltiplas
+estruturas definidas. Caso exista a definição de um pacote, ela vale para todas
+as classes/interfaces definidas nesse arquivo, e o mesmo vale para <em>imports</em>.</p>
+
+		</div>
+	</div>
+</section>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+				
+					
+
+
+
+
+
+
+	
+	
+		<section class="task-actions">
+			<div class="container">
+				
+
+
+
+
+
+<a href="https://cursos.alura.com.br/forum/curso-certificacao-java-basico/exercicio-defina-a-estrutura-de-uma-classe-java/5841/novo" class=" task-actions-button task-actions-button-forum" target="_blank">Discutir no Forum</a>
+
+				
+				
+				
+					<a href="https://cursos.alura.com.br/course/certificacao-java-basico/task/5841/next" class="task-actions-button task-body-actions-button task-actions-button-next">Próxima Atividade</a>
+				
+			</div>
+		</section>
+	
+
+
+				
+			</main>
+		</div>
+	</section>
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<button title="Abrir menu/Fechar menu" aria-label="Abrir menu/Fechar menu" type="button" class="openMenu-button task-body-button "></button>
+
+<aside class="task-menu" style="position: fixed; transform: translateY(-378.922px);">
+	<section class="task-menu-header">
+		<button title="Fechar menu" aria-label="Fechar menu" type="button" class="openMenu-button task-menu-button "></button>
+		<div class="task-menu-header-info">
+			<a class="task-menu-header-info-title" href="https://cursos.alura.com.br/course/certificacao-java-basico" title="Ir para página do curso">
+				
+					
+					
+						<img src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/certificacao-java-basico.svg" alt="ícone Certificação Java SE 7 Programmer I: O básico de Java" class="task-menu-header-info-title-icon " width="37.5px" height="37.5px">
+					
+				
+				<h2 class="task-menu-header-info-title-text">Certificação Java SE 7 Programmer I: O básico de Java</h2>
+			</a>
+			
+				<div class="task-menu-header-info-progress">
+					
+					<span class="task-menu-header-info-progress-percentage ">24%</span>
+					<span class="task-menu-header-info-progress-bar" style="background-image: linear-gradient(to right, #9de482, #9de482 24%, transparent 24%);"></span>
+				</div>
+			
+		</div>
+	</section>
+	
+	<div class="task-menu-others task-menu-notes">
+		<button class="task-menu-others-link class-notes-button" title="Abrir caderno">Abrir caderno</button>
+	</div>
+
+	<section class="task-menu-section">
+		<div class="task-menu-section-title">
+			<span class="task-menu-section-title-number ">Aula<strong>02</strong>
+				<span>de 04</span></span>
+			<h3 class="task-menu-section-title-text">
+				Defina a estrutura de uma classe Java
+			</h3>
+		</div>
+	</section>
+	<nav class="task-menu-nav">
+		<h2 class="task-menu-nav-title">
+			Atividades
+			<span>2 de 6</span>
+		</h2>
+		<ul class="task-menu-nav-list">
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/certificacao-java-basico/task/5840" class="task-menu-nav-item-link task-menu-nav-item-link-VIDEO">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Vídeo concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#VIDEO"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">01</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Vídeo 1">
+							Vídeo 1
+						</span>
+						
+						<span class="task-menu-nav-item-infos">
+							
+								<span class="task-menu-nav-item-videoDuration" title="Ir para o Vídeo">17min</span>
+							
+						</span>
+					</span>
+					
+					</a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item task-menu-nav-item--selected">
+					<a href="https://cursos.alura.com.br/course/certificacao-java-basico/task/5841" class="task-menu-nav-item-link task-menu-nav-item-link-HQ_EXPLANATION">
+						<svg class="task-menu-nav-item-svg task-menu-nav-item-svg--done" aria-label="Atividade de Explicação concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#HQ_EXPLANATION"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">02</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Defina a estrutura de uma classe Java">
+							Defina a estrutura de uma classe Java
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/certificacao-java-basico/task/5842" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						<svg class="task-menu-nav-item-svg " aria-label="Atividade de Atividade de Única Escolha não concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">03</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Exercício 1">
+							Exercício 1
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/certificacao-java-basico/task/5843" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						<svg class="task-menu-nav-item-svg " aria-label="Atividade de Atividade de Única Escolha não concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">04</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Exercício 2">
+							Exercício 2
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/certificacao-java-basico/task/5844" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						<svg class="task-menu-nav-item-svg " aria-label="Atividade de Atividade de Única Escolha não concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">05</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Exercício 3">
+							Exercício 3
+						</span>
+						
+					</span></a>
+				</li>
+			
+				
+				<li class="task-menu-nav-item ">
+					<a href="https://cursos.alura.com.br/course/certificacao-java-basico/task/5845" class="task-menu-nav-item-link task-menu-nav-item-link-SINGLE_CHOICE">
+						<svg class="task-menu-nav-item-svg " aria-label="Atividade de Atividade de Única Escolha não concluída">
+							
+								
+								<use xlink:href="/assets/images/classPage/icon-menu-icons.svg#SINGLE_CHOICE"></use>
+							
+							
+						
+					</svg>
+					<span class="task-menu-nav-item-number">06</span>
+					<span class="task-menu-nav-item-text">
+						<span class="task-menu-nav-item-title" title="Exercício 4">
+							Exercício 4
+						</span>
+						
+					</span></a>
+				</li>
+			
+			
+		</ul>
+	</nav>
+	<section class="task-menu-sections">
+		<h2 class="task-menu-sections-title">
+			Aulas
+		</h2>
+		<select class="task-menu-sections-select" onchange="location.href=&#39;/course/certificacao-java-basico/section/&#39;+this.value+&#39;/tasks&#39;;">
+			
+				<option value="1917">01. Defina o escopo de variáveis</option>
+			
+				<option value="1918" selected="">02. Defina a estrutura de uma classe Java</option>
+			
+				<option value="1919">03. Crie aplicações Java executáveis com um método main</option>
+			
+				<option value="1951">04. Importe outros pacotes Java e deixe-os acessíveis ao seu código</option>
+			
+		</select>
+	</section>
+	<section class="task-menu-others">
+		<h2 class="task-menu-others-title ">
+			Outros Links
+		</h2>
+		<a href="https://cursos.alura.com.br/forum/curso-certificacao-java-basico/todos" class="task-menu-others-link task-menu-others-link-forum" title="Ir para o fórum do curso">Fórum</a>
+		<a href="https://cursos.alura.com.br/dashboard" class="task-menu-others-link task-menu-others-link-curso" title="Ir para a página principal">Trocar Curso</a>
+
+	</section>
+	<section class="task-menu-footer">
+		<a class="task-menu-footer-user" href="https://cursos.alura.com.br/user/jaironsousa" title="Ir para sua página de usuário">
+			<img src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/3834e9bd0d40b9d142d2f4277f3c4c41.png" alt="Gravatar de Jairo Nascimento de Sousa" class="task-menu-footer-img" width="40px" height="40px">
+			
+				<p class="task-menu-footer-detalhes">
+					<span class="task-menu-footer-detalhes-nome">Jairo Nascimento de Sousa</span>
+					<span class="task-menu-footer-detalhes-xp">
+						135.2k xp
+					</span>
+				</p>
+			
+			<input type="hidden" value="">
+			<input type="hidden" value="">
+		</a>
+		<a href="https://cursos.alura.com.br/dashboard" class="task-menu-footer-logo">
+			<img src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/icon-menu-alura.svg" alt="Logo da Alura" class="task-menu-footer-logo-image" width="19px" height="32px" title="Ir para a página principal">
+		</a>
+	</section>
+</aside>
+
+
+
+</section><div class="full-screen__panel" style="display: none;">
+				<img id="full-screen__image" class="full-screen__image" src="https://cursos.alura.com.br/course/certificacao-java-basico/task/5841" alt="">
+				<div class="full-screen__actions">
+				<button class="button buttonAction partitura-download">Anterior</button><button class="button buttonAction partitura-download">Sair</button><button class="button buttonAction partitura-download">Próximo</button></div> 
+			</div>
+
+
+
+
+	
+		<!-- Hotjar Tracking Code for https://cursos.alura.com.br -->
+		<script>
+			(function(h,o,t,j,a,r){
+				h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+				h._hjSettings={hjid:1638253,hjsv:6};
+				a=o.getElementsByTagName('head')[0];
+				r=o.createElement('script');r.async=1;
+				r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+				a.appendChild(r);
+			})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+		</script>
+	
+
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/jquery-2.1.3.min.32015dd4.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/buttonToggle.js.download" async=""></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/sectionMenu.9c6d35d8.js.download" async=""></script>
+
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/marked.min.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/markdownEditor.07eebbca.js.download" async=""></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/caret.js.download" async=""></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/keydownWatchers.f20680cd.js.download" async=""></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/prettify.min.49a10a85.js.download" async=""></script>
+
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/preventsMultipleInteractions.ccefe158.js.download" async=""></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/assessment.050f656f.js.download" async=""></script>
+
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/menuSettings.586ae39e.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/aria.1c51db86.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/ProjectSubmit.1da29f73.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/classPage.8b2d2097.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/phrase.dda08bd7.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/feedback.98f71e18.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/ExtraContentProgressRequest.74258bb3.js.download"></script>
+	
+	
+
+	
+	
+	
+	
+
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/partitura.c5cff29c.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/audioProgress.71d14880.js.download"></script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/audioPlayer.9e2e5334.js.download"></script>
+
+		
+
+	
+
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/darkMode.65d4b699.js.download">
+	</script>
+
+	
+		
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-42101548-1', 'alura.com.br');
+
+    
+        ga('set', 'userId', '330602');
+    
+
+    ga('require', 'displayfeatures');
+    
+    ga('send', 'pageview');
+    
+    
+</script>
+	
+
+	<script>new DarkModeToggler().refreshListener()</script>
+	<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/ClassNotes.1b143ac5.js.download">
+	</script>
+<script>
+	new ClassNotes().refreshListeners();
+</script>
+
+
+
+
+
+
+<script src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/MarkdownProcessing.f83261d2.js.download"></script>
+<script>
+	new MarkdownProcessing("https://cursos.alura.com.br").onLoad();
+</script><script type="text/javascript" id="">function eventClick(d,a,b,c){a.includes(" \x3e ")&&(a=document.querySelector(a).textContent);b.includes(" \x3e ")&&(b=document.querySelector(b).textContent);(c=document.querySelector(c))&&c.addEventListener("click",function(){dataLayer.push({event:"gaEvent",eventCategory:d,eventAction:a,eventLabel:b})})}eventClick("Menu","Logo","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e a");eventClick("Menu","Todos os Cursos","Abrir","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e div");
+eventClick("Menu","Todos os Cursos","Cursos de Mobile","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--mobile \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Programa\u00e7\u00e3o","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--programacao \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Front-end","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--front-end \x3e a");
+eventClick("Menu","Todos os Cursos","Cursos de Infraestrutura","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--infraestrutura \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Design \x26 UX","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--design-ux \x3e a");eventClick("Menu","Todos os Cursos","Cursos de Business","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e ul \x3e li.header-cursos-lista-categoria.header-cursos-lista-categoria--business \x3e a");
+eventClick("Menu","Carreiras e Forma\u00e7\u00f5es","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e a:nth-child(2)");eventClick("Menu","Como funciona","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e a:nth-child(3)");eventClick("Menu","Para empresas","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--menu \x3e a:nth-child(4)");
+eventClick("Menu","Entrar","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--ctas \x3e a:nth-child(1)");eventClick("Menu","Matricule-se","","body \x3e div.home \x3e div \x3e header \x3e div \x3e nav \x3e div.header__nav__wrapper.header__nav__wrapper--ctas \x3e a.header__nav__link.header__nav__link--cta");eventClick("Menu","Busca","Abrir","body \x3e div.home \x3e div \x3e header \x3e section \x3e div:nth-child(2) \x3e a");
+eventClick("Menu","Busca","Buscar","body \x3e div.home \x3e div \x3e header \x3e section \x3e div:nth-child(1) \x3e form \x3e button");eventClick("Footer","Primeira Se\u00e7\u00e3o","Alura","body \x3e footer.footer \x3e div \x3e div.footer-info \x3e div.footer-logos \x3e a.footer-logos-home");eventClick("Footer","Primeira Se\u00e7\u00e3o","Caelum","body \x3e footer.footer \x3e div \x3e div.footer-info \x3e div.footer-logos \x3e a.footer-link-caelum");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Apostilas","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(1) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Planos","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(2) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Todos os Cursos","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(3) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Carreiras","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(4) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Instrutores","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(5) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Como virar Instrutor","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(6) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Ranking","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(7) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Blog da Alura","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(8) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Podcast Nerdtech","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(9) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Pol\u00edtica de Privacidade","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(10) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Termos de Uso","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(11) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Sobre N\u00f3s","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(12) \x3e a");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Perguntas Frequentes","body \x3e footer.footer \x3e div \x3e div.footer-navegue \x3e ul \x3e li:nth-child(13) \x3e a");eventClick("Footer","Primeira Se\u00e7\u00e3o","Youtube","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(1)");eventClick("Footer","Primeira Se\u00e7\u00e3o","Facebook","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(2)");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Twitter","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(3)");eventClick("Footer","Primeira Se\u00e7\u00e3o","Hipsters","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-redes \x3e a:nth-child(4)");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Google Play","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-mobile \x3e a:nth-child(1)");eventClick("Footer","Primeira Se\u00e7\u00e3o","App Store","body \x3e footer.footer \x3e div \x3e div.footer-column.footer-column-cards \x3e div.footer-card-hotLinks \x3e div.footer-card-hotLinks-info.footer-card-mobile \x3e a:nth-child(2)");
+eventClick("Footer","Primeira Se\u00e7\u00e3o","Fale Conosco","body \x3e footer.footer \x3e div \x3e div:nth-child(3) \x3e a.footer-card.footer-card-contato");eventClick("Footer","Primeira Se\u00e7\u00e3o","Empresa?","body \x3e footer.footer \x3e div \x3e div:nth-child(3) \x3e a.footer-card.footer-card-empresa");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(2)","body \x3e nav \x3e div \x3e a:nth-child(2)");
+eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(3)","body \x3e nav \x3e div \x3e a:nth-child(3)");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(4)","body \x3e nav \x3e div \x3e a:nth-child(4)");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(5)","body \x3e nav \x3e div \x3e a:nth-child(5)");eventClick("Footer","Mobile","body \x3e nav \x3e div \x3e a:nth-child(6)","body \x3e nav \x3e div \x3e a:nth-child(6)");
+eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(8)","body \x3e nav \x3e div \x3e a:nth-child(8)");eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(9)","body \x3e nav \x3e div \x3e a:nth-child(9)");eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(10)","body \x3e nav \x3e div \x3e a:nth-child(10)");eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(11)","body \x3e nav \x3e div \x3e a:nth-child(11)");
+eventClick("Footer","Programa\u00e7\u00e3o","body \x3e nav \x3e div \x3e a:nth-child(12)","body \x3e nav \x3e div \x3e a:nth-child(12)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(14)","body \x3e nav \x3e div \x3e a:nth-child(14)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(15)","body \x3e nav \x3e div \x3e a:nth-child(15)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(16)","body \x3e nav \x3e div \x3e a:nth-child(16)");
+eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(17)","body \x3e nav \x3e div \x3e a:nth-child(17)");eventClick("Footer","Front-end","body \x3e nav \x3e div \x3e a:nth-child(18)","body \x3e nav \x3e div \x3e a:nth-child(18)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(20)","body \x3e nav \x3e div \x3e a:nth-child(20)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(21)","body \x3e nav \x3e div \x3e a:nth-child(21)");
+eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(22)","body \x3e nav \x3e div \x3e a:nth-child(22)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(23)","body \x3e nav \x3e div \x3e a:nth-child(23)");eventClick("Footer","Infraestrutura","body \x3e nav \x3e div \x3e a:nth-child(24)","body \x3e nav \x3e div \x3e a:nth-child(24)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(26)","body \x3e nav \x3e div \x3e a:nth-child(26)");
+eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(27)","body \x3e nav \x3e div \x3e a:nth-child(27)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(28)","body \x3e nav \x3e div \x3e a:nth-child(28)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(29)","body \x3e nav \x3e div \x3e a:nth-child(29)");eventClick("Footer","Design e UX","body \x3e nav \x3e div \x3e a:nth-child(30)","body \x3e nav \x3e div \x3e a:nth-child(30)");
+eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(32)","body \x3e nav \x3e div \x3e a:nth-child(32)");eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(33)","body \x3e nav \x3e div \x3e a:nth-child(33)");eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(34)","body \x3e nav \x3e div \x3e a:nth-child(34)");eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(35)","body \x3e nav \x3e div \x3e a:nth-child(35)");
+eventClick("Footer","Business","body \x3e nav \x3e div \x3e a:nth-child(36)","body \x3e nav \x3e div \x3e a:nth-child(36)");</script><script type="text/javascript" id="">elements=document.querySelectorAll("input, select");elements.forEach(function(b,c){b.addEventListener("change",function(a){a=this.getAttribute("name");dataLayer.push({event:"gaEvent",eventCategory:"Formul\u00e1rios",eventAction:"Altera\u00e7\u00e3o",eventLabel:a})})});</script>
+<script type="text/javascript" id="">var key="Think_Again45984$%";function log(a){console.log(a)}function getPars(){var a={};window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi,function(b,c,d){a[c]=d});return a}function userId(a){a=sha256.hmac(key,a);dataLayer.push({event:"userId",userId:a})}var script=document.createElement("script");script.onload=function(){var a=getPars().e;a&&userId(a);a=document.querySelectorAll('[type\x3d"email"]');for(var b=0;b<a.length;b++)a[b].onchange=function(){userId(this.value)}};script.src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js";
+document.head.appendChild(script);</script><iframe name="_hjRemoteVarsFrame" title="_hjRemoteVarsFrame" id="_hjRemoteVarsFrame" src="./Certificação Java SE 7 Programmer I_ Aula 2 - Atividade 2 Defina a estrutura de uma classe Java _ Alura - Cursos online de tecnologia_files/box-469cf41adb11dc78be68c1ae7f9457a4.html" style="display: none !important; width: 1px !important; height: 1px !important; opacity: 0 !important; pointer-events: none !important;"></iframe></body></html>

@@ -1,0 +1,28 @@
+
+O
+java:S4719("9Replace charset name argument with StandardCharsets.UTF_8(ƒ‰ãŞ
+M	java:S106)"9Replace this use of System.out or System.err by a logger.(œ™À
+c
+java:S1192"FDefine a constant instead of duplicating this literal "UTF-8" 3 times.(…‡‰î8ÏáÃó½.
+X
+java:S1854";Remove this useless assignment to local variable "charset".(Ìô©Í8ÏáÃó½.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(ñõŠäùÿÿÿÿ8ÏáÃó½.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(®¥Ù¿úÿÿÿÿ8ÏáÃó½.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ó‰úÿÿÿÿ8ÏáÃó½.
+W
+java:S4719":Replace charset name argument with StandardCharsets.UTF_16(¢«Æá8ÏáÃó½.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(öè¦¬8ÏáÃó½.
+\
+java:S4719":Replace charset name argument with StandardCharsets.UTF_16(íí—ÿÿÿÿÿ8ÏáÃó½.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ó‰úÿÿÿÿ8ÏáÃó½.
+V
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(…‡‰î8ÏáÃó½.
+U	java:S106"9Replace this use of System.out or System.err by a logger.(æø´İ8ÏáÃó½.
+V
+java:S4719"9Replace charset name argument with StandardCharsets.UTF_8(ƒ¢­¢8ÏáÃó½.
+Z	java:S106"9Replace this use of System.out or System.err by a logger.(Ó‰úÿÿÿÿ8ÏáÃó½.
+U	java:S106!"9Replace this use of System.out or System.err by a logger.(“Û›Ô8ÏáÃó½.
+Z	java:S106#"9Replace this use of System.out or System.err by a logger.(Ó‰úÿÿÿÿ8ÏáÃó½.
+I
+java:S1481",Remove this unused "charset" local variable.(Ìô©Í8ÏáÃó½.
+X	java:S125"<This block of commented-out lines of code should be removed.(½îù8ÏáÃó½.
