@@ -5,6 +5,7 @@ import { PhotoListModule } from './photo-list/photo-list.module';
 import { CardModule } from '../shared/components/card/card.module';
 import { DarkenOnHoverModule } from '../shared/directives/darken-on-hover/darken-on-hover.module';
 import { RouterModule } from '@angular/router';
+import { PhotoDetailsModule } from './photo-details/photo-details.module';
 
 @NgModule({
     imports: [
@@ -12,7 +13,8 @@ import { RouterModule } from '@angular/router';
         PhotoFormModule,
         PhotoListModule,
         DarkenOnHoverModule,
-        RouterModule
+        RouterModule,
+        PhotoDetailsModule
     ]
 })
 export class PhotosModule { }
