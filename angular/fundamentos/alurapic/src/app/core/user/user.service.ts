@@ -4,15 +4,14 @@ import { BehaviorSubject } from 'rxjs';
 import { User } from './user';
 import * as jtw_decode from 'jwt-decode';
 
-@Injectable({ providedIn: 'root'})
-export class UserService { 
+@Injectable({ providedIn: 'root' })
+export class UserService {
 
     private userSubject = new BehaviorSubject<User>(null);
     private userName: string;
 
-    constructor(private tokenService: TokenService) { 
-
-        this.tokenService.hasToken() && 
+    constructor(private tokenService: TokenService) {
+        this.tokenService.hasToken() &&
             this.decodeAndNotify();
     }
 

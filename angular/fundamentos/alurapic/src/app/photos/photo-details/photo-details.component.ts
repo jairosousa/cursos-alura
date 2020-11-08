@@ -42,13 +42,23 @@ export class PhotoDetailsComponent implements OnInit {
     this.photoService.removePhoto(this.photoId)
       .subscribe(() => {
         this.alertService.success("Photo removed", true);
-        this.router.navigate(['/user', this.userService.getUserName()])
+        this.router.navigate(['/user', this.userService.getUserName()], { replaceUrl: true })
       },
         err => {
           console.log(err);
           this.alertService.danger('Could not delete the photo', true);
         }
       );
+  }
+
+  like(photo: Photo) {
+    this.photoService
+      .like(photo.id)
+      .subscribe(liked => {
+        if (liked) {
+          this.photo$ = this.photoService.findById(photo.id);
+        }
+      })
   }
 
 }

@@ -4,6 +4,7 @@ import { PhotoCommnet } from '../../photo/photo-comments';
 import { PhotoService } from '../../photo/photo.service';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { switchMap, tap } from 'rxjs/operators';
+import { AlertService } from '../../../shared/components/alert/alert.service';
 
 @Component({
   selector: 'ap-photo-comments',
@@ -20,7 +21,8 @@ export class PhotoCommentsComponent implements OnInit {
 
   constructor(
     private photoService: PhotoService,
-    private formBuilder: FormBuilder
+    private formBuilder: FormBuilder,
+    private alertService: AlertService
   ) { }
 
   ngOnInit() {
@@ -36,7 +38,7 @@ export class PhotoCommentsComponent implements OnInit {
       .pipe(switchMap(() => this.photoService.getCommnet(this.photoId)))
       .pipe(tap(() => {
         this.commentForm.reset();
-        alert('Comentario adicionado com sucesso');
+        this.alertService.success('Comentario adicionado com sucesso', true);
       }))
 
 
