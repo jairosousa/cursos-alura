@@ -1,9 +1,8 @@
-import { Component, OnInit, ElementRef, ViewChild, query } from '@angular/core';
-import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from '../../core/auth/auth.service';
-import { Router, ActivatedRoute } from '@angular/router';
 import { PlatformDetectorService } from '../../core/plataform-detector/platform-detector.service';
-import { Title } from '@angular/platform-browser';
 
 @Component({
     templateUrl: './signin.component.html'
