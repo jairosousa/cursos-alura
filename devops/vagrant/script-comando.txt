@@ -1,0 +1,33 @@
+# Cria o vagrantfile
+> vagrant init hashicorp/05
+
+# Cria, configura e sobe a máquina VM
+> vagrant up
+
+# Status
+> vagrant status
+
+# Forçar parada
+> vagrant halt
+
+# Suspender 
+> vagrant suspend
+
+# Reiniciar
+> vagrant up
+
+# Conectar a VM
+> vagrant ssh
+
+# Sair VM
+> ctrl + d
+
+# Ver configurações VM
+> vagrant ssh-config
+
+# Conectar via ssh
+> ssh -p 2222 vagrant@127.0.0.1 // -p 2222(porta) vagrant(user) @127.0.0.1(host, nesse cado é localhost)
+
+# destroi VM
+> vagrant -f destroy
+

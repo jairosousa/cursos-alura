@@ -1,0 +1,7 @@
+1º) entrei na pasta "...\apache-activemq-5.12.0\bin\win64", e lá eu executei o "activemq.bat", tudo como ADM no CMD;
+
+2º) após ter inicializado o "ActiveMQ", entre como o endereço "http://localhost:8161/admin" e não o "http://0.0.0.0:8161/", sendo que esse último ele não entra(pelo monos no meu windows não entrou).
+
+Ele vai te pedir um login e senha, ai você coloca login: "admin" e senha "admin".
+
+Pronto, tela do ActiveMQ funcionando!
