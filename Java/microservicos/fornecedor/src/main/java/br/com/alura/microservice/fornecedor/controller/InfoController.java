@@ -1,6 +1,7 @@
 package br.com.alura.microservice.fornecedor.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -11,6 +12,9 @@ import br.com.alura.microservice.fornecedor.service.InfoService;
 @RestController
 @RequestMapping("/info")
 public class InfoController {
+
+	@Value("${spring.datasource.username}")
+	private String nome;
 	
 	@Autowired
 	private InfoService infoService;
