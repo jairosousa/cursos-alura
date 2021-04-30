@@ -13,8 +13,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BonusServiceTest {
 
+    private BonusService service;
+
     @BeforeEach
     void setUp() {
+        service = new BonusService();
     }
 
     @AfterEach
@@ -33,7 +36,6 @@ class BonusServiceTest {
             fail("Não deu exception");
         } catch (Exception e) {
             assertEquals("Funcionario com salario maior que 10 mil não pode receber bônus", e.getMessage());
-
         }
 
     }
@@ -41,20 +43,14 @@ class BonusServiceTest {
     @Test
     @DisplayName("Deve calcular bonus de 10% do salario do Funcionario")
     void calcularBonus10porCentoTest() {
-        BonusService service = new BonusService();
         BigDecimal bonus = service.calcularBonus(new Funcionario("Rodrigo", LocalDate.now(), new BigDecimal("2500")));
-
         assertEquals(new BigDecimal("250.00"), bonus);
-
     }
 
     @Test
     @DisplayName("Deve calcular bonus com salario de exatamente 10 mil do Funcionario")
     void calcularBonusTest() {
-        BonusService service = new BonusService();
         BigDecimal bonus = service.calcularBonus(new Funcionario("Rodrigo", LocalDate.now(), new BigDecimal("10000.00")));
-
         assertEquals(new BigDecimal("1000.00"), bonus);
-
     }
 }
