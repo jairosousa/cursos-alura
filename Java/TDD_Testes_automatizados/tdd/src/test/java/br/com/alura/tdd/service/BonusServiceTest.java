@@ -1,10 +1,7 @@
 package br.com.alura.tdd.service;
 
 import br.com.alura.tdd.modelo.Funcionario;
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -22,6 +19,16 @@ class BonusServiceTest {
 
     @AfterEach
     void tearDown() {
+    }
+
+    @BeforeAll
+    public static void antesDeTodos() {
+        System.out.println("Antes de todos");
+    }
+
+    @BeforeAll
+    public static void depoisDeTodos() {
+        System.out.println("Depois de todos");
     }
 
     @Test
