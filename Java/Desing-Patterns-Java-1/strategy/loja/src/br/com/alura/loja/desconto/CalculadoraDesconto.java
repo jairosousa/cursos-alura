@@ -9,6 +9,12 @@ import java.math.BigDecimal;
 
 public class CalculadoraDesconto {
 
+  /**
+   * Padrão Chain of Responsibility
+   * 
+   * @param orcamento
+   * @return
+   */
   public BigDecimal calcular(Orcamento orcamento) {
     Desconto desconto =
         new DescontoOrcamentoComMaisDeCincoItens(

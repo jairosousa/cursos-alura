@@ -9,6 +9,13 @@ import java.math.BigDecimal;
 
 public class CalculadoraDeImpostos {
 
+  /**
+   * Padrão Stratgy
+   *
+   * @param orcamento
+   * @param imposto
+   * @return
+   */
   public BigDecimal calcular(Orcamento orcamento, Imposto imposto) {
 
     return imposto.calcular(orcamento);
