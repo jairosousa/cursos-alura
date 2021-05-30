@@ -20,6 +20,13 @@ public class TesteDesconto {
 
     System.out.println(calculadora.calcular(primeiro));
     System.out.println(calculadora.calcular(segundo));
+    primeiro.aplicarDescontoExtra();
+    System.out.println(primeiro.getValor());
+
+    primeiro.aprovar();
+    primeiro.aplicarDescontoExtra();
+    System.out.println(primeiro.getValor());
+
   }
 
 }
