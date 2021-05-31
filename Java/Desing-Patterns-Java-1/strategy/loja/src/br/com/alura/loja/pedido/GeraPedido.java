@@ -20,11 +20,15 @@ public class GeraPedido {
     this.quantidadeItens = quantidadeItens;
   }
 
-  public void executa() {
-    Orcamento orcamento = new Orcamento(this.valorOrcamento, this.quantidadeItens);
-    Pedido pedido = new Pedido(this.cliente, LocalDateTime.now(), orcamento);
+  public String getCliente() {
+    return cliente;
+  }
 
-    System.out.println("Salvar pedido no banco de dados");
-    System.out.println("Enviar email com dados de novo pedido");
+  public BigDecimal getValorOrcamento() {
+    return valorOrcamento;
+  }
+
+  public int getQuantidadeItens() {
+    return quantidadeItens;
   }
 }
