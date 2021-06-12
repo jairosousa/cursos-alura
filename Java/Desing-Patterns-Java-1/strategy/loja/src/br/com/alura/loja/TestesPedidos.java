@@ -19,6 +19,9 @@ public class TestesPedidos {
     GeraPedidoHandler handler = new GeraPedidoHandler(/*dependencias*/);
     handler.execute(gerador);
 
+
+    
+
   }
 
 }
