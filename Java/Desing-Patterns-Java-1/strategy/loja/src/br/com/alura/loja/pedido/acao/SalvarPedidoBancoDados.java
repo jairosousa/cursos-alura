@@ -9,8 +9,8 @@ import br.com.alura.loja.pedido.Pedido;
 /**
  * @Author: Jairo Nascimento on 31/05/2021 - 17:08
  */
-public class SalvarPedidoBancoDados {
+public class SalvarPedidoBancoDados implements AcaoAposGerarPedido{
 
-  public void executar(Pedido pedido) {
+  public void executarAcao(Pedido pedido) {
     System.out.println("Salvando pedido no banco de dados!");
   }}
