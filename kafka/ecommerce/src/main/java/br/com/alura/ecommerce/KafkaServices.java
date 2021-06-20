@@ -1,6 +1,6 @@
 package br.com.alura.ecommerce;/*
  *
- * @Author: Jairo Nascimento on 20/06/2021 - 15:48
+ * @Author: Jairo Nascimento on 20/06/2021 - 17:41
  *
  */
 
@@ -12,35 +12,30 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
-public class FraudeDetectorService {
+public class KafkaServices {
 
-  public static void main(String[] args) {
-    var consumer = new KafkaConsumer<String, String>(properties());
-    consumer.subscribe(Collections.singletonList("ECOMMERCE_NEW_ORDER"));
+  private final KafkaConsumer<String, String> consumer;
+  private final ConsumerFunction parse;
 
+  KafkaServices(String groupId, String topic, ConsumerFunction parse) {
+    this.parse = parse;
+    this.consumer = new KafkaConsumer<>(properties(groupId));
+    consumer.subscribe(Collections.singletonList(topic));
+  }
+
+  void run() {
     while (true) {
       var records = consumer.poll(Duration.ofMillis(100));
       if (!records.isEmpty()) {
         System.out.println("Encontrei " + records.count() + " registros");
         for (var record : records) {
-          System.out.println("----------------------------------------");
-          System.out.println("Processing new order, checking for fraud");
-          System.out.println(record.key());
-          System.out.println(record.value());
-          System.out.println(record.partition());
-          System.out.println(record.offset());
-          try {
-            Thread.sleep(5000);
-          } catch (InterruptedException e) {
-            e.printStackTrace();
-          }
-          System.out.println("Order processed");
+          parse.consume(record);
         }
       }
     }
   }
 
-  private static Properties properties() {
+  private static Properties properties(String groupId) {
     var properties = new Properties();
     properties.setProperty(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "127.0.0.1:9092");
     properties
@@ -49,9 +44,9 @@ public class FraudeDetectorService {
     properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
         StringDeserializer.class.getName());
     properties
-        .setProperty(ConsumerConfig.GROUP_ID_CONFIG, FraudeDetectorService.class.getSimpleName());
+        .setProperty(ConsumerConfig.GROUP_ID_CONFIG, groupId);
     properties.setProperty(ConsumerConfig.CLIENT_ID_CONFIG,
-        FraudeDetectorService.class.getSimpleName() +"/" +UUID.randomUUID());
+        groupId +"/" + UUID.randomUUID().toString());
     properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1");
 
     return properties;
