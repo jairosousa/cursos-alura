@@ -7,16 +7,16 @@ package br.com.alura.ecommerce;/*
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
-import java.util.UUID;
+import java.util.regex.Pattern;
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
-public class FraudeDetectorService {
+public class LogService {
 
   public static void main(String[] args) {
-    var consumer = new KafkaConsumer<String, String>(properties());
-    consumer.subscribe(Collections.singletonList("ECOMMERCE_NEW_ORDER"));
+    var consumer = new KafkaConsumer<String,String>(properties());
+    consumer.subscribe(Pattern.compile("ECOMMERCE.*"));
 
     while (true) {
       var records = consumer.poll(Duration.ofMillis(100));
@@ -24,17 +24,11 @@ public class FraudeDetectorService {
         System.out.println("Encontrei " + records.count() + " registros");
         for (var record : records) {
           System.out.println("----------------------------------------");
-          System.out.println("Processing new order, checking for fraud");
+          System.out.println("LOG: " + record.topic());
           System.out.println(record.key());
           System.out.println(record.value());
           System.out.println(record.partition());
           System.out.println(record.offset());
-          try {
-            Thread.sleep(5000);
-          } catch (InterruptedException e) {
-            e.printStackTrace();
-          }
-          System.out.println("Order processed");
         }
       }
     }
@@ -49,9 +43,7 @@ public class FraudeDetectorService {
     properties.setProperty(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG,
         StringDeserializer.class.getName());
     properties
-        .setProperty(ConsumerConfig.GROUP_ID_CONFIG, FraudeDetectorService.class.getSimpleName());
-    properties.setProperty(ConsumerConfig.CLIENT_ID_CONFIG,
-        FraudeDetectorService.class.getSimpleName() +"/" +UUID.randomUUID());
+        .setProperty(ConsumerConfig.GROUP_ID_CONFIG, LogService.class.getSimpleName());
 
     return properties;
   }
