@@ -52,6 +52,7 @@ public class FraudeDetectorService {
         .setProperty(ConsumerConfig.GROUP_ID_CONFIG, FraudeDetectorService.class.getSimpleName());
     properties.setProperty(ConsumerConfig.CLIENT_ID_CONFIG,
         FraudeDetectorService.class.getSimpleName() +"/" +UUID.randomUUID());
+    properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1");
 
     return properties;
   }
