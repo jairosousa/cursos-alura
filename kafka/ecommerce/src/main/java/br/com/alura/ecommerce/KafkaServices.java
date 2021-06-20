@@ -4,6 +4,8 @@ package br.com.alura.ecommerce;/*
  *
  */
 
+import java.io.Closeable;
+import java.io.IOException;
 import java.time.Duration;
 import java.util.Collections;
 import java.util.Properties;
@@ -12,7 +14,7 @@ import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.KafkaConsumer;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
-public class KafkaServices {
+public class KafkaServices implements Closeable {
 
   private final KafkaConsumer<String, String> consumer;
   private final ConsumerFunction parse;
@@ -50,5 +52,10 @@ public class KafkaServices {
     properties.setProperty(ConsumerConfig.MAX_POLL_RECORDS_CONFIG, "1");
 
     return properties;
+  }
+
+  @Override
+  public void close() {
+    this.consumer.close();
   }
 }
