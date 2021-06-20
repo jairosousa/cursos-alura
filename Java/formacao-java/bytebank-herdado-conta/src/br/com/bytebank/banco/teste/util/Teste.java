@@ -8,6 +8,7 @@ import br.com.bytebank.banco.modelo.Cliente;
 import br.com.bytebank.banco.modelo.Conta;
 import br.com.bytebank.banco.modelo.ContaCorrente;
 import br.com.bytebank.banco.modelo.ContaPoupanca;
+import java.util.function.Consumer;
 
 public class Teste {
 
@@ -55,14 +56,23 @@ public class Teste {
 		lista.add(cc3);
 		lista.add(cc4);
 
+		System.out.println("\n===LISTANDO CONTA USANDO FOREACH===");
 		for (Conta conta : lista) {
 			System.out.println(conta.getNumero());
 		}
 
 		lista.sort((c1, c2) -> Integer.compare(c1.getNumero(),c2.getNumero()));
 
-		System.out.println("===LISTA ORDENADA PELO NUMERO=====");
+		System.out.println("\n===LISTA ORDENADA PELO NUMERO=====");
 		lista.forEach(conta -> System.out.println(conta.getNumero()));
+
+		System.out.println("\n===LISTAGEM DOS NOMES DOS TITULARES DA CONTA=====");
+		lista.forEach(new Consumer<Conta>() {
+			@Override
+			public void accept(Conta conta) {
+				System.out.println(conta.getTitular().getNome());
+			}
+		});
 
 		Comparator<Conta> comp = (Conta c1, Conta c2) -> {
 			String nomeC1 = c1.getTitular().getNome();
