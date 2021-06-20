@@ -13,9 +13,9 @@ import org.apache.kafka.clients.producer.ProducerConfig;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.apache.kafka.common.serialization.StringSerializer;
 
-class KafkaDispacher implements Closeable {
+class KafkaDispacher<T> implements Closeable {
 
-  private final KafkaProducer<String, String> producer;
+  private final KafkaProducer<String, T> producer;
 
   KafkaDispacher() {
     this.producer = new KafkaProducer<>(properties());
@@ -27,15 +27,14 @@ class KafkaDispacher implements Closeable {
     properties
         .setProperty(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
     properties.setProperty(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG,
-        StringSerializer.class.getName());
+        GsonSerializer.class.getName());
 
     return properties;
   }
 
-  public void send(String topic, String key, String value)
+  public void send(String topic, String key, T value)
       throws ExecutionException, InterruptedException {
     var record = new ProducerRecord<>(topic, key, value);
-
     producer.send(record, getCallback()).get();
   }
 

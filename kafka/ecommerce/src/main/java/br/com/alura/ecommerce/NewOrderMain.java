@@ -4,6 +4,7 @@ package br.com.alura.ecommerce;/*
  *
  */
 
+import java.math.BigDecimal;
 import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 
@@ -11,14 +12,18 @@ public class NewOrderMain {
 
   public static void main(String[] args) throws ExecutionException, InterruptedException {
 
-    try (var dispacher = new KafkaDispacher()) {
-      var key = UUID.randomUUID().toString();
+    try (var orderDispacher = new KafkaDispacher<Order>()) {
+      try(var emailDispacher = new KafkaDispacher<String>()) {
+      var userId = UUID.randomUUID().toString();
+      var orderId = UUID.randomUUID().toString();
+      var amount = BigDecimal.valueOf(Math.random() * 5000 + 1);
 
-      var value = key + "1236,123695,7856952364";
-      dispacher.send("ECOMMERCE_NEW_ORDER", key, value);
+      var order = new Order(userId, orderId, amount);
+        orderDispacher.send("ECOMMERCE_NEW_ORDER", userId, order);
 
       var email = "Thanks you for order! We are processing your order";
-      dispacher.send("ECOMMERCE_SEND_EMAIL", key, email);
+        emailDispacher.send("ECOMMERCE_SEND_EMAIL", userId, email);
+      }
     }
   }
 }
