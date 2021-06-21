@@ -4,6 +4,7 @@ package br.com.alura.ecommerce;/*
  *
  */
 
+import java.util.HashMap;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 
 public class EmailService {
@@ -11,7 +12,7 @@ public class EmailService {
   public static void main(String[] args) {
     var emailService = new EmailService();
     try (var service = new KafkaServices(EmailService.class.getSimpleName(),
-        "ECOMMERCE_SEND_EMAIL", emailService::parse, Email.class)) {
+        "ECOMMERCE_SEND_EMAIL", emailService::parse, Email.class, new HashMap<>())) {
       service.run();
     }
   }
