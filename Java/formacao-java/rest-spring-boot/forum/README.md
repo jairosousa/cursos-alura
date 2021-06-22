@@ -52,3 +52,8 @@ public class ForumApplication extends SpringBootServletInitializer {
 	}
 }
 ```
+
+## Gerar imagem Docker do projeto
+```
+Docker build -t jnsousa/alura-forum .
+```
