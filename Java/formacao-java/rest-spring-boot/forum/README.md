@@ -62,3 +62,8 @@ precisa passar o comando extras como a exposição das portas, profile e variave
 ```java
 docker run -p 8080:8080 -e SPRING_PROFILES_ACTIVE='prod' -e FORUM_DATABASE_URL='jdbc:h2:mem:alura-forum' -e FORUM_DATABASE_USERNAME='sa' -e FORUM_DATABASE_PASSWORD='' -e FORUM_JWT_SECRET='123456' jnsousa/alura-forum
 ```
+
+## Deploy Heroku com Docker
+
+[Container Registry & Runtime (Docker Deploys)](https://devcenter.heroku.com/articles/container-registry-and-runtime)
+
