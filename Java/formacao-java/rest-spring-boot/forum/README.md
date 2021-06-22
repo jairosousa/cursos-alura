@@ -55,5 +55,10 @@ public class ForumApplication extends SpringBootServletInitializer {
 
 ## Gerar imagem Docker do projeto
 ```
-Docker build -t jnsousa/alura-forum .
+docker build -t jnsousa/alura-forum .
+```
+## Inicializar Container
+precisa passar o comando extras como a exposição das portas, profile e variaveis de ambientes
+```java
+docker run -p 8080:8080 -e SPRING_PROFILES_ACTIVE='prod' -e FORUM_DATABASE_URL='jdbc:h2:mem:alura-forum' -e FORUM_DATABASE_USERNAME='sa' -e FORUM_DATABASE_PASSWORD='' -e FORUM_JWT_SECRET='123456' jnsousa/alura-forum
 ```
