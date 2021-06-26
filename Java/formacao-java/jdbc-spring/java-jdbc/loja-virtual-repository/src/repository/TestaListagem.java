@@ -4,7 +4,6 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 /**
  * @Author: Jairo Nascimento on 25/06/2021 - 20:07
@@ -33,7 +32,7 @@ public class TestaListagem {
     }
 
     System.out.println("Fechando a conexão");
-
+    stm.close();
     con.close();
   }
 

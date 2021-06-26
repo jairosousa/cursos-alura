@@ -25,6 +25,7 @@ public class TestaRemocao {
 
     System.out.println("Fechando a conexão");
 
+    stm.close();
     con.close();
   }
 }
