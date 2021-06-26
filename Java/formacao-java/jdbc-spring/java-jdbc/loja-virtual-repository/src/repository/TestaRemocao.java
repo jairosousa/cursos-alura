@@ -1,6 +1,7 @@
 package repository;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -12,9 +13,11 @@ public class TestaRemocao {
   public static void main(String[] args) throws SQLException {
     Connection con = new ConnectionFactory().recuperaConexao();
 
-    Statement stm = con.createStatement();
+    PreparedStatement stm = con.prepareStatement("DELETE FROM produto WHERE id > ?");
+    stm.setInt(1, 3);
+
     boolean result = stm
-        .execute("DELETE FROM produto WHERE id > 3");
+        .execute();
 
     int linhasModificadas = stm.getUpdateCount();
 

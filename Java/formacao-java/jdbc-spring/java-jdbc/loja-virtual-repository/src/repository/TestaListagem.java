@@ -1,6 +1,7 @@
 package repository;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -14,9 +15,9 @@ public class TestaListagem {
 
     Connection con = new ConnectionFactory().recuperaConexao();
 
-    Statement stm = con.createStatement();
+    PreparedStatement stm = con.prepareStatement("select id, nome, descricao from produto");
 
-    boolean resultado = stm.execute("select id, nome, descricao from produto;");
+    boolean resultado = stm.execute();
 
     System.out.println(resultado);
 
