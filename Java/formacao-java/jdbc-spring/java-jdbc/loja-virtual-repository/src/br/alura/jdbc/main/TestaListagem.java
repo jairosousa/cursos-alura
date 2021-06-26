@@ -1,5 +1,6 @@
-package br.alura.jdbc;
+package br.alura.jdbc.main;
 
+import br.alura.jdbc.dao.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -14,7 +15,7 @@ public class TestaListagem {
 
     Connection con = new ConnectionFactory().recuperaConexao();
 
-    PreparedStatement stm = con.prepareStatement("select id, nome, descricao from produto");
+    PreparedStatement stm = con.prepareStatement("SELECT ID, NOME, DESCRICAO from PRODUTO");
 
     boolean resultado = stm.execute();
 

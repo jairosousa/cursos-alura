@@ -1,5 +1,6 @@
 package br.alura.jdbc.dao;
 
+import br.alura.jdbc.modelo.Categoria;
 import br.alura.jdbc.modelo.Produto;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -22,7 +23,7 @@ public class ProdutoDao {
 
   public void salvar(Produto produto) throws SQLException {
 
-    String sql = "INSERT INTO produto (nome, descricao) VALUES(?, ?)";
+    String sql = "INSERT INTO PRODUTO (NOME, DESCRICAO) VALUES(?, ?)";
 
     try (PreparedStatement pstm = connection
         .prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
@@ -40,12 +41,35 @@ public class ProdutoDao {
   }
 
   public List<Produto> listar() throws SQLException {
-    
+
     List<Produto> produtos = new ArrayList<>();
-    String sql = "select id, nome, descricao from produto";
+    String sql = "select ID, NOME, DESCRICAO from PRODUTO";
 
     try (PreparedStatement pstm = connection.prepareStatement(sql)) {
 
+      pstm.execute();
+
+      try (ResultSet rst = pstm.getResultSet()) {
+        while (rst.next()) {
+          Integer id = rst.getInt(1);
+          String nome = rst.getString(2);
+          String descricao = rst.getString(3);
+
+          produtos.add(new Produto(id, nome, descricao));
+
+        }
+      }
+
+    }
+    return produtos;
+  }
+
+  public List<Produto> buscar(Categoria categoria) throws SQLException {
+    List<Produto> produtos = new ArrayList<>();
+    String sql = "SELECT ID, NOME, DESCRICAO from PRODUTO WHERE CATEGORIA_ID = ?";
+
+    try (PreparedStatement pstm = connection.prepareStatement(sql)) {
+      pstm.setInt(1, categoria.getId());
       pstm.execute();
 
       try (ResultSet rst = pstm.getResultSet()) {

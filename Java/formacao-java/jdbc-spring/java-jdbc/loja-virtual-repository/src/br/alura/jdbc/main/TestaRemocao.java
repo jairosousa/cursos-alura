@@ -1,5 +1,6 @@
-package br.alura.jdbc;
+package br.alura.jdbc.main;
 
+import br.alura.jdbc.dao.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -12,7 +13,7 @@ public class TestaRemocao {
   public static void main(String[] args) throws SQLException {
     Connection con = new ConnectionFactory().recuperaConexao();
 
-    PreparedStatement stm = con.prepareStatement("DELETE FROM produto WHERE id > ?");
+    PreparedStatement stm = con.prepareStatement("DELETE FROM PRODUTO WHERE ID > ?");
     stm.setInt(1, 3);
 
     boolean result = stm

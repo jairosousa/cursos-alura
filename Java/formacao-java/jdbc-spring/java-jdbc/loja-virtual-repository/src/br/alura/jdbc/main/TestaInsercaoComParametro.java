@@ -1,5 +1,6 @@
-package br.alura.jdbc;
+package br.alura.jdbc.main;
 
+import br.alura.jdbc.dao.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -17,7 +18,7 @@ public class TestaInsercaoComParametro {
       con.setAutoCommit(false);
 
       try (PreparedStatement stm = con
-          .prepareStatement("INSERT INTO produto (nome,descricao) VALUES(?,?)",
+          .prepareStatement("INSERT INTO PRODUTO (nome,descricao) VALUES(?,?)",
               Statement.RETURN_GENERATED_KEYS)) {
 
         adicionarVariavel("Teclado", "Teclado sem fio", stm);

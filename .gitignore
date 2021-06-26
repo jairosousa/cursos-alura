@@ -4,7 +4,7 @@ target/
 !**/src/main/**
 !**/src/test/**
 
-/Java/formacao-java/jdbc-spring/java-jdbc/loja-virtual-repository/out
+/Java/formacao-java/jdbc-spring/java-jdbc/loja-virtual-repository/out/*
 
 ### STS ###
 .apt_generated

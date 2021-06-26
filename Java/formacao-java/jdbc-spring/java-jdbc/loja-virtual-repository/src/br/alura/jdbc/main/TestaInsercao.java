@@ -1,5 +1,6 @@
-package br.alura.jdbc;
+package br.alura.jdbc.main;
 
+import br.alura.jdbc.dao.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -15,7 +16,7 @@ public class TestaInsercao {
 
     Statement stm = con.createStatement();
     boolean result = stm
-        .execute("INSERT INTO produto (nome,descricao) VALUES('Teclado','Teclado sem fio')",
+        .execute("INSERT INTO PRODUTO (nome,descricao) VALUES('Teclado','Teclado sem fio')",
             Statement.RETURN_GENERATED_KEYS);
 
     ResultSet rst = stm.getGeneratedKeys();

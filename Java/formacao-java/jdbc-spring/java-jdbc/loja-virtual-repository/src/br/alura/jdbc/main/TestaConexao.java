@@ -1,5 +1,6 @@
-package br.alura.jdbc;
+package br.alura.jdbc.main;
 
+import br.alura.jdbc.dao.ConnectionFactory;
 import java.sql.Connection;
 import java.sql.SQLException;
 
