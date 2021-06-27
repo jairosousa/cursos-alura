@@ -2,7 +2,10 @@ package br.com.alura.loja.dao;
 
 import br.com.alura.loja.modelo.Cliente;
 import br.com.alura.loja.modelo.Produto;
+import java.time.LocalDate;
+import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.TypedQuery;
 
 public class ClienteDao {
 	
@@ -27,5 +30,29 @@ public class ClienteDao {
 
 	public Cliente buscarPorId(long id) {
 		return em.find(Cliente.class, id);
+	}
+
+	/**
+	 * Busca Dinamica sem Criteria
+	 * @param nome
+	 * @param dataNascimento
+	 * @return
+	 */
+	public List<Cliente> buscarClientes(String nome, LocalDate dataNascimento) {
+		String jpql = "SELECT c FROM Cliente c WHERE 1=1 ";
+		if (nome != null && !nome.trim().isEmpty()) {
+			jpql += "AND c.nome = :nome ";
+		}
+		if (dataNascimento != null) {
+			jpql += " AND c.dataNascimento = :dataNascimento ";
+		}
+		TypedQuery<Cliente> query = em.createQuery(jpql, Cliente.class);
+		if (nome != null && !nome.trim().isEmpty()) {
+			query.setParameter("nome", nome);
+		}
+		if (dataNascimento != null) {
+			query.setParameter("dataNascimento", dataNascimento);
+		}
+		return query.getResultList();
 	}
 }
