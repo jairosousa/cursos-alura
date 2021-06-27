@@ -54,6 +54,10 @@ public class CadastroDePedido {
 
     em.getTransaction().commit();
 
+    System.out.println("\n---------Usando a classe DadosPessoais Embedded com Cliente-----");
+    Pedido pedidoComCliente = pedidoDao.buscaPedidoComCliente(1l);
+    System.out.println(pedidoComCliente.getCliente().getDadosPessoais().getNome());
+
     BigDecimal totalVendido = pedidoDao.valorTotalVendido();
     System.out.println("\nTOTAL VENDIDO: " + totalVendido);
 
