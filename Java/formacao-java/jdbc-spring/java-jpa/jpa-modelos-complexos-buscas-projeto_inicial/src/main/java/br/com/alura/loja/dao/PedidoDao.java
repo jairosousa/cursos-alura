@@ -45,6 +45,16 @@ public class PedidoDao {
         .getResultList();
   }
 
+  /*
+  / Query Planejada
+   */
+  public Pedido buscaPedidoComCliente(Long id) {
+    String jpql = "SELECT p FROM Pedido p JOIN FETCH p.cliente WHERE p.id = ?1";
+    return em.createQuery(jpql, Pedido.class)
+        .setParameter(1, id)
+        .getSingleResult();
+  }
+
   public List<Pedido> buscarPorData(LocalDate data) {
     String jpql = "SELECT p FROM Pedido p WHERE p.data = :data";
     return em.createQuery(jpql, Pedido.class)
@@ -53,12 +63,13 @@ public class PedidoDao {
   }
 
   public List<RelatorioDeVendasVO> relatorioDeVendas() {
-    String jpql = "SELECT new br.com.alura.loja.vo.RelatorioDeVendasVO(produto.nome, SUM(item.quantidade) AS total, MAX(pedido.data)) "
-        + "FROM Pedido pedido "
-        + "JOIN pedido.itens item "
-        + "JOIN item.produto produto "
-        + "GROUP BY produto.nome "
-        + "ORDER BY total DESC";
+    String jpql =
+        "SELECT new br.com.alura.loja.vo.RelatorioDeVendasVO(produto.nome, SUM(item.quantidade), MAX(pedido.data)) "
+            + "FROM Pedido pedido "
+            + "JOIN pedido.itens item "
+            + "JOIN item.produto produto "
+            + "GROUP BY produto.nome "
+            + "ORDER BY SUM(item.quantidade) DESC";
 
     return this.em.createQuery(jpql, RelatorioDeVendasVO.class)
         .getResultList();

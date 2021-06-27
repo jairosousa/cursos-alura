@@ -7,11 +7,10 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -31,7 +30,7 @@ public class Pedido {
   @Column(name = "valor_total")
   private BigDecimal valorTotal = BigDecimal.ZERO;
 
-  @ManyToOne
+  @ManyToOne(fetch = FetchType.LAZY)
   private Cliente cliente;
 
   @OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL)
@@ -78,7 +77,21 @@ public class Pedido {
     return valorTotal;
   }
 
+  public List<ItemPedido> getItens() {
+    return itens;
+  }
+
   public void setValorTotal(BigDecimal valorTotal) {
     this.valorTotal = valorTotal;
+  }
+
+  @Override
+  public String toString() {
+    return "{" +
+        "id=" + id +
+        ", data=" + data +
+        ", valorTotal=" + valorTotal +
+        ", cliente=" + cliente +
+        '}';
   }
 }
