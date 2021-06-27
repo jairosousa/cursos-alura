@@ -18,12 +18,15 @@ public class CadastroDeProduto {
 		EntityManager em = JPAUtil.getEntityManager();
 		ProdutoDao produtoDao = new ProdutoDao(em);
 		
+		System.out.println("----------BUSCA PELO ID PRODUTO------------------");
 		Produto p = produtoDao.buscarPorId(1l);
 		System.out.println(p.getPreco());
-		
+
+		System.out.println("----------BUSCA PELO NOME CATEGORIA COM NAMED QUERY------------");
 		List<Produto> todos = produtoDao.buscarPorNomeDaCategoria("CELULARES");
 		todos.forEach(p2 -> System.out.println(p.getNome()));
-	
+
+		System.out.println("----------BUSCA PRECO PELO NOME DO PRODUTO------------------");
 		BigDecimal precoDoProduto = produtoDao.buscarPrecoDoProdutoComNome("Xiaomi Redmi");
 		System.out.println("Preco do Produto: " + precoDoProduto);
 	}
