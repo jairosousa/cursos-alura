@@ -28,7 +28,7 @@ public class CadastroDePedido {
     ClienteDao clienteDao = new ClienteDao(em);
 
     Produto produto = produtoDao.buscarPorId(1l);
-    Cliente cliente = clienteDao.buscarPorId(1l);    ;
+    Cliente cliente = clienteDao.buscarPorId(1l);
 
     Pedido pedido = new Pedido(cliente);
     pedido.adicionarItem(new ItemPedido(10, pedido, produto));
@@ -38,6 +38,9 @@ public class CadastroDePedido {
     pedidoDao.cadastrar(pedido);
 
     em.getTransaction().commit();
+
+    BigDecimal totalVendido = pedidoDao.valorTotalVendido();
+    System.out.println("\nTOTAL VENDIDO: " + totalVendido);
 
     em.close();
 

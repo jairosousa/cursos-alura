@@ -1,6 +1,7 @@
 package br.com.alura.loja.dao;
 
 import br.com.alura.loja.modelo.Pedido;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -21,9 +22,10 @@ public class PedidoDao {
 		this.em.merge(pedido);
 	}
 
-	public void remover(Pedido pedido) {
-		pedido = em.merge(pedido);
-		this.em.remove(pedido);
+	public BigDecimal valorTotalVendido() {
+		String jpql = "SELECT SUM(p.valorTotal) FROM Pedido p";
+		return this.em.createQuery(jpql, BigDecimal.class)
+				.getSingleResult();
 	}
 	
 	public Pedido buscarPorId(Long id) {
