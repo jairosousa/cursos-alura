@@ -10,6 +10,7 @@ import br.com.alura.loja.modelo.ItemPedido;
 import br.com.alura.loja.modelo.Pedido;
 import br.com.alura.loja.modelo.Produto;
 import br.com.alura.loja.util.JPAUtil;
+import br.com.alura.loja.vo.RelatorioDeVendasVO;
 import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.EntityManager;
@@ -28,15 +29,28 @@ public class CadastroDePedido {
     PedidoDao pedidoDao = new PedidoDao(em);
     ClienteDao clienteDao = new ClienteDao(em);
 
-    Produto produto = produtoDao.buscarPorId(1l);
+    Produto produto1 = produtoDao.buscarPorId(1l);
+    Produto produto2 = produtoDao.buscarPorId(2l);
+    Produto produto3 = produtoDao.buscarPorId(3l);
     Cliente cliente = clienteDao.buscarPorId(1l);
 
     Pedido pedido = new Pedido(cliente);
-    pedido.adicionarItem(new ItemPedido(10, pedido, produto));
+    pedido.adicionarItem(new ItemPedido(10, pedido, produto1));
+    pedido.adicionarItem(new ItemPedido(20, pedido, produto2));
+
+    Pedido pedido2 = new Pedido(cliente);
+    pedido2.adicionarItem(new ItemPedido(2, pedido2, produto3));
+    pedido2.adicionarItem(new ItemPedido(10, pedido2, produto2));
+
+    Pedido pedido3 = new Pedido(cliente);
+    pedido2.adicionarItem(new ItemPedido(50, pedido3, produto1));
+    pedido2.adicionarItem(new ItemPedido(15, pedido3, produto3));
 
     em.getTransaction().begin();
 
     pedidoDao.cadastrar(pedido);
+    pedidoDao.cadastrar(pedido2);
+    pedidoDao.cadastrar(pedido3);
 
     em.getTransaction().commit();
 
@@ -44,11 +58,12 @@ public class CadastroDePedido {
     System.out.println("\nTOTAL VENDIDO: " + totalVendido);
 
     System.out.println("\n-----Relatorio-----");
-    List<Object[]> relatorio = pedidoDao.relatorioDeVendas();
-    for (Object[] obj : relatorio) {
-      System.out.println(obj[0]);
-      System.out.println(obj[1]);
-      System.out.println(obj[2]);
+    List<RelatorioDeVendasVO> relatorioDeVendasVOS = pedidoDao.relatorioDeVendas();
+    for (RelatorioDeVendasVO rel : relatorioDeVendasVOS) {
+      System.out.println("PRODUTO: " + rel.getNomeProduto());
+      System.out.println("QUANTIDADE VENDAS: " + rel.getQuantidadeVendida());
+      System.out.println("DATA ULTIMA VENDA: " + rel.getDataUltimaVenda());
+      System.out.println("---------------------------------");
     }
 
     em.close();
@@ -59,18 +74,29 @@ public class CadastroDePedido {
     EntityManager em = JPAUtil.getEntityManager();
 
     Categoria celulares = new Categoria("CELULARES");
+    Categoria videogames = new Categoria("VIDEOGAMES");
+    Categoria informatica = new Categoria("INFORMATICA");
+
     Produto celular = new Produto("Xiaomi Redmi", "Muito legal", new BigDecimal("800"), celulares);
+    Produto videogame = new Produto("PS5", "Playstation 5", new BigDecimal("1800"), videogames);
+    Produto macbook = new Produto("Macbook", "Macbook Pro", new BigDecimal("5000"), informatica);
+
+    Cliente cliente = new Cliente("Jairo", "123456");
 
     ProdutoDao produtoDao = new ProdutoDao(em);
     CategoriaDao categoriaDao = new CategoriaDao(em);
-
-    Cliente cliente = new Cliente("Jairo", "123456");
     ClienteDao clienteDao = new ClienteDao(em);
 
     em.getTransaction().begin();
 
     categoriaDao.cadastrar(celulares);
+    categoriaDao.cadastrar(videogames);
+    categoriaDao.cadastrar(informatica);
+
     produtoDao.cadastrar(celular);
+    produtoDao.cadastrar(videogame);
+    produtoDao.cadastrar(macbook);
+
     clienteDao.cadastrar(cliente);
 
     em.getTransaction().commit();
