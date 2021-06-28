@@ -1,6 +1,9 @@
 package br.com.alura.spring.jpa;
 
 import br.com.alura.spring.jpa.service.CrudCargoService;
+import br.com.alura.spring.jpa.service.CrudFuncionarioService;
+import br.com.alura.spring.jpa.service.CrudUnidadeTrabalhoService;
+import br.com.alura.spring.jpa.service.RelatoriosService;
 import java.util.Scanner;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -12,12 +15,20 @@ public class SpringJpaLocalApplication implements CommandLineRunner {
   private boolean system = true;
 
   private final CrudCargoService crudCargoService;
+  private final CrudUnidadeTrabalhoService crudUnidadeTrabalhoService;
+  private final CrudFuncionarioService crudFuncionarioService;
+  private final RelatoriosService relatoriosService;
 
   public SpringJpaLocalApplication(
-      CrudCargoService crudCargoService) {
+      CrudCargoService crudCargoService,
+      CrudUnidadeTrabalhoService crudUnidadeTrabalhoService,
+      CrudFuncionarioService crudFuncionarioService,
+      RelatoriosService relatoriosService) {
     this.crudCargoService = crudCargoService;
+    this.crudUnidadeTrabalhoService = crudUnidadeTrabalhoService;
+    this.crudFuncionarioService = crudFuncionarioService;
+    this.relatoriosService = relatoriosService;
   }
-
 
   public static void main(String[] args) {
     SpringApplication.run(SpringJpaLocalApplication.class, args);
@@ -31,15 +42,28 @@ public class SpringJpaLocalApplication implements CommandLineRunner {
       System.out.println("qual a ação você quer executar\n");
       System.out.println("0 - Sair");
       System.out.println("1 - Cargo");
+      System.out.println("2 - Unidade");
+      System.out.println("3 - Funcionario");
+      System.out.println("4 - Relatorios");
 
       int action = scanner.nextInt();
+      scanner.nextLine();
 
       switch (action) {
-        case 0:
-          system = false;
         case 1:
           crudCargoService.inicial(scanner);
           break;
+        case 2:
+          crudUnidadeTrabalhoService.inicial(scanner);
+          break;
+        case 3:
+          crudFuncionarioService.inicial(scanner);
+          break;
+        case 4:
+          relatoriosService.inicial(scanner);
+          break;
+        default:
+          system = false;
       }
     }
   }

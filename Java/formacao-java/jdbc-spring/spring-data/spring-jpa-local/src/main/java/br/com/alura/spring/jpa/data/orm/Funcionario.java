@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -26,22 +27,18 @@ public class Funcionario {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Integer id;
-
   private String nome;
-
   private String cpf;
-
   private Double salario;
-
   @ManyToOne
   @JoinColumn(name = "cargo_id", nullable = false)
   private Cargo cargo;
 
   @Fetch(FetchMode.SELECT)
-  @ManyToOne(fetch = FetchType.EAGER)
+  @ManyToMany(fetch = FetchType.EAGER)
   @JoinTable(name = "funcionarios_unidades", joinColumns = {
-      @JoinColumn(name = "fk_funcionario")
-  })
+      @JoinColumn(name = "fk_funcionario")},
+      inverseJoinColumns = { @JoinColumn(name = "fk_unidade") })
   private List<UnidadeTrabalho> unidadeTrabalhos;
 
   @Column(name = "data_contratacao")

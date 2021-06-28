@@ -29,9 +29,7 @@ public class CrudFuncionarioService {
   private final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
 
   private final UnidadeTrabalhoRepository unidadeTrabalhoRepository;
-
   private final FuncionarioRepository funcionarioRepository;
-
   private final CargoRepository cargoRepository;
 
   public CrudFuncionarioService(
@@ -52,6 +50,7 @@ public class CrudFuncionarioService {
       System.out.println("3 - visualizar");
       System.out.println("4 - Deletar");
       Integer opcao = scanner.nextInt();
+      scanner.nextLine();
 
       switch (opcao) {
         case 1:
@@ -75,19 +74,22 @@ public class CrudFuncionarioService {
 
   private void salvar(Scanner scanner) {
     System.out.println("Digite o nome");
-    String nome = scanner.next();
+    String nome = scanner.nextLine();
+    scanner.nextLine();
 
     System.out.println("Digite o cpf");
     String cpf = scanner.next();
 
     System.out.println("Digite o salario");
     Double salario = scanner.nextDouble();
+//    scanner.nextLine();
 
     System.out.println("Digite a data de contracao");
     String dataContratacao = scanner.next();
 
     System.out.println("Digite o cargoId");
     Integer cargoId = scanner.nextInt();
+    scanner.nextLine();
 
     List<UnidadeTrabalho> unidades = unidade(scanner);
 
@@ -155,8 +157,8 @@ public class CrudFuncionarioService {
   }
 
   private void visualizar(Scanner scanner) {
-    System.out.println("Qual pagina voce deseja visualizar");
-    Integer page = scanner.nextInt();
+//    System.out.println("Qual pagina voce deseja visualizar");
+//    Integer page = scanner.nextInt();
 
     Iterable<Funcionario> funcionarios = funcionarioRepository.findAll();
 

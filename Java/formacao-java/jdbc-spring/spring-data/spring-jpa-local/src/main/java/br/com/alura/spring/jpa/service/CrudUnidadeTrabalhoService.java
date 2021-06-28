@@ -2,6 +2,7 @@ package br.com.alura.spring.jpa.service;
 
 import br.com.alura.spring.jpa.data.orm.UnidadeTrabalho;
 import br.com.alura.spring.jpa.data.repository.UnidadeTrabalhoRepository;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +13,6 @@ import org.springframework.stereotype.Service;
 public class CrudUnidadeTrabalhoService {
 
   private Boolean system = true;
-
   private final UnidadeTrabalhoRepository unidadeTrabalhoRepository;
 
   public CrudUnidadeTrabalhoService(UnidadeTrabalhoRepository unidadeTrabalhoRepository) {
@@ -52,14 +52,17 @@ public class CrudUnidadeTrabalhoService {
 
   private void salvar(Scanner scanner) {
     System.out.println("nome unidade Trabalho");
-    String nome = scanner.next();
+    String nome = scanner.nextLine();
+    scanner.nextLine();
 
     System.out.println("Endereco unidade Trabalho");
-    String endereco = scanner.next();
+    String endereco = scanner.nextLine();
+    scanner.nextLine();
 
     UnidadeTrabalho unidadeTrabalho = new UnidadeTrabalho();
     unidadeTrabalho.setNome(nome);
     unidadeTrabalho.setEndereco(endereco);
+
     unidadeTrabalhoRepository.save(unidadeTrabalho);
     System.out.println("UnidadeTrabalho Salvo!");
   }
@@ -71,10 +74,9 @@ public class CrudUnidadeTrabalhoService {
 
     System.out.println("Nome Unidade Trabalho");
     String nome = scanner.nextLine();
-    scanner.nextLine();
 
     System.out.println("Endereco unidade Trabalho");
-    String endereco = scanner.next();
+    String endereco = scanner.nextLine();
 
     UnidadeTrabalho unidadeTrabalho = new UnidadeTrabalho();
     unidadeTrabalho.setId(id);
