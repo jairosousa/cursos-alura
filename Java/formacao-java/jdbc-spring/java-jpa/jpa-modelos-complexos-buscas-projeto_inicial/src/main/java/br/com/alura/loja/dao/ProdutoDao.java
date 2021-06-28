@@ -1,5 +1,6 @@
 package br.com.alura.loja.dao;
 
+import br.com.alura.loja.modelo.CategoriaId;
 import br.com.alura.loja.modelo.Produto;
 import java.math.BigDecimal;
 import java.time.LocalDate;
@@ -48,8 +49,9 @@ public class ProdutoDao {
   }
 
   public List<Produto> buscarPorNomeDaCategoria(String nome) {
+    CategoriaId id = new CategoriaId(nome, "XPTO");
     return em.createNamedQuery("Produto.produtosPorCategoria", Produto.class)
-        .setParameter("nome", nome)
+        .setParameter("id", id)
         .getResultList();
   }
 
