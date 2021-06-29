@@ -3,6 +3,7 @@ package br.com.alura.spring.jpa;
 import br.com.alura.spring.jpa.service.CrudCargoService;
 import br.com.alura.spring.jpa.service.CrudFuncionarioService;
 import br.com.alura.spring.jpa.service.CrudUnidadeTrabalhoService;
+import br.com.alura.spring.jpa.service.RelatorioFuncionarioDinamico;
 import br.com.alura.spring.jpa.service.RelatoriosService;
 import java.util.Scanner;
 import org.springframework.boot.CommandLineRunner;
@@ -18,16 +19,19 @@ public class SpringJpaLocalApplication implements CommandLineRunner {
   private final CrudUnidadeTrabalhoService crudUnidadeTrabalhoService;
   private final CrudFuncionarioService crudFuncionarioService;
   private final RelatoriosService relatoriosService;
+  private final RelatorioFuncionarioDinamico relatorioFuncionarioDinamico;
 
   public SpringJpaLocalApplication(
       CrudCargoService crudCargoService,
       CrudUnidadeTrabalhoService crudUnidadeTrabalhoService,
       CrudFuncionarioService crudFuncionarioService,
-      RelatoriosService relatoriosService) {
+      RelatoriosService relatoriosService,
+      RelatorioFuncionarioDinamico relatorioFuncionarioDinamico) {
     this.crudCargoService = crudCargoService;
     this.crudUnidadeTrabalhoService = crudUnidadeTrabalhoService;
     this.crudFuncionarioService = crudFuncionarioService;
     this.relatoriosService = relatoriosService;
+    this.relatorioFuncionarioDinamico = relatorioFuncionarioDinamico;
   }
 
   public static void main(String[] args) {
@@ -45,6 +49,7 @@ public class SpringJpaLocalApplication implements CommandLineRunner {
       System.out.println("2 - Unidade");
       System.out.println("3 - Funcionario");
       System.out.println("4 - Relatorios");
+      System.out.println("5 - Busca dinamicas");
 
       int action = scanner.nextInt();
 
@@ -60,6 +65,9 @@ public class SpringJpaLocalApplication implements CommandLineRunner {
           break;
         case 4:
           relatoriosService.inicial(scanner);
+          break;
+        case 5:
+          relatorioFuncionarioDinamico.inicial(scanner);
           break;
         default:
           system = false;
