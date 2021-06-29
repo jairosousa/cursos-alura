@@ -1,6 +1,7 @@
 package br.com.alura.spring.jpa.service;
 
 import br.com.alura.spring.jpa.data.orm.Funcionario;
+import br.com.alura.spring.jpa.data.orm.FuncionarioDTO;
 import br.com.alura.spring.jpa.data.repository.FuncionarioRepository;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -30,6 +31,7 @@ public class RelatoriosService {
       System.out.println("1 - Busca Funcionario por nome");
       System.out.println("2 - Busca Funcionario por nome, salario e data contratação");
       System.out.println("3 - Busca Funcionario por data contratação");
+      System.out.println("4 - Busca Funcionario por salario");
       Integer opcao = scanner.nextInt();
 
       switch (opcao) {
@@ -43,13 +45,16 @@ public class RelatoriosService {
         case 3:
           buscaFuncionarioDataContratacao(scanner);
           break;
-
+        case 4:
+          pesquisaFuncionarioSalario();
+          break;
         default:
           system = false;
           break;
       }
     }
   }
+
 
   private void buscaFuncionarioNome(Scanner scanner) {
     System.out.println("Escreva o nome:");
@@ -82,6 +87,16 @@ public class RelatoriosService {
 
     funcionarioRepository.findDataContratacao(localDate)
         .forEach(System.out::println);
+  }
+
+  private void pesquisaFuncionarioSalario() {
+    funcionarioRepository.findFuncionarioSalario()
+        .forEach(f -> System.out.println("Funcionario: " + f.getId() +
+            " - " + f.getNome() + "/" + f.getSalario()));
+
+    System.out.println("\n----------Busca funcionarioDTO----------------");
+//    List<FuncionarioDTO> list = funcionarioRepository.findFuncionarioDTOSalario();
+//    list.forEach(System.out::println);
 
   }
 }
