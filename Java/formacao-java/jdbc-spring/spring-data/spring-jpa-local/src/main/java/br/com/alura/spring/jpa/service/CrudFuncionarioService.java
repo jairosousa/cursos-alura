@@ -75,7 +75,6 @@ public class CrudFuncionarioService {
   private void salvar(Scanner scanner) {
     System.out.println("Digite o nome");
     String nome = scanner.nextLine();
-    scanner.nextLine();
 
     System.out.println("Digite o cpf");
     String cpf = scanner.next();
@@ -157,18 +156,15 @@ public class CrudFuncionarioService {
   }
 
   private void visualizar(Scanner scanner) {
-//    System.out.println("Qual pagina voce deseja visualizar");
-//    Integer page = scanner.nextInt();
+    System.out.println("Qual pagina voce deseja visualizar");
+    Integer page = scanner.nextInt();
 
-    Iterable<Funcionario> funcionarios = funcionarioRepository.findAll();
+    Pageable pageable = PageRequest.of(page, 5, Sort.by(Sort.Direction.ASC, "nome"));
+    Page<Funcionario> funcionarios = funcionarioRepository.findAll(pageable);
 
-//    Pageable pageable = PageRequest.of(page, 5, Sort.by(Sort.Direction.ASC, "nome"));
-//    Page<Funcionario> funcionarios = funcionarioRepository.findAll(pageable);
-
-    funcionarios.forEach(System.out::println);
-//    System.out.println("Pagina atual " + funcionarios.getNumber());
-//    System.out.println("Total elemento " + funcionarios.getTotalElements());
-//    funcionarios.forEach(funcionario -> System.out.println(funcionario));
+    System.out.println("Pagina atual " + funcionarios.getNumber());
+    System.out.println("Total elemento " + funcionarios.getTotalElements());
+    funcionarios.forEach(funcionario -> System.out.println(funcionario));
   }
 
   private void deletar(Scanner scanner) {

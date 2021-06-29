@@ -47,7 +47,6 @@ public class SpringJpaLocalApplication implements CommandLineRunner {
       System.out.println("4 - Relatorios");
 
       int action = scanner.nextInt();
-      scanner.nextLine();
 
       switch (action) {
         case 1:
