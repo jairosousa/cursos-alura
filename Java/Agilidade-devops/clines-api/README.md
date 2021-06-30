@@ -32,3 +32,10 @@ docker run jnsousa/clines-api
 ```
 
 ## Vamos usar o docker compose
+
+Makefile
+
+no terminal execute o comando make <nome da tarefa> no caso `run`
+```
+make run
+```
