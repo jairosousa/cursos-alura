@@ -39,3 +39,65 @@ no terminal execute o comando make <nome da tarefa> no caso `run`
 ```
 make run
 ```
+
+# Passo a passo deploy no heroku via linha de comando
+
+```
+heroku login
+```
+```
+login docker --username=_ --password=$(heroku auth:token)
+```
+```
+heroku create jnsousa-clienes-teste
+```
+```
+heroku addons:create heroku-postgresql:hobby-dev
+```
+## Configurar variaveis de ambientes
+```
+heroku config
+```
+## Exemplo configuração url database postgres no heroku
+![database](database.png)
+```
+heroku config:set DB_HOST=
+```
+```
+heroku config:set DB_NAME=
+```
+```
+heroku config:set DB_USER=
+```
+```
+heroku config:set DB_PASSWORD=
+```
+
+## Realizar alyeração no Dockerfile para aplicação não ultrapassar o limite de memoria e configurar a porta aleatoria
+
+`CMD java -XX:+UseContainerSupport -Xmx512m -jar app.jar --server-port=$PORT`
+
+##Gerar nova imagem Docker no heroku
+
+```
+docker build -t jnsousa/clines-api:latest .
+```
+
+## Renomear a imagem para padrão do Heroku
+```
+docker image tag jnsousa/clines-api:latest registry.heroku.com/jnsousa-clines-teste/web:1
+```
+
+## Realizar o `push` da imagem para o registry do Heroku
+```
+docker image push registry.heroku.com/jnsousa-clines-teste/web:1
+```
+## Comando para pegar id da imagem
+```
+docker image inspect registry.heroku.com/alura-clines-teste/web:1 -f {{.id}}
+```
+```
+curl -X PATCH \
+                    -H "Authorization: Bearer ${}
+                    -H "Content-Type: application.json"
+```
