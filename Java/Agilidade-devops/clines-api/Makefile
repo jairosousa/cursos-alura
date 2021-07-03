@@ -1,11 +1,28 @@
-package:
-	@ mvn clean package
+test:
+	@ ./mvnw test
 
+package:
+	@ ./mvnw clean package -DskipTests
+	
 docker-image-build: package
-	@ docker build -t jnsousa/clines-api .
+	@ docker build -t caelum/clines-api .
 
 run: docker-image-build
 	@ docker-compose up -d
 
-stop:
+stop: 
 	@ docker-compose down -v
+
+deploy: docker-image-build
+	@ docker login --username=_ --password=$$DOCKER_REGISTRY_PASS registry.heroku.com
+	@ docker image tag jnsousa/clines-api:latest registry.heroku.com/jnsousa-clines-teste/web:1
+	@ docker image push registry.heroku.com/jnsousa-clines-teste/web:1
+	@ make deploy_on_heroku IMAGE_ID=$$(docker image inspect registry.heroku.com/jnsousa-clines-teste/web:1 -f {{.Id}})
+
+deploy_on_heroku:
+	@ curl -X PATCH \
+			-H "Authorization: Bearer $$DOCKER_REGISTRY_PASS" \
+			-H "Content-Type: application/json" \
+			-H "Accept:application/vnd.heroku+json; version=3.docker-releases" \
+			-d '{ "updates": [{"type": "web",  "docker_image": "$(IMAGE_ID)"}] }' \
+			https://api.heroku.com/apps/jnsousa-clines-teste/formation

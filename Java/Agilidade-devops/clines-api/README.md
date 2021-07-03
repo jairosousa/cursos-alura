@@ -94,10 +94,14 @@ docker image push registry.heroku.com/jnsousa-clines-teste/web:1
 ```
 ## Comando para pegar id da imagem
 ```
-docker image inspect registry.heroku.com/alura-clines-teste/web:1 -f {{.id}}
+docker image inspect registry.heroku.com/jnsousa-clines-teste/web:1 -f {{.id}}
 ```
 ```
 curl -X PATCH \
-                    -H "Authorization: Bearer ${}
+                    -H "Authorization: Bearer ${heroku auth:token}
                     -H "Content-Type: application.json"
+                    -H "Accept:application/vnd.heroku+json; version=3.docker-releases" \
+                    -d '{ "updates": [{"type": "web",  "docker_image": "$(IMAGE_ID)"}] }' \
+			https://api.heroku.com/apps/jnsousa-clines-teste/formation
 ```
+
