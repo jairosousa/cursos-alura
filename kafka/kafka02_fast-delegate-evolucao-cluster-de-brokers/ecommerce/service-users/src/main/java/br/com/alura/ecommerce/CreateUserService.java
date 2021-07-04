@@ -21,7 +21,7 @@ public class CreateUserService {
       this.connection.createStatement().execute("CREATE TABLE Users ("
           + "uuid VARCHAR(200) PRIMARY KEY,"
           + "email VARCHAR(200))");
-    }catch (SQLException e) {
+    } catch (SQLException e) {
       // be careful, the sql could be wrong, be realy careful!!
       e.printStackTrace();
     }
@@ -54,10 +54,11 @@ public class CreateUserService {
 
   private void insertNewUser(String email) throws SQLException {
     var insert = connection.prepareStatement("INSERT INTO Users (uuid, email) VALUES (?,?)");
-    insert.setString(1, UUID.randomUUID().toString());
+    var uuid = UUID.randomUUID().toString();
+    insert.setString(1, uuid);
     insert.setString(2, email);
     insert.execute();
-    System.out.println("Usuario uuid e " + email + " adicionado");
+    System.out.println("Usuario: [id= " + uuid + " e email= " + email + "] adicionado");
   }
 
   private boolean isNewUser(String email) throws SQLException {
