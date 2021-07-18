@@ -2,35 +2,38 @@ package br.com.alura.microservice.loja.dto;
 
 public class EnderecoDTO {
 
-	private String rua;
-	
-	private int numero;
-	
-	private String estado;
+    private String rua;
 
-	public String getRua() {
-		return rua;
-	}
+    private int numero;
 
-	public void setRua(String rua) {
-		this.rua = rua;
-	}
+    private String estado;
 
-	public int getNumero() {
-		return numero;
-	}
+    public String getRua() {
+        return rua;
+    }
 
-	public void setNumero(int numero) {
-		this.numero = numero;
-	}
+    public void setRua(String rua) {
+        this.rua = rua;
+    }
 
-	public String getEstado() {
-		return estado;
-	}
+    public int getNumero() {
+        return numero;
+    }
 
-	public void setEstado(String estado) {
-		this.estado = estado;
-	}
-	
-	
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    @Override
+    public String toString() {
+        return rua + ", numero= " + numero + ", estado= " + estado;
+    }
 }
