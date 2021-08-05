@@ -10,4 +10,4 @@ spring:
             enabled: false
         git:
           uri: https://github.com/jairosousa/microservice-repo/
-          search-paths: fornecedor
+          search-paths: fornecedor, loja

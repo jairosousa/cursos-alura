@@ -1,11 +1,16 @@
 package br.com.alura.microservice.loja.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 /**
  * @Autor Jairo Nascimento
  * @Created 18/07/2021 - 14:27
  */
+@Entity
 public class Compra {
 
+    @Id
     private Long pedidoId;
 
     private Integer tempoDePreparo;
