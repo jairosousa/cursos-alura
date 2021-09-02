@@ -8,6 +8,7 @@ import javax.enterprise.context.ApplicationScoped;
 import javax.inject.Inject;
 import javax.ws.rs.core.SecurityContext;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.Optional;
 
 /**
@@ -22,7 +23,7 @@ public class OrdemService {
 
     public void inserir(SecurityContext securityContext, Ordem ordem) {
         Optional<Usuario> usuarioOptional = Usuario.findByIdOptional(ordem.getUserId());
-        Usuario usuario = usuarioOptional.orElseThrow();
+        Usuario usuario = usuarioOptional.orElseThrow(() -> new RuntimeException("Usuario não existe na base de dados"));
         if (!usuario.getUsername().equals(securityContext.getUserPrincipal().getName())){
             throw new RuntimeException("Usuario logado é diferente do userId");
         }
@@ -30,5 +31,9 @@ public class OrdemService {
         ordem.setData(LocalDate.now());
         ordem.setStatus("ENVIADA");
         ordemRepository.persist(ordem);
+    }
+
+    public List<Ordem> listar() {
+        return ordemRepository.listAll();
     }
 }
