@@ -19,6 +19,6 @@ public class UsuarioResource {
     @Transactional
     @Consumes(MediaType.APPLICATION_JSON)
     public void inserir(Usuario usuario) {
-        Usuario.persist(usuario);
+        Usuario.adicionar(usuario);
     }
 }
