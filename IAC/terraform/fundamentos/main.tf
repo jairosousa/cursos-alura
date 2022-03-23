@@ -10,16 +10,22 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region  = "us-east-1"
   profile = "aprendizado"
 }
 
 resource "aws_instance" "app_server" {
   ami           = "ami-04505e74c0741db8d"
   instance_type = "t2.micro"
-  key_name = "aws-jairo"
-
+  key_name      = "aws-jairo"
+  # user_data = <<-EOF
+  #               #!/bin/bash
+  #               cd /home/ubuntu
+  #               echo "<h1>Feito com terraform</h1>" > index.html
+  #               nohup busybox httpd -f -p 8080 &
+  #               EOF
+  security_groups = ["cw-access-terraform"]
   tags = {
-    Name = "Primeira instancia"
+    Name = "Teste AWS"
   }
 }
