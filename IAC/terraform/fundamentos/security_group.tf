@@ -1,5 +1,5 @@
-resource "aws_security_group" "cw_access_ssh" {
-  name = "cw-access-terraform"
+resource "aws_security_group" "sg_access_ssh" {
+  name = "sg-access-tf"
 
   #Incoming traffic
   ingress {
@@ -14,6 +14,22 @@ resource "aws_security_group" "cw_access_ssh" {
     from_port   = 0
     protocol    = "-1"
     to_port     = 0
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+}
+
+resource "aws_security_group" "web-sg" {
+  name = "sg-access-web-tf"
+  ingress {
+    from_port   = 80
+    to_port     = 80
+    protocol    = "tcp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
+    egress {
+    from_port   = 0
+    to_port     = 0
+    protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
