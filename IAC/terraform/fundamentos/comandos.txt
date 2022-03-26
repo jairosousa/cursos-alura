@@ -30,3 +30,10 @@ ALLOWED_HOSTS = ['*']
 CTRL + O (ENTER) salva
 CTRL + x sair
 subir novamente o servidor
+
+# Sair VM
+deactivate
+
+# Limpar o projeto para Ansible executar comandos bash
+excluir:
+> rm -rf manage.py setup/
