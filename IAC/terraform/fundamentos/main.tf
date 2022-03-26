@@ -18,15 +18,9 @@ resource "aws_instance" "app_server" {
   ami           = "ami-04505e74c0741db8d"
   instance_type = "t2.micro"
   key_name      = "aws-jairo"
-  # user_data = <<-EOF
-  #               #!/bin/bash
-  #               cd /home/ubuntu
-  #               echo "<h1>Feito com terraform</h1>" > index.html
-  #               nohup busybox httpd -f -p 8080 &
-  #               EOF
-  security_groups = ["sg-access-tf", "sg-access-web-tf"]
-  
+  security_groups = ["sgr-access-tf", "sgr-access-web-tf"]
+
   tags = {
-    Name = "Teste AWS"
+    Name = "aws Ansible Python Terraform"
   }
 }

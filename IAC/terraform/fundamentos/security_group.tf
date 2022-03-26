@@ -1,5 +1,5 @@
 resource "aws_security_group" "sg_access_ssh" {
-  name = "sg-access-tf"
+  name = "sgr-access-tf"
 
   #Incoming traffic
   ingress {
@@ -18,15 +18,15 @@ resource "aws_security_group" "sg_access_ssh" {
   }
 }
 
-resource "aws_security_group" "web-sg" {
-  name = "sg-access-web-tf"
+resource "aws_security_group" "sg-web" {
+  name = "sgr-access-web-tf"
   ingress {
     from_port   = 80
     to_port     = 80
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
-    egress {
+  egress {
     from_port   = 0
     to_port     = 0
     protocol    = "-1"
