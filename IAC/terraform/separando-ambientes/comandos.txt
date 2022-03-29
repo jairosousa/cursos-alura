@@ -1,0 +1,39 @@
+# cria servidor web
+nohup busybox httpd -f -p 8080 &
+
+# Ansible
+ansible-playbook playbook.yml -u ubuntu --private-key aws-jairo -i hosts.yml
+
+sudo ansible-playbook playbook.yml -u ubuntu --private-key ./aws-jairo.pem -i hosts.yml
+
+# Ativar virtualenv e verificar se djando foi instalado
+** pasta tcc
+. venv/bin/activate
+
+ - verificar a instalação dos pacotes:
+ (venv) ubuntu@ip-172-31-81-110:~/tcc$ pip freeze
+asgiref==3.5.0
+backports.zoneinfo==0.2.1
+Django==4.0.3
+djangorestframework==3.13.1
+pytz==2022.1
+sqlparse==0.4.2
+
+# Subir projeto em Django
+>django-admin startproject setup .
+> python manage.py runserver 0.0.0.0:8000
+
+# Alterar arquivo setting.py (para dar erro DisallowedHost)
+cd setup
+sudo nano settings.py
+ALLOWED_HOSTS = ['*'] 
+CTRL + O (ENTER) salva
+CTRL + x sair
+subir novamente o servidor
+
+# Sair VM
+deactivate
+
+# Limpar o projeto para Ansible executar comandos bash
+excluir:
+> rm -rf manage.py setup/
