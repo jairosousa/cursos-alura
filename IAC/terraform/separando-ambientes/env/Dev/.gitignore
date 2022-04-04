@@ -38,5 +38,6 @@ override.tf.json
 terraform.rc
 *.pem
 *.pub
+IaC-DEV
 
 # End of https://www.toptal.com/developers/gitignore/api/terraform
