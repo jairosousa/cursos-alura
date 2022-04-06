@@ -18,6 +18,7 @@ resource "aws_instance" "app_server" {
   ami           = "ami-04505e74c0741db8d"
   instance_type = var.instancia
   key_name      = var.chave
+  vpc_security_group_ids = [ aws_security_group.acesso_geral.id ]
   
   tags = {
     Name = "aws Ansible Python Terraform"

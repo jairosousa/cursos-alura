@@ -9,3 +9,8 @@ variable "chave" {
 variable "instancia" {
   type = string
 }
+
+variable "env" {
+  description = "Ambiente onde esta sendo aprisionado o serviço"
+  type = string
+}

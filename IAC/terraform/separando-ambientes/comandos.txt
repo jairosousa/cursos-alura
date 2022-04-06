@@ -37,3 +37,11 @@ deactivate
 # Limpar o projeto para Ansible executar comandos bash
 excluir:
 > rm -rf manage.py setup/
+
+# Executar Ansible no ambiente DEV
+> sudo ansible-playbook env/Dev/playbook.yml -i infra/hosts.yml -u ubuntu --private-key env/Dev/IaC-DEV
+
+> sudo ansible-playbook env/Prod/playbook.yml -i infra/hosts.yml -u ubuntu --private-key env/Prod/IaC-PROD
+
+# Ver IP
+>terraform output
