@@ -22,7 +22,7 @@ resource "aws_launch_template" "maquina" {
     Name = "Terraform Ansible Python"
   }
   security_group_names = [var.grupoDeSeguranca]
-  user_data = filebase("ansible.sh")
+  user_data = filebase64("ansible.sh")
 }
 
 resource "aws_key_pair" "chaveSSH" {
@@ -73,5 +73,17 @@ resource "aws_lb_listener" "entradaLoadBalancer" {
   default_action {
     type = "forward"
     target_group_arn = aws_lb_target_group.alvoLoadBalancer.arn
+  }
+}
+
+resource "aws_autoscaling_policy" "escala-Producao" {
+  name = "terraform-escala"
+  autoscaling_group_name = var.nomeGrupo
+  policy_type = "TargetTrackingScaling"
+  target_tracking_configuration {
+    predefined_metric_specification {
+      predefined_metric_type = "ASGAverageCPUUtilization"
+    }
+    target_value = 50.0
   }
 }
