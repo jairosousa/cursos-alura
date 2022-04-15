@@ -1,7 +1,7 @@
 module "Producao" {
   source = "../../infra"
 
-  nome      = "Producao"
+  nome      = "producao"
   descricao = "aplicacao-de-producao"
   max       = 5
   maquina   = "t2.micro"
