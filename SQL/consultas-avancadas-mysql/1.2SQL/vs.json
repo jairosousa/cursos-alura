@@ -1,0 +1,56 @@
+{
+      "_embedded": {
+            "products": [
+                  {
+                        "name": "Laptop",
+                        "price": 53000,
+                        "status": false,
+                        "quantity": 23,
+                        "_links": {
+                              "self": {
+                                    "href": "http://localhost:9090/products/1"
+                              },
+                              "product": {
+                                    "href": "http://localhost:9090/products/1"
+                              }
+                        }
+                  },
+                  {
+                        "name": "Desktop",
+                        "price": 35000,
+                        "status": true,
+                        "quantity": 34,
+                        "_links": {
+                              "self": {
+                                    "href": "http://localhost:9090/products/2"
+                              },
+                              "product": {
+                                    "href": "http://localhost:9090/products/2"
+                              }
+                        }
+                  }
+            ]
+      },
+      "_links": {
+            "first": {
+                  "href": "http://localhost:9090/products?page=0&size=2"
+            },
+            "self": {
+                  "href": "http://localhost:9090/products?page=0&size=2"
+            },
+            "next": {
+                  "href": "http://localhost:9090/products?page=1&size=2"
+            },
+            "last": {
+                  "href": "http://localhost:9090/products?page=1&size=2"
+            },
+            "profile": {
+                  "href": "http://localhost:9090/profile/products"
+            }
+      },
+      "page": {
+            "size": 2,
+            "totalElements": 4,
+            "totalPages": 2,
+            "number": 0
+      }
