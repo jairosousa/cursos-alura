@@ -56,7 +56,7 @@ public class UserService {
     }
 
     public List<UserDTO> queryByName(String nome) {
-        List<User> usuarios = userRepository.queryByNomeLike(nome);
+        List<User> usuarios = userRepository.queryByNomeLike("%".concat(nome).concat("%"));
 
         return usuarios
                 .stream()
