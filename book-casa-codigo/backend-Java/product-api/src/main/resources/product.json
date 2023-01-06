@@ -1,0 +1,47 @@
+[
+  {
+    "productIdentifier": "tv",
+    "nome": "TV",
+    "preco": 1200,
+    "descricao": "Uma tv",
+    "category": {
+      "id": 1
+    }
+  },
+  {
+    "productIdentifier": "cama",
+    "nome": "CAMA",
+    "preco": 800,
+    "descricao": "Uma cama",
+    "category": {
+      "id": 2
+    }
+  },
+  {
+    "productIdentifier": "cadeira",
+    "nome": "CADEIRA",
+    "preco": 100,
+    "descricao": "Uma cadeira",
+    "category": {
+      "id": 2
+    }
+  },
+  {
+    "productIdentifier": "robô",
+    "nome": "ROBÔ",
+    "preco": 80,
+    "descricao": "Um robô",
+    "category": {
+      "id": 3
+    }
+  },
+  {
+    "productIdentifier": "boneca",
+    "nome": "BONECA",
+    "preco": 125,
+    "descricao": "Uma boneca",
+    "category": {
+      "id": 3
+    }
+  }
+]

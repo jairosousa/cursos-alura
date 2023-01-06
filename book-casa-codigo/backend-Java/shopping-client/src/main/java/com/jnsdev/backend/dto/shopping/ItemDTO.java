@@ -1,12 +1,7 @@
-package com.jnsdev.backend.dto;
-
-import com.jnsdev.backend.model.Item;
-import com.jnsdev.backend.model.Shop;
+package com.jnsdev.backend.dto.shopping;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import java.util.Date;
-import java.util.List;
 
 /**
  * @Autor Jairo Nascimento
@@ -35,11 +30,11 @@ public class ItemDTO {
         this.price = price;
     }
 
-    public static ItemDTO convert(Item item) {
-        ItemDTO itemDTO = new ItemDTO();
-        itemDTO.setProductIdentifier(
-                item.getProductIdentifier());
-        itemDTO.setPrice(item.getPrice());
-        return itemDTO;
-    }
+//    public static ItemDTO convert(Item item) {
+//        ItemDTO itemDTO = new ItemDTO();
+//        itemDTO.setProductIdentifier(
+//                item.getProductIdentifier());
+//        itemDTO.setPrice(item.getPrice());
+//        return itemDTO;
+//    }
 }

@@ -1,6 +1,6 @@
 package com.jnsdev.backend.model;
 
-import com.jnsdev.backend.dto.ItemDTO;
+import com.jnsdev.backend.dto.shopping.ItemDTO;
 
 import javax.persistence.Embeddable;
 import javax.persistence.Table;

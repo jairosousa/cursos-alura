@@ -1,6 +1,6 @@
 package com.jnsdev.backend.controller;
 
-import com.jnsdev.backend.dto.UserDTO;
+import com.jnsdev.backend.dto.user.UserDTO;
 import com.jnsdev.backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

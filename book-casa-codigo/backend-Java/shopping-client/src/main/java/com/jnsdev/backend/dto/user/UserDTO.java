@@ -1,19 +1,23 @@
-package com.jnsdev.backend.dto;
+package com.jnsdev.backend.dto.user;
 
-import com.jnsdev.backend.model.User;
-
+import javax.validation.constraints.NotBlank;
 import java.util.Date;
 
 public class UserDTO {
 
+    @NotBlank
     private String nome;
 
+    @NotBlank
     private String cpf;
 
+    @NotBlank
     private String endereco;
 
+    @NotBlank
     private String email;
 
+    @NotBlank
     private String telefone;
 
     private Date dataCadastro;
@@ -64,17 +68,6 @@ public class UserDTO {
 
     public void setDataCadastro(Date dataCadastro) {
         this.dataCadastro = dataCadastro;
-    }
-
-    public static UserDTO convert(User user) {
-        UserDTO userDTO = new UserDTO();
-        userDTO.setNome(user.getNome());
-        userDTO.setCpf(user.getCpf());
-        userDTO.setEndereco(user.getEndereco());
-        userDTO.setEmail(user.getEmail());
-        userDTO.setTelefone(user.getTelefone());
-        userDTO.setDataCadastro(user.getDataCadastro());
-        return userDTO;
     }
 
 }

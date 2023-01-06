@@ -1,6 +1,6 @@
 package com.jnsdev.backend.controller;
 
-import com.jnsdev.backend.dto.ProductDTO;
+import com.jnsdev.backend.dto.product.ProductDTO;
 import com.jnsdev.backend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

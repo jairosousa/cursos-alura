@@ -1,6 +1,5 @@
-package com.jnsdev.backend.dto;
+package com.jnsdev.backend.dto.product;
 
-import com.jnsdev.backend.model.Product;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -62,17 +61,17 @@ public class ProductDTO {
         this.category = category;
     }
 
-    public static ProductDTO convert(Product product) {
-        ProductDTO productDTO = new ProductDTO();
-        productDTO.setNome(product.getNome());
-        productDTO.setPreco(product.getPreco());
-        productDTO.setProductIdentifier(
-                product.getProductIdentifier());
-        productDTO.setDescricao(product.getDescricao());
-        if (product.getCategory() != null) {
-            productDTO.setCategory(
-                    CategoryDTO.convert(product.getCategory()));
-        }
-        return productDTO;
-    }
+//    public static ProductDTO convert(Product product) {
+//        ProductDTO productDTO = new ProductDTO();
+//        productDTO.setNome(product.getNome());
+//        productDTO.setPreco(product.getPreco());
+//        productDTO.setProductIdentifier(
+//                product.getProductIdentifier());
+//        productDTO.setDescricao(product.getDescricao());
+//        if (product.getCategory() != null) {
+//            productDTO.setCategory(
+//                    CategoryDTO.convert(product.getCategory()));
+//        }
+//        return productDTO;
+//    }
 }

@@ -1,6 +1,4 @@
-package com.jnsdev.backend.dto;
-
-import com.jnsdev.backend.model.Shop;
+package com.jnsdev.backend.dto.shopping;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -16,9 +14,9 @@ public class ShopDTO {
 
     @NotBlank
     private String userIdentifier;
-    //    @NotNull
+
     private Float total;
-    //    @NotNull
+
     private Date date;
     @NotNull
     private List<ItemDTO> items;
@@ -55,15 +53,15 @@ public class ShopDTO {
         this.items = items;
     }
 
-    public static ShopDTO convert(Shop shop) {
-        ShopDTO shopDTO = new ShopDTO();
-        shopDTO.setUserIdentifier(shop.getUserIdentifier());
-        shopDTO.setTotal(shop.getTotal());
-        shopDTO.setDate(shop.getDate());
-        shopDTO.setItems(shop.getItems()
-                .stream()
-                .map(ItemDTO::convert)
-                .collect(Collectors.toList()));
-        return shopDTO;
-    }
+//    public static ShopDTO convert(Shop shop) {
+//        ShopDTO shopDTO = new ShopDTO();
+//        shopDTO.setUserIdentifier(shop.getUserIdentifier());
+//        shopDTO.setTotal(shop.getTotal());
+//        shopDTO.setDate(shop.getDate());
+//        shopDTO.setItems(shop.getItems()
+//                .stream()
+//                .map(ItemDTO::convert)
+//                .collect(Collectors.toList()));
+//        return shopDTO;
+//    }
 }

@@ -1,7 +1,10 @@
 package com.jnsdev.backend.service;
 
-import com.jnsdev.backend.dto.ShopDTO;
+import com.jnsdev.backend.dto.DTOConverter;
 import com.jnsdev.backend.dto.ShopReportDTO;
+import com.jnsdev.backend.dto.product.ProductDTO;
+import com.jnsdev.backend.dto.shopping.ItemDTO;
+import com.jnsdev.backend.dto.shopping.ShopDTO;
 import com.jnsdev.backend.model.Shop;
 import com.jnsdev.backend.repository.ShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,36 +25,51 @@ public class ShopService {
     @Autowired
     private ShopRepository shopRepository;
 
+    @Autowired
+    private UserService userService;
+
+    @Autowired
+    private ProductService productService;
+
     public List<ShopDTO> getAll() {
         return shopRepository.findAll()
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
     public List<ShopDTO> getByUser(String userIdentifier) {
         return shopRepository.findAllByUserIdentifier(userIdentifier)
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
     public List<ShopDTO> getByDate(Date date) {
         return shopRepository.findAllByDateGreaterThanEqual(date)
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
     public ShopDTO findById(Long productId) {
         Optional<Shop> shop = shopRepository.findById(productId);
         if (shop.isPresent()) {
-            return ShopDTO.convert(shop.get());
+            return DTOConverter.convert(shop.get());
         }
         return null;
     }
 
     public ShopDTO save(ShopDTO shopDTO) {
+        if (userService
+                .getUserByCpf(shopDTO.getUserIdentifier()) == null) {
+            return null;
+        }
+
+        if (!validateProducts(shopDTO.getItems())) {
+            return null;
+        }
+
         shopDTO.setTotal(shopDTO
                 .getItems()
                 .stream().map(itemDTO -> itemDTO.getPrice())
@@ -60,8 +78,22 @@ public class ShopService {
         shop.setDate(new Date());
         shop = shopRepository.save(shop);
 
-        return ShopDTO.convert(shop);
+        return DTOConverter.convert(shop);
     }
+
+    private boolean validateProducts(List<ItemDTO> items) {
+        for (ItemDTO item : items) {
+            ProductDTO productDTO = productService
+                    .getProductByIdentifier(item.getProductIdentifier());
+            if (productDTO == null) {
+                return false;
+            }
+            item.setPrice(productDTO.getPreco());
+        }
+        return true;
+    }
+
+
 
     public List<ShopDTO> getShopsByFilter(
             Date dataInicio,
@@ -74,7 +106,7 @@ public class ShopService {
 
         return shops
                 .stream()
-                .map(ShopDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 

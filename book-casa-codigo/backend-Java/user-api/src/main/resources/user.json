@@ -1,0 +1,16 @@
+[
+  {
+    "cpf":"375",
+    "nome":"Jairo",
+    "endereco":" Avenida 1",
+    "email":" jns@email.com",
+    "telefone":" 1234-3450"
+  },
+  {
+    "cpf":"410",
+    "nome":"Silvana",
+    "endereco":" Avenida 2",
+    "email":" sls@email.com",
+    "telefone":" 1234-3451"
+  }
+]

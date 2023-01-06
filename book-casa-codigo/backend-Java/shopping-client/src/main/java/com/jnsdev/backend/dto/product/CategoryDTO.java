@@ -1,6 +1,4 @@
-package com.jnsdev.backend.dto;
-
-import com.jnsdev.backend.model.Category;
+package com.jnsdev.backend.dto.product;
 
 /**
  * @Autor Jairo Nascimento
@@ -9,6 +7,7 @@ import com.jnsdev.backend.model.Category;
 public class CategoryDTO {
 
     private long id;
+
     private String nome;
 
     public long getId() {
@@ -27,10 +26,10 @@ public class CategoryDTO {
         this.nome = nome;
     }
 
-    public static CategoryDTO convert(Category category) {
-        CategoryDTO categoryDTO = new CategoryDTO();
-        categoryDTO.setId(category.getId());
-        categoryDTO.setNome(category.getNome());
-        return categoryDTO;
-    }
+//    public static CategoryDTO convert(Category category) {
+//        CategoryDTO categoryDTO = new CategoryDTO();
+//        categoryDTO.setId(category.getId());
+//        categoryDTO.setNome(category.getNome());
+//        return categoryDTO;
+//    }
 }

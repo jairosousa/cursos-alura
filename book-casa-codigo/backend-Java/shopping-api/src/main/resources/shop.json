@@ -1,0 +1,36 @@
+[
+  {
+    "userIdentifier":"375",
+    "items": [
+      {
+        "productIdentifier":"tv",
+        "price":"1050"
+      },
+      {
+        "productIdentifier":"cama",
+        "price":"560"
+      },
+      {
+        "productIdentifier":"cadeira",
+        "price":"60"
+      }
+    ]
+  },
+  {
+    "userIdentifier":"410",
+    "items": [
+      {
+        "productIdentifier":"boneca",
+        "price":"50"
+      },
+      {
+        "productIdentifier":"robô",
+        "price":"145"
+      },
+      {
+        "productIdentifier":"cadeira",
+        "price":"65"
+      }
+    ]
+  }
+]

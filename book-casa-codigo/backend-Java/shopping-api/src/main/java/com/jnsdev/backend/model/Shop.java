@@ -1,6 +1,7 @@
 package com.jnsdev.backend.model;
 
-import com.jnsdev.backend.dto.ShopDTO;
+import com.jnsdev.backend.dto.DTOConverter;
+import com.jnsdev.backend.dto.shopping.ShopDTO;
 
 import javax.persistence.*;
 import java.util.Date;

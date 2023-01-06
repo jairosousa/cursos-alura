@@ -1,7 +1,10 @@
 package com.jnsdev.backend.service;
 
-import com.jnsdev.backend.dto.ProductDTO;
+import com.jnsdev.backend.dto.DTOConverter;
+import com.jnsdev.backend.dto.product.ProductDTO;
+import com.jnsdev.backend.model.Category;
 import com.jnsdev.backend.model.Product;
+import com.jnsdev.backend.repository.CategoryRepository;
 import com.jnsdev.backend.repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -20,11 +23,14 @@ public class ProductService {
     @Autowired
     private ProductRepository productRepository;
 
+    @Autowired
+    private CategoryRepository categoryRepository;
+
     public List<ProductDTO> getAll() {
         List<Product> products = productRepository.findAll();
         return products
                 .stream()
-                .map(ProductDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -34,7 +40,7 @@ public class ProductService {
                 productRepository.getProductByCategory(categoryId);
         return products
                 .stream()
-                .map(ProductDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -42,15 +48,23 @@ public class ProductService {
             String productIdentifier) {
         Product product = productRepository.findByProductIdentifier(productIdentifier);
         if (product != null) {
-            return ProductDTO.convert(product);
+            return DTOConverter.convert(product);
         }
         return null;
     }
 
     public ProductDTO save(ProductDTO productDTO) {
-        Product product =
-                productRepository.save(Product.convert(productDTO));
-        return ProductDTO.convert(product);
+
+        Product product = Product.convert(productDTO);
+
+        Optional<Category> category = categoryRepository.findById(productDTO.getCategory().getId());
+
+        if (category.isPresent()) {
+            product.setCategory(category.get());
+        }
+
+        product = productRepository.save(product);
+        return DTOConverter.convert(product);
     }
 
     public void delete(Long productId) {

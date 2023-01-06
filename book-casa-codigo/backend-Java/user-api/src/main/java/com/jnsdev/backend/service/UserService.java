@@ -1,6 +1,7 @@
 package com.jnsdev.backend.service;
 
-import com.jnsdev.backend.dto.UserDTO;
+import com.jnsdev.backend.dto.DTOConverter;
+import com.jnsdev.backend.dto.user.UserDTO;
 import com.jnsdev.backend.model.User;
 import com.jnsdev.backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class UserService {
     public List<UserDTO> getAll() {
         return userRepository.findAll()
                 .stream()
-                .map(UserDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 
@@ -27,14 +28,14 @@ public class UserService {
         Optional<User> usuario = userRepository.findById(id);
 
         if (usuario.isPresent()) {
-            return UserDTO.convert(usuario.get());
+            return DTOConverter.convert(usuario.get());
         }
         return null;
     }
 
     public UserDTO save(UserDTO userDTO) {
         User user = userRepository.save(User.convert(userDTO));
-        return UserDTO.convert(user);
+        return DTOConverter.convert(user);
     }
 
     public UserDTO delete(Long id) {
@@ -50,7 +51,7 @@ public class UserService {
         User user = userRepository.findByCpf(cpf);
 
         if (user != null) {
-            return UserDTO.convert(user);
+            return DTOConverter.convert(user);
         }
         return null;
     }
@@ -60,7 +61,7 @@ public class UserService {
 
         return usuarios
                 .stream()
-                .map(UserDTO::convert)
+                .map(DTOConverter::convert)
                 .collect(Collectors.toList());
     }
 

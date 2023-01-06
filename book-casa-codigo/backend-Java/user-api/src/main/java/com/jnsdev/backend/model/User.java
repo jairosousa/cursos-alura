@@ -1,6 +1,6 @@
 package com.jnsdev.backend.model;
 
-import com.jnsdev.backend.dto.UserDTO;
+import com.jnsdev.backend.dto.user.UserDTO;
 
 import javax.persistence.*;
 import java.util.Date;

@@ -1,6 +1,6 @@
 package com.jnsdev.backend.model;
 
-import com.jnsdev.backend.dto.CategoryDTO;
+import com.jnsdev.backend.dto.product.CategoryDTO;
 
 import javax.persistence.*;
 

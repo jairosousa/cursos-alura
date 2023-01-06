@@ -1,6 +1,7 @@
 package com.jnsdev.backend.model;
 
-import com.jnsdev.backend.dto.ProductDTO;
+import com.jnsdev.backend.dto.DTOConverter;
+import com.jnsdev.backend.dto.product.ProductDTO;
 
 import javax.persistence.*;
 
