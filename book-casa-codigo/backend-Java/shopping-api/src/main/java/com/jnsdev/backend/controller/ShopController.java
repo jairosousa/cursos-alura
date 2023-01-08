@@ -1,7 +1,7 @@
 package com.jnsdev.backend.controller;
 
-import com.jnsdev.backend.dto.ShopReportDTO;
 import com.jnsdev.backend.dto.shopping.ShopDTO;
+import com.jnsdev.backend.dto.shopping.ShopReportDTO;
 import com.jnsdev.backend.service.ShopService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;

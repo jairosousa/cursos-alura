@@ -1,10 +1,10 @@
 package com.jnsdev.backend.service;
 
 import com.jnsdev.backend.dto.DTOConverter;
-import com.jnsdev.backend.dto.ShopReportDTO;
 import com.jnsdev.backend.dto.product.ProductDTO;
 import com.jnsdev.backend.dto.shopping.ItemDTO;
 import com.jnsdev.backend.dto.shopping.ShopDTO;
+import com.jnsdev.backend.dto.shopping.ShopReportDTO;
 import com.jnsdev.backend.model.Shop;
 import com.jnsdev.backend.repository.ShopRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,14 +61,10 @@ public class ShopService {
     }
 
     public ShopDTO save(ShopDTO shopDTO) {
-        if (userService
-                .getUserByCpf(shopDTO.getUserIdentifier()) == null) {
-            return null;
-        }
 
-        if (!validateProducts(shopDTO.getItems())) {
-            return null;
-        }
+        userService.getUserByCpf(shopDTO.getUserIdentifier());
+
+        validateProducts(shopDTO.getItems());
 
         shopDTO.setTotal(shopDTO
                 .getItems()
@@ -82,6 +78,7 @@ public class ShopService {
     }
 
     private boolean validateProducts(List<ItemDTO> items) {
+
         for (ItemDTO item : items) {
             ProductDTO productDTO = productService
                     .getProductByIdentifier(item.getProductIdentifier());
@@ -92,7 +89,6 @@ public class ShopService {
         }
         return true;
     }
-
 
 
     public List<ShopDTO> getShopsByFilter(

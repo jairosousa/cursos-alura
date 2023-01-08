@@ -1,6 +1,6 @@
 package com.jnsdev.backend.repository;
 
-import com.jnsdev.backend.dto.ShopReportDTO;
+import com.jnsdev.backend.dto.shopping.ShopReportDTO;
 import com.jnsdev.backend.model.Shop;
 
 import java.util.Date;

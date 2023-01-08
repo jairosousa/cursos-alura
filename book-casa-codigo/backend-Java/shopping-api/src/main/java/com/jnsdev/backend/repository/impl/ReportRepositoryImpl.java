@@ -1,6 +1,6 @@
 package com.jnsdev.backend.repository.impl;
 
-import com.jnsdev.backend.dto.ShopReportDTO;
+import com.jnsdev.backend.dto.shopping.ShopReportDTO;
 import com.jnsdev.backend.model.Shop;
 import com.jnsdev.backend.repository.ReportRepository;
 
