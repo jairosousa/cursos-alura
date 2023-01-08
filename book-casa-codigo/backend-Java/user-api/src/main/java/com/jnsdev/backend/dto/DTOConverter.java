@@ -17,6 +17,7 @@ public class DTOConverter {
         userDTO.setEmail(user.getEmail());
         userDTO.setTelefone(user.getTelefone());
         userDTO.setDataCadastro(user.getDataCadastro());
+        userDTO.setKey(user.getKey());
         return userDTO;
     }
 }

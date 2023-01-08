@@ -25,6 +25,8 @@ public class User {
 
     private Date dataCadastro;
 
+    private String key;
+
     public User() {
     }
 
@@ -84,6 +86,15 @@ public class User {
         this.dataCadastro = dataCadastro;
     }
 
+    
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
     public static User convert(UserDTO userDTO) {
         User user = new User();
         user.setNome(userDTO.getNome());
@@ -92,7 +103,9 @@ public class User {
         user.setEmail(userDTO.getEmail());
         user.setTelefone(userDTO.getTelefone());
         user.setDataCadastro(userDTO.getDataCadastro());
+        user.setKey(userDTO.getKey());
         return user;
     }
+
 
 }

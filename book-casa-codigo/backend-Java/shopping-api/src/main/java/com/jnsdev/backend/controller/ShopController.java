@@ -38,27 +38,24 @@ public class ShopController {
     }
 
     @PostMapping
-    public ShopDTO newShop(@Valid @RequestBody ShopDTO shopDTO) {
-        return shopService.save(shopDTO);
+    public ShopDTO newShop(
+            @RequestHeader(name = "key", required = true) String key,
+            @Valid @RequestBody ShopDTO shopDTO) {
+        return shopService.save(shopDTO, key);
     }
 
     @GetMapping("/search")
     public List<ShopDTO> getShopsByFilter(
-            @RequestParam(name = "dataInicio", required = true)
-            @DateTimeFormat(pattern = "dd/MM/yyyy") Date dataInicio,
-            @RequestParam(name = "dataFim", required = false)
-            @DateTimeFormat(pattern = "dd/MM/yyyy") Date dataFim,
-            @RequestParam(name = "valorMinimo", required = false)
-                    Float valorMinimo) {
+            @RequestParam(name = "dataInicio", required = true) @DateTimeFormat(pattern = "dd/MM/yyyy") Date dataInicio,
+            @RequestParam(name = "dataFim", required = false) @DateTimeFormat(pattern = "dd/MM/yyyy") Date dataFim,
+            @RequestParam(name = "valorMinimo", required = false) Float valorMinimo) {
         return shopService.getShopsByFilter(dataInicio, dataFim, valorMinimo);
     }
 
     @GetMapping("/report")
     public ShopReportDTO getReportByDate(
-            @RequestParam(name = "dataInicio", required = true)
-            @DateTimeFormat(pattern = "dd/MM/yyyy") Date dataInicio,
-            @RequestParam(name = "dataFim", required = true)
-            @DateTimeFormat(pattern = "dd/MM/yyyy") Date dataFim) {
+            @RequestParam(name = "dataInicio", required = true) @DateTimeFormat(pattern = "dd/MM/yyyy") Date dataInicio,
+            @RequestParam(name = "dataFim", required = true) @DateTimeFormat(pattern = "dd/MM/yyyy") Date dataFim) {
         return shopService.getReportByDate(dataInicio, dataFim);
     }
 

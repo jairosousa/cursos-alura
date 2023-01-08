@@ -60,9 +60,9 @@ public class ShopService {
         return null;
     }
 
-    public ShopDTO save(ShopDTO shopDTO) {
+    public ShopDTO save(ShopDTO shopDTO, String key) {
 
-        userService.getUserByCpf(shopDTO.getUserIdentifier());
+        userService.getUserByCpf(shopDTO.getUserIdentifier(), key);
 
         validateProducts(shopDTO.getItems());
 
