@@ -17,6 +17,6 @@
     "mysql": "github:mysqljs/mysql"
   },
   "devDependencies": {
-    "nodemon": "^2.0.6"
+    "nodemon": "^2.0.20"
   }
 }
