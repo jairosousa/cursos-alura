@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: shopping-api
+  labels:
+    app: shopping-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: shopping-api
+  template:
+    metadata:
+      labels:
+        app: shopping-api
+    spec:
+      containers:
+      - name: shopping-api
+        image: jnsousa/shopping-api
+        imagePullPolicy:	Never
+        ports:
+        - containerPort: 8082
+        env:
+          - name: POSTGRES_URL
+            valueFrom:
+              configMapKeyRef:
+                key: database_url
+                name: postgres-configmap
+          - name: POSTGRES_USER
+            valueFrom:
+              configMapKeyRef:
+                key: database_user
+                name: postgres-configmap
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                key: database_password
+                name: postgres-configmap
+          - name: PRODUCT_API_URL
+            valueFrom:
+              configMapKeyRef:
+                key: product_api_url
+                name: shopping-api-configmap
+          - name: USER_API_URL
+            valueFrom:
+              configMapKeyRef:
+                key: user_api_url
+                name: shopping-api-configmap

@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product-api
+  labels:
+    app: product-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product-api
+  template:
+    metadata:
+      labels:
+        app: product-api
+    spec:
+      containers:
+      - name: product-api
+        image: jnsousa/product-api
+        imagePullPolicy:	Never
+        ports:
+        - containerPort: 8081
+        env:
+          - name: POSTGRES_URL
+            valueFrom:
+              configMapKeyRef:
+                key: database_url
+                name: postgres-configmap
+          - name: POSTGRES_USER
+            valueFrom:
+              configMapKeyRef:
+                key: database_user
+                name: postgres-configmap
+          - name: POSTGRES_PASSWORD
+            valueFrom:
+              configMapKeyRef:
+                key: database_password
+                name: postgres-configmap

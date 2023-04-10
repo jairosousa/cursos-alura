@@ -1,0 +1,10 @@
+minikube profile list            
+minikube -p minikube docker-env --shell powershell | Invoke-Expression
+
+        
+bash/zsh
+eval $(minikube -p <profile> docker-env)
+
+kubectl delete -n default deployment user-api
+
+minikube dashboard
