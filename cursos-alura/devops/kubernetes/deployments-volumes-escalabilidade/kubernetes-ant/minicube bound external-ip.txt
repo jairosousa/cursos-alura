@@ -1,9 +1,0 @@
-minicube bound external-ip
-
-https://minikube.sigs.k8s.io/docs/handbook/accessing/
-> minikube service <service-name> --url
-
-
-kubectl rollout undo deployment nginx-deployment
-
-kubectl annotate deployment portal-noticias-deployment kubernets.io/change-cause="Criando portal de notícias na versão 1"
