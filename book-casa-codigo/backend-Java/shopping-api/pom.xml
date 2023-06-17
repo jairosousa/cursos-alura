@@ -45,7 +45,7 @@
 			<scope>test</scope>
 		</dependency>
 		<dependency>
-			<groupId>com.jnsdev.banckend</groupId>
+			<groupId>com.jnsdev.backend</groupId>
 			<artifactId>shopping-client</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
