@@ -56,16 +56,14 @@ public class ProductService {
 
     public ProductDTO save(ProductDTO productDTO) {
 
-        Product product = Product.convert(productDTO);
+        boolean existsCategory = categoryRepository.existsById(productDTO.getCategory().getId());
 
-        Optional<Category> category = categoryRepository.findById(productDTO.getCategory().getId());
-
-        if (category.isPresent()) {
-            product.setCategory(category.get());
-            product = productRepository.save(product);
-            return DTOConverter.convert(product);
+        if (!existsCategory) {
+            throw new CategoryNotFoundException();
         }
-        throw new CategoryNotFoundException();
+
+        Product product = productRepository.save(Product.convert(productDTO));
+        return DTOConverter.convert(product);
     }
 
     public void delete(Long productId) {

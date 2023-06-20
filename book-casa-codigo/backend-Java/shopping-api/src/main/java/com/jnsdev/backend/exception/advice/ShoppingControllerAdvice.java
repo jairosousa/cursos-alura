@@ -22,7 +22,7 @@ public class ShoppingControllerAdvice {
     @ResponseBody
     @ResponseStatus(HttpStatus.NOT_FOUND)
     @ExceptionHandler(ProductNotFoundException.class)
-    public ErrorDTO handleUserNotFound(
+    public ErrorDTO handleProductNotFound(
             ProductNotFoundException userNotFoundException) {
         ErrorDTO errorDTO = new ErrorDTO();
         errorDTO.setStatus(HttpStatus.NOT_FOUND.value());
