@@ -14,6 +14,7 @@ import javax.persistence.Table;
 public class Item {
 
     private String productIdentifier;
+    
     private Float price;
 
     public String getProductIdentifier() {

@@ -35,7 +35,6 @@ public class UserController {
         return userService.findByCpf(cpf, key);
     }
 
-
     @DeleteMapping("/user/{id}")
     public UserDTO remover(@PathVariable Long id) {
         return userService.delete(id);

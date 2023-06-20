@@ -1,6 +1,7 @@
 package com.jnsdev.backend.controller;
 
 import com.jnsdev.backend.dto.product.ProductDTO;
+import com.jnsdev.backend.exception.ProductNotFoundException;
 import com.jnsdev.backend.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,7 +45,7 @@ public class ProductController {
     }
 
     @DeleteMapping("/{id}")
-    void delete(@PathVariable Long id) {
+    void delete(@PathVariable Long id) throws ProductNotFoundException {
         productService.delete(id);
     }
 }

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@Table(name="user", schema = "users")
+@Table(name = "user", schema = "users")
 public class User {
 
     @Id
@@ -86,7 +86,6 @@ public class User {
         this.dataCadastro = dataCadastro;
     }
 
-    
     public String getKey() {
         return key;
     }
