@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: product-api
-        image: jnsousa/product-api
-        imagePullPolicy:	Never
+        image: jnsousa/product-api:1.0.0
+        imagePullPolicy: Always
         ports:
         - containerPort: 8081
         env:

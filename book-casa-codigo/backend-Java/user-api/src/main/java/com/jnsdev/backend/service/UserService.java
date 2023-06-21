@@ -52,7 +52,7 @@ public class UserService {
         return null;
     }
 
-    public UserDTO findByCpf(String cpf, String key) {
+    public UserDTO findByCpfAndKey(String cpf, String key) {
         User user = userRepository.findByCpfAndKey(cpf, key);
 
         if (user != null) {

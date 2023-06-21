@@ -1,6 +1,13 @@
 minikube profile list            
 minikube -p minikube docker-env --shell powershell | Invoke-Expression
 
+
+- Esse YAML contém a definição de diversas
+  coisas como um usuário padrão, um novo Deployment com o
+  dashboard e um Service
+> kubectl create -f https://raw.githubusercontent.com/kubernetes/da
+shboard/v2.0.0-beta6/aio/deploy/recommended.yaml
+
         
 bash/zsh
 eval $(minikube -p <profile> docker-env)
