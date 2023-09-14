@@ -13,7 +13,7 @@ $ docker build -t jnsousa/user-api .
 ### Postgresql
 
 ```shell
-$ docker run -d --name postgres_dev -p 5432:5432 -e POSTGRES_PASSWORD=postgres postgres
+$ docker run -d --name postgres_dev -p 5432:5432 -e POSTGRES_DB=dev -e POSTGRES_PASSWORD=postgres -d postgres
 ``` 
 
 Expor serviço
