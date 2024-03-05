@@ -19,7 +19,7 @@ $ docker run -d --name postgres_dev -p 5432:5432 -e POSTGRES_DB=dev -e POSTGRES_
 Expor serviço
 
 ```shell
-$ kubectl port-forward svc/postgres 5000:5432
+$ kubectl port-forward svc/postgres 5432:5432
 ```
 
 ou

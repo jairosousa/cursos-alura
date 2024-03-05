@@ -16,8 +16,8 @@ spec:
     spec:
       containers:
       - name: user-api
-        image: jnsousa/user-api
-        imagePullPolicy: Never
+        image: jnsousa/user-api:latest
+        imagePullPolicy: IfNotPresent
         ports:
         - containerPort: 8080
         env:
