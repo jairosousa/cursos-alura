@@ -1,0 +1,17 @@
+version: '3.4'
+services:
+  db:
+    image: mysql
+    ports:
+      - '3306:3306'
+    restart: always
+    volumes:
+      - mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: vollmed_db
+      MYSQL_USER: vollmed
+      MYSQL_PASSWORD: root
+volumes:
+  mysql-data:
+    driver: local
