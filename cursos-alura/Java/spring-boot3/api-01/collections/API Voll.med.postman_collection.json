@@ -1,0 +1,373 @@
+{
+	"info": {
+		"_postman_id": "cd708190-6457-4483-9db4-c6aa90909052",
+		"name": "API Voll.med",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "1010130"
+	},
+	"item": [
+		{
+			"name": "medicos",
+			"item": [
+				{
+					"name": "cadastro",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "pt-br",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Snyder Mcguire\",\r\n  \"email\": \"snydermcguiresoftmicro.com\",\r\n  \"telefone\": \"(92)11172-6846\",\r\n  \"crm\": 513,\r\n  \"especialidade\": \"ORTOPEDIA\",\r\n  \"endereco\": {\r\n    \r\n    \"bairro\": \"Marta Helena\",\r\n    \"cep\": \"98752657\",\r\n    \"cidade\": \"Chapin\",\r\n    \"uf\": \"PE\",\r\n    \"numero\": 32,\r\n    \"complemento\": \"Rua\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/medicos",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"medicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 20,\r\n    \"nome\": \"Raimundo Nonato\",\r\n    \"telefone\": \"23985413607\",\r\n    \"endereco\": {\r\n        \"logradouro\": \"Rua das Mercês\",\r\n        \"numero\": \"3\",\r\n        \"bairro\": \"Campina\",\r\n        \"cep\": \"66845000\",\r\n        \"cidade\": \"Belém\",\r\n        \"uf\": \"PA\",\r\n        \"complemento\": \"Comercio\"\r\n    }\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/medicos",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"medicos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listagem",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqbnNAZW1haWwuY29tIiwiaXNzIjoiQVBJIFZvbGwubWVkIiwiaWQiOjEsImV4cCI6MTcwOTgxNTE2MH0.LIwy-MtY1ZvV59QkY_sWuRlpB0BjRetJ9F0ww7ZvTjA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/medicos",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"medicos"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "nome,desc",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/medicos/15",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"medicos",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detalhar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqbnNAZW1haWwuY29tIiwiaXNzIjoiQVBJIFZvbGwubWVkIiwiaWQiOjEsImV4cCI6MTcwOTgxNjg3MH0.xkl6jyWbS_fN5dkG2WhbjtjC3CqIglr3bkvf5M3nWgM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/medicos/1",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"medicos",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "pacientes",
+			"item": [
+				{
+					"name": "cadastro",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nome\": \"Josefina Summers\",\r\n  \"email\": \"josefinasummers@softmicro.com\",\r\n  \"telefone\": \"(27)70514-9418\",\r\n  \"cpf\": \"138.582.645-98\",\r\n  \"endereco\": {\r\n    \"logradouro\": \"Meadow Street\",\r\n    \"bairro\": \"Umuruana\",\r\n    \"cep\": \"30064616\",\r\n    \"cidade\": \"Sexton\",\r\n    \"uf\": \"MG\",\r\n    \"numero\": 1,\r\n    \"complemento\": \"perimetro\"\r\n  }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/pacientes",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detalhar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJqbnNAZW1haWwuY29tIiwiaXNzIjoiQVBJIFZvbGwubWVkIiwiaWQiOjEsImV4cCI6MTcwOTgxNjg3MH0.xkl6jyWbS_fN5dkG2WhbjtjC3CqIglr3bkvf5M3nWgM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/pacientes/5",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"pacientes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "excluir",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/pacientes/15",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"pacientes",
+								"15"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "atualizar",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 16,\r\n    \"nome\": \"Nilda Vilhena\",\r\n    \"telefone\": \"93985450052\",\r\n    \"endereco\": {\r\n        \"logradouro\": \"Rua das Rosas\",\r\n        \"numero\": \"28\",\r\n        \"bairro\": \"Guama\",\r\n        \"cep\": \"66130450\",\r\n        \"cidade\": \"Belém\",\r\n        \"uf\": \"PA\",\r\n        \"complemento\": \"universidade\"\r\n    }\r\n    \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/pacientes",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"pacientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listagem",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url-base}}/pacientes",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"pacientes"
+							],
+							"query": [
+								{
+									"key": "size",
+									"value": "1",
+									"disabled": true
+								},
+								{
+									"key": "sort",
+									"value": "nome,desc",
+									"disabled": true
+								},
+								{
+									"key": "page",
+									"value": "0",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "autenticação",
+			"item": [
+				{
+					"name": "autenticação",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"if (responseCode.code >= 200 && responseCode.code <= 299) {\r",
+									"    var jsonData = JSON.parse(responseBody);\r",
+									"    postman.setEnvironmentVariable(\"token\", jsonData.token);\r",
+									"   \r",
+									"}"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"login\": \"jns@email.com\",\r\n    \"senha\": \"123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url-base}}/login",
+							"host": [
+								"{{url-base}}"
+							],
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url-base",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
