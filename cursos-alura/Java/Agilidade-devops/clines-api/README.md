@@ -16,9 +16,14 @@ Before you begin, ensure you have met the following requirements:
 
 To run this project simply execute this commands inside de project path
 
+## Banco postgres loval via docker compose
+```shell
+$ docker compose -f .\docker\db\docker-compose.yml up -d
+```
+
 ```shell script
 ./mvnw clean package
-docker image build --build-arg JAR=target/clines-api-0.0.1-SNAPSHOT.jar -t caelum/clines-api:latest .
+docker image build --build-arg JAR=target/clines-api-0.0.1-SNAPSHOT.jar -t jnsousa/clines-api:latest .
 docker-compose up
 ```
 ## criar container via Dockerfile

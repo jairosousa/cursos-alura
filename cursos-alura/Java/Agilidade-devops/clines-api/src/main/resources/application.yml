@@ -1,3 +1,5 @@
+server:
+  port: 8080
 spring:
   datasource:
     url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:clines}
@@ -12,5 +14,3 @@ cors:
     all-methods: true
     all-headers: true
     send-credentials: true
-server:
-  port: 8081
