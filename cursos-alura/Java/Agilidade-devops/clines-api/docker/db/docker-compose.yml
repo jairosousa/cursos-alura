@@ -1,0 +1,34 @@
+version: '3.9'
+services:
+  postgres:
+    image: postgres
+    container_name: clines-postgressql
+    restart: always
+    environment:
+      TZ: America/Sao_Paulo
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: clines
+    ports:
+      - 5432:5432
+    expose:
+      - 5432
+    networks:
+      - clines-network
+
+  pgadmin4:
+    container_name: clines-pgadmin4
+    image: dpage/pgadmin4
+    environment:
+      PGADMIN_DEFAULT_EMAIL: "clines@email.com"
+      PGADMIN_DEFAULT_PASSWORD: "admin123"
+    ports:
+      - 80:80
+    depends_on:
+      - postgres
+    networks:
+      - gestao-network
+
+networks:
+  clines-network:
+    driver: bridge
