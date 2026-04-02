@@ -3,9 +3,21 @@ spring:
     name: ecomart
 
   ai:
+    retry:
+      max-attempts: 20
+      backoff:
+        initial-interval: 3000
+        max-interval: 30000
     openai:
       api-key: ${OPENAI_API_KEY}
-      model: gpt-3.5-turbo
-      max-tokens: 1000
-      temperature: 0.7
-      system-prompt: "You will be a helpful assistant on an e-commerce platform for eco-friendly products. Your duties include providing concise and accurate answers to user questions about products, orders, and general information related to the platform."
+      chat:
+        options:
+#          model: gpt-3.5-turbo
+          max-tokens: 1000
+          temperature: 0.8
+#          system-prompt: "You will be a helpful assistant on an e-commerce platform for eco-friendly products. Your duties include providing concise and accurate answers to user questions about products, orders, and general information related to the platform."
+
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor: DEBUG
+    org.springframework.ai.chat.client: DEBUG
